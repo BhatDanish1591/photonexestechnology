@@ -5,11 +5,11 @@ import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 text-slate-50 pt-16 pb-6 border-t-4 border-orange-600">
+    <footer className="bg-[#0b1120] text-slate-50 pt-8 pb-4 border-t-2 border-orange-600">
       <div className="max-w-[1400px] mx-auto px-6 md:px-8">
         
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-6">
           
           {/* Brand Column */}
           <div>
@@ -60,9 +60,6 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-            <p className="text-slate-400 text-sm leading-relaxed mb-6">
-              Delivering next-generation IT solutions and enterprise software development to empower your digital transformation journey.
-            </p>
             <div className="flex gap-4">
               {[
                 { Icon: FaFacebook, href: "https://facebook.com/photonexes" },
@@ -85,10 +82,10 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white text-lg font-bold mb-6 relative pb-2 after:absolute after:bottom-0 after:left-0 after:w-8 after:h-[2px] after:bg-orange-600">
+            <h4 className="text-white text-base font-bold mb-4 relative pb-2 after:absolute after:bottom-0 after:left-0 after:w-6 after:h-[2px] after:bg-orange-600">
               Quick Links
             </h4>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col gap-1.5">
               {[
                 { label: "About Us", href: "/about" },
                 { label: "Services", href: "/services" },
@@ -100,10 +97,10 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link 
                     href={link.href} 
-                    className="text-slate-400 hover:text-sky-400 text-sm flex items-center gap-2 group transition-colors duration-200"
+                    className="text-slate-400 hover:text-orange-400 text-sm flex items-center gap-1.5 group transition-colors duration-200"
                   >
-                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-200" /> 
-                    {link.label}
+                    <span className="text-orange-600 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200">›</span>
+                    <span className="group-hover:translate-x-1 transition-transform duration-200">{link.label}</span>
                   </Link>
                 </li>
               ))}
@@ -112,10 +109,10 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-white text-lg font-bold mb-6 relative pb-2 after:absolute after:bottom-0 after:left-0 after:w-8 after:h-[2px] after:bg-orange-600">
+            <h4 className="text-white text-base font-bold mb-4 relative pb-2 after:absolute after:bottom-0 after:left-0 after:w-6 after:h-[2px] after:bg-orange-600">
               Our Services
             </h4>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col gap-1.5">
               {[
                 { label: "Web Development", href: "/services" },
                 { label: "Mobile App Solutions", href: "/services" },
@@ -126,10 +123,10 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link 
                     href={link.href} 
-                    className="text-slate-400 hover:text-sky-400 text-sm flex items-center gap-2 group transition-colors duration-200"
+                    className="text-slate-400 hover:text-orange-400 text-sm flex items-center gap-1.5 group transition-colors duration-200"
                   >
-                    <ArrowRight size={14} className="opacity-50 group-hover:translate-x-1 transition-transform duration-200" /> 
-                    {link.label}
+                    <span className="text-orange-600 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200">›</span>
+                    <span className="group-hover:translate-x-1 transition-transform duration-200">{link.label}</span>
                   </Link>
                 </li>
               ))}
@@ -138,12 +135,12 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-white text-lg font-bold mb-6 relative pb-2 after:absolute after:bottom-0 after:left-0 after:w-8 after:h-[2px] after:bg-orange-600">
+            <h4 className="text-white text-base font-bold mb-4 relative pb-2 after:absolute after:bottom-0 after:left-0 after:w-6 after:h-[2px] after:bg-orange-600">
               Contact Us
             </h4>
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-3">
               <div className="flex gap-4 items-start">
-                <MapPin size={20} className="text-orange-600 mt-1 shrink-0" />
+                <MapPin size={16} className="text-orange-600 mt-1 shrink-0" />
                 <div>
                   <div className="text-slate-200 font-semibold text-sm mb-1">Location</div>
                   <div className="text-slate-400 text-sm leading-relaxed">chandighar zirakpur</div>
@@ -151,7 +148,7 @@ export default function Footer() {
               </div>
               
               <div className="flex gap-4 items-start">
-                <Phone size={20} className="text-orange-600 mt-1 shrink-0" />
+                <Phone size={16} className="text-orange-600 mt-1 shrink-0" />
                 <div>
                   <div className="text-slate-200 font-semibold text-sm mb-1">Phone</div>
                   <div className="text-slate-400 text-sm">7006291591</div>
@@ -159,7 +156,7 @@ export default function Footer() {
               </div>
 
               <div className="flex gap-4 items-start">
-                <Mail size={20} className="text-orange-600 mt-1 shrink-0" />
+                <Mail size={16} className="text-orange-600 mt-1 shrink-0" />
                 <div>
                   <div className="text-slate-200 font-semibold text-sm mb-1">Email</div>
                   <div className="text-slate-400 text-sm">contact@photonexes.com</div>
@@ -171,7 +168,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-white/10 pt-4 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-slate-500 text-sm text-center md:text-left">
             &copy; 2026 Photonexes Technologies. All Rights Reserved.
           </div>
