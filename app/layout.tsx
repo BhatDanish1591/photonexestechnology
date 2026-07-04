@@ -52,13 +52,6 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true },
   },
-  icons: {
-    icon: [
-      { url: "/icon.png", type: "image/png" },
-      { url: "/favicon.ico" }
-    ],
-    apple: "/apple-icon.png",
-  },
 };
 
 import Navbar from "@/components/Navbar";
