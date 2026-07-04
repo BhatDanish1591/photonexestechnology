@@ -161,7 +161,7 @@ export default function ServicesGridSection() {
             >
               {/* Image Container */}
               <div style={{ height: "200px", width: "100%", overflow: "hidden", position: "relative" }}>
-                <img 
+                <img loading="eager" fetchPriority="high" 
                   className="service-img"
                   src={service.image} 
                   alt={service.title} 

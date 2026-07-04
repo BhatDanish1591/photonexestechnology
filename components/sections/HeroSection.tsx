@@ -21,7 +21,7 @@ export default function HeroSection() {
       <div className="max-w-[1400px] w-full px-6 md:px-8 py-16 relative z-10 grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-16 items-center">
         
         {/* Left Side: Text Content */}
-        <div className="animate-[fadeInUp_1s_cubic-bezier(0.16,1,0.3,1)_forwards]">
+        <div className="">
           
           <div className="inline-flex items-center gap-2 bg-white border border-slate-200 shadow-sm px-4 py-2 rounded-full mb-8">
             <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
@@ -69,10 +69,10 @@ export default function HeroSection() {
         </div>
 
         {/* Right Side: Professional Corporate Imagery */}
-        <div className="relative flex justify-center items-center opacity-0 animate-[fadeInUp_1.2s_cubic-bezier(0.16,1,0.3,1)_forwards] [animation-delay:200ms]">
+        <div className="relative flex justify-center items-center">
           
           <div className="relative w-full max-w-[500px] aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
-            <img 
+            <img loading="eager" fetchPriority="high" 
               src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80" 
               alt="Corporate Tech Professionals" 
               className="w-full h-full object-cover"

@@ -19,7 +19,7 @@ export default function AboutSection() {
         {/* Left Side: Image */}
         <div className="relative group">
           <div className="absolute top-5 -left-5 w-full h-full bg-slate-100 rounded-2xl -z-10 group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-500" />
-          <img 
+          <img loading="eager" fetchPriority="high" 
             src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80" 
             alt="Indian students and professionals working at Photonexes" 
             className="w-full h-auto rounded-2xl relative z-10 shadow-[0_20px_40px_rgba(0,0,0,0.06)] object-cover aspect-[4/3] group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)] transition-shadow duration-500"
