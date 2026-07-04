@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 export const metadata: Metadata = {
   title: {
-    default: "Photonexes Technologies | Code. Create. Innovate.",
+    default: "Photonexes Technologies",
     template: "%s | Photonexes Technologies",
   },
   description:
