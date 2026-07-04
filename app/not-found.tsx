@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Home, Phone, Search } from "lucide-react";
+import { Home, Phone } from "lucide-react";
 
 export default function NotFound() {
   return (
@@ -45,20 +45,7 @@ export default function NotFound() {
             </Link>
           </div>
 
-          {/* Search Bar */}
-          <div className="relative max-w-[450px] mx-auto lg:mx-0 w-full group shadow-sm">
-            <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none text-slate-400">
-              <Search size={18} />
-            </div>
-            <input 
-              type="text" 
-              placeholder="Search our website..." 
-              className="w-full pl-12 pr-[100px] py-4 border-2 border-slate-100 rounded-xl focus:outline-none focus:border-[#6b3deb]/50 focus:ring-4 focus:ring-[#6b3deb]/10 transition-all bg-slate-50 focus:bg-white"
-            />
-            <button className="absolute right-2 top-2 bottom-2 px-6 bg-[#6b3deb] hover:bg-[#582bcf] text-white rounded-lg font-medium transition-colors">
-              Search
-            </button>
-          </div>
+
         </div>
 
         {/* Right Content - Generated Image */}
