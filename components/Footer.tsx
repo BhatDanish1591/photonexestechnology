@@ -64,7 +64,7 @@ export default function Footer() {
               {[
                 { Icon: FaFacebook, href: "https://facebook.com/photonexes" },
                 { Icon: FaTwitter, href: "https://twitter.com/photonexes" },
-                { Icon: FaLinkedin, href: "https://linkedin.com/company/photonexes" },
+                { Icon: FaLinkedin, href: "https://www.linkedin.com/company/photonexes-technologies/" },
                 { Icon: FaInstagram, href: "https://www.instagram.com/photonexes?igsh=MThuNnYxanVmYzA3aw==" }
               ].map((social, i) => (
                 <a
