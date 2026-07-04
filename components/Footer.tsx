@@ -159,7 +159,7 @@ export default function Footer() {
                 <Mail size={16} className="text-orange-600 mt-1 shrink-0" />
                 <div>
                   <div className="text-slate-200 font-semibold text-sm mb-1">Email</div>
-                  <div className="text-slate-400 text-sm">contact@photonexes.com</div>
+                  <div className="text-slate-400 text-sm">contact@photonexes.in</div>
                 </div>
               </div>
             </div>

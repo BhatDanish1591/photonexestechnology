@@ -246,7 +246,7 @@ export default function PrivacyPolicyPage() {
               ))}
             </div>
             <p style={{ color: "#475569", fontSize: "0.9rem", lineHeight: 1.7, marginTop: "1rem" }}>
-              To exercise any of these rights, please contact us at <a href="mailto:contact@photonexes.com" style={{ color: "#2563eb", fontWeight: 600 }}>contact@photonexes.com</a>.
+              To exercise any of these rights, please contact us at <a href="mailto:contact@photonexes.in" style={{ color: "#2563eb", fontWeight: 600 }}>contact@photonexes.in</a>.
             </p>
           </section>
 
@@ -312,7 +312,7 @@ export default function PrivacyPolicyPage() {
             <div style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "12px", padding: "1.75rem", display: "flex", flexDirection: "column", gap: "0.75rem" }}>
               <div style={{ fontWeight: 800, color: "#0f172a", fontSize: "1rem" }}>Photonexes Technologies</div>
               <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
-                <div style={{ color: "#475569", fontSize: "0.9rem" }}><strong style={{ color: "#1e293b" }}>Email:</strong> <a href="mailto:contact@photonexes.com" style={{ color: "#2563eb" }}>contact@photonexes.com</a></div>
+                <div style={{ color: "#475569", fontSize: "0.9rem" }}><strong style={{ color: "#1e293b" }}>Email:</strong> <a href="mailto:contact@photonexes.in" style={{ color: "#2563eb" }}>contact@photonexes.in</a></div>
                 <div style={{ color: "#475569", fontSize: "0.9rem" }}><strong style={{ color: "#1e293b" }}>Phone:</strong> +91 7006291591</div>
                 <div style={{ color: "#475569", fontSize: "0.9rem" }}><strong style={{ color: "#1e293b" }}>Address:</strong> Chandigarh Zirakpur, India</div>
               </div>

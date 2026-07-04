@@ -239,7 +239,7 @@ export default function TermsOfServicePage() {
               ))}
             </ul>
             <p style={{ color: "#475569", fontSize: "0.95rem", lineHeight: 1.85, marginTop: "1rem" }}>
-              You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. Please notify us immediately at <a href="mailto:contact@photonexes.com" style={{ color: "#2563eb", fontWeight: 600 }}>contact@photonexes.com</a> if you suspect any unauthorized use.
+              You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. Please notify us immediately at <a href="mailto:contact@photonexes.in" style={{ color: "#2563eb", fontWeight: 600 }}>contact@photonexes.in</a> if you suspect any unauthorized use.
             </p>
           </section>
 
@@ -274,7 +274,7 @@ export default function TermsOfServicePage() {
             </p>
             <h3 style={{ fontFamily: "Inter, sans-serif", fontSize: "1rem", fontWeight: 700, color: "#1e293b", marginBottom: "0.5rem", marginTop: "1.25rem" }}>7.2 Termination by You</h3>
             <p style={{ color: "#475569", fontSize: "0.95rem", lineHeight: 1.85 }}>
-              You may stop using our services at any time. To close your account, please contact us at <a href="mailto:contact@photonexes.com" style={{ color: "#2563eb", fontWeight: 600 }}>contact@photonexes.com</a>. Termination does not entitle you to a refund of fees already paid.
+              You may stop using our services at any time. To close your account, please contact us at <a href="mailto:contact@photonexes.in" style={{ color: "#2563eb", fontWeight: 600 }}>contact@photonexes.in</a>. Termination does not entitle you to a refund of fees already paid.
             </p>
             <h3 style={{ fontFamily: "Inter, sans-serif", fontSize: "1rem", fontWeight: 700, color: "#1e293b", marginBottom: "0.5rem", marginTop: "1.25rem" }}>7.3 Effect of Termination</h3>
             <p style={{ color: "#475569", fontSize: "0.95rem", lineHeight: 1.85 }}>
@@ -292,7 +292,7 @@ export default function TermsOfServicePage() {
               These Terms shall be governed by and construed in accordance with the laws of the <strong style={{ color: "#1e293b" }}>Republic of India</strong>. Any disputes arising from or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts located in <strong style={{ color: "#1e293b" }}>Chandigarh, India</strong>.
             </p>
             <p style={{ color: "#475569", fontSize: "0.95rem", lineHeight: 1.85, marginTop: "1rem" }}>
-              Before initiating any legal proceedings, we strongly encourage you to contact us at <a href="mailto:contact@photonexes.com" style={{ color: "#2563eb", fontWeight: 600 }}>contact@photonexes.com</a> to resolve disputes amicably. We are committed to addressing concerns fairly and promptly.
+              Before initiating any legal proceedings, we strongly encourage you to contact us at <a href="mailto:contact@photonexes.in" style={{ color: "#2563eb", fontWeight: 600 }}>contact@photonexes.in</a> to resolve disputes amicably. We are committed to addressing concerns fairly and promptly.
             </p>
           </section>
 
@@ -308,7 +308,7 @@ export default function TermsOfServicePage() {
             <div style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "12px", padding: "1.75rem", display: "flex", flexDirection: "column", gap: "0.75rem" }}>
               <div style={{ fontWeight: 800, color: "#0f172a", fontSize: "1rem" }}>Photonexes Technologies</div>
               <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
-                <div style={{ color: "#475569", fontSize: "0.9rem" }}><strong style={{ color: "#1e293b" }}>Email:</strong> <a href="mailto:contact@photonexes.com" style={{ color: "#2563eb" }}>contact@photonexes.com</a></div>
+                <div style={{ color: "#475569", fontSize: "0.9rem" }}><strong style={{ color: "#1e293b" }}>Email:</strong> <a href="mailto:contact@photonexes.in" style={{ color: "#2563eb" }}>contact@photonexes.in</a></div>
                 <div style={{ color: "#475569", fontSize: "0.9rem" }}><strong style={{ color: "#1e293b" }}>Phone:</strong> +91 7006291591</div>
                 <div style={{ color: "#475569", fontSize: "0.9rem" }}><strong style={{ color: "#1e293b" }}>Address:</strong> Chandigarh Zirakpur, India</div>
               </div>
