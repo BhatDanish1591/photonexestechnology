@@ -8,7 +8,7 @@ import IndustriesSection from "@/components/sections/IndustriesSection";
 import InternshipSection from "@/components/sections/InternshipSection";
 import PlacementSection from "@/components/sections/PlacementSection";
 import StatsBannerSection from "@/components/sections/StatsBannerSection";
-import DashboardSection from "@/components/sections/DashboardSection";
+
 import ClientsSection from "@/components/sections/ClientsSection";
 import BlogSection from "@/components/sections/BlogSection";
 import ContactSection from "@/components/sections/ContactSection";
