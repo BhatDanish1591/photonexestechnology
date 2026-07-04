@@ -4,8 +4,9 @@ import WorkProcessSection from "@/components/sections/WorkProcessSection";
 import ContactSection from "@/components/sections/ContactSection";
 
 export const metadata = {
-  title: "Our Services | Photonexes",
-  description: "Explore the wide range of IT services and solutions we provide.",
+  title: "IT Services & Software Development",
+  description: "Explore our comprehensive IT services including web development, mobile apps, AI solutions, cloud computing, and enterprise software by Photonexes.",
+  keywords: ["web development services", "mobile app development", "cloud computing solutions", "AI software"],
 };
 
 export default function ServicesPage() {

@@ -14,50 +14,12 @@ export default function Footer() {
           {/* Brand Column */}
           <div>
             <div className="mb-4">
-              {/* Logo: same as navbar */}
-              <div style={{ display: "flex", flexDirection: "column", gap: "4px", alignItems: "flex-start" }}>
-                {/* Row: SVG + Photonexes */}
-                <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                  <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-400 p-2 rounded-full text-white shadow-lg flex items-center justify-center">
-                    <Shield size={20} className="text-white" />
-                  </span>
-                  <span style={{
-                    fontFamily: "Inter, sans-serif",
-                    fontSize: "1.6rem",
-                    fontWeight: 800,
-                    lineHeight: 1,
-                    background: "linear-gradient(90deg, #c084fc, #f472b6, #fde68a)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                  }}>
-                    Photonexes
-                  </span>
-                </div>
-                {/* Slogan */}
-                <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-                  {["INNOVATION", "TECHNOLOGY", "CONNECTIVITY"].map((word, i) => (
-                    <span key={i} style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-                      <span style={{
-                        fontSize: "0.55rem",
-                        fontWeight: 800,
-                        letterSpacing: "0.15em",
-                        lineHeight: 1,
-                        background: i === 0
-                          ? "linear-gradient(90deg, #c084fc, #f472b6)"
-                          : i === 1
-                          ? "linear-gradient(90deg, #f472b6, #fb923c)"
-                          : "linear-gradient(90deg, #fb923c, #fbbf24)",
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                        backgroundClip: "text",
-                      }}>
-                        {word}{i < 2 ? "." : "."}
-                      </span>
-                      {i < 2 && <span style={{ display: "inline-block", width: "3px" }} />}
-                    </span>
-                  ))}
-                </div>
+              <div className="relative h-[60px] w-[200px] mb-4">
+                <img 
+                  src="/logo.png" 
+                  alt="Photonexes Logo" 
+                  className="w-full h-full object-contain object-left hover:scale-105 transition-transform duration-300"
+                />
               </div>
             </div>
             <div className="flex gap-4">

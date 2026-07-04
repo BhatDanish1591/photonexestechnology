@@ -2,8 +2,9 @@ import PageHeader from "@/components/PageHeader";
 import BlogSection from "@/components/sections/BlogSection";
 
 export const metadata = {
-  title: "Tech Blog | Photonexes",
-  description: "Stay ahead with the latest tech insights and career guidance.",
+  title: "Tech Blog & Insights",
+  description: "Read the latest insights on software development, AI trends, cloud computing, and IT career advice on the Photonexes Technologies blog.",
+  keywords: ["tech blog", "software development trends", "AI news", "IT career advice"],
 };
 
 export default function BlogPage() {

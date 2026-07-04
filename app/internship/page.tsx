@@ -3,8 +3,9 @@ import InternshipSection from "@/components/sections/InternshipSection";
 import ClientsSection from "@/components/sections/ClientsSection";
 
 export const metadata = {
-  title: "Internship | Photonexes",
-  description: "Join our internship program and gain real-world experience.",
+  title: "IT Internship Programs",
+  description: "Join our hands-on IT internship programs in software development, data science, and cloud computing. Gain real-world experience at Photonexes.",
+  keywords: ["IT internships", "software engineering intern", "summer internship India", "tech internships"],
 };
 
 export default function InternshipPage() {
