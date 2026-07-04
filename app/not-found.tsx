@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { Home, Phone } from "lucide-react";
+
 
 export default function NotFound() {
   return (
@@ -27,23 +26,7 @@ export default function NotFound() {
           <p className="text-[#64748b] text-lg max-w-[500px] mx-auto mb-10 leading-relaxed">
             The page you're looking for doesn't exist or has been moved. Don't worry, you can go back to homepage or explore more from below.
           </p>
-          
-          <div className="flex flex-col sm:flex-row items-center gap-4 justify-center mb-10">
-            <Link 
-              href="/" 
-              className="flex items-center gap-2 px-8 py-4 bg-[#6b3deb] hover:bg-[#582bcf] text-white rounded-xl font-semibold transition-all shadow-lg shadow-[#6b3deb]/30 w-full sm:w-auto justify-center group"
-            >
-              <Home size={20} className="group-hover:-translate-y-0.5 transition-transform" />
-              Back to Home
-            </Link>
-            <Link 
-              href="/contact" 
-              className="flex items-center gap-2 px-8 py-4 bg-white border-2 border-slate-200 hover:border-[#6b3deb] hover:text-[#6b3deb] text-slate-700 rounded-xl font-semibold transition-all w-full sm:w-auto justify-center group"
-            >
-              <Phone size={20} className="group-hover:-translate-y-0.5 transition-transform" />
-              Contact Us
-            </Link>
-          </div>
+
         </div>
 
       </div>
