@@ -67,18 +67,10 @@ export default function PrivacyPolicyPage() {
       </div>
 
       {/* Body: Sidebar + Content */}
-      <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "4rem 2rem", display: "flex", gap: "4rem", alignItems: "flex-start" }}>
+      <div className="max-w-[1200px] mx-auto px-4 md:px-8 py-12 md:py-16 flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
 
         {/* Sticky Sidebar TOC */}
-        <aside style={{
-          width: "240px",
-          flexShrink: 0,
-          position: "sticky",
-          top: "100px",
-          display: "flex",
-          flexDirection: "column",
-          gap: "0.25rem"
-        }}>
+        <aside className="w-full lg:w-[240px] shrink-0 lg:sticky lg:top-[100px] flex flex-col gap-1">
           <div style={{ fontSize: "0.7rem", fontWeight: 700, color: "#94a3b8", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "0.75rem" }}>
             Table of Contents
           </div>
@@ -119,7 +111,7 @@ export default function PrivacyPolicyPage() {
         </aside>
 
         {/* Main Document */}
-        <article style={{ flex: 1, minWidth: 0, maxWidth: "720px" }}>
+        <article className="flex-1 min-w-0 w-full lg:max-w-[720px]">
 
           {/* Overview */}
           <section id="overview" style={{ marginBottom: "3rem", paddingBottom: "3rem", borderBottom: "1px solid #f1f5f9" }}>
