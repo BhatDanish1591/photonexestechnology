@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 export const metadata: Metadata = {
+  metadataBase: new URL('https://photonexes.in'),
   title: {
     default: "Photonexes Technologies",
     template: "%s | Photonexes Technologies",
