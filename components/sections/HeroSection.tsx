@@ -18,7 +18,7 @@ export default function HeroSection() {
         }}
       />
 
-      <div className="max-w-[1400px] w-full px-6 md:px-8 py-16 relative z-10 grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-16 items-center">
+      <div className="max-w-[1400px] w-full px-4 sm:px-6 lg:px-8 py-16 relative z-10 grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-16 items-center">
         
         {/* Left Side: Text Content */}
         <div className="">
@@ -39,10 +39,10 @@ export default function HeroSection() {
             We design, develop, and deliver robust enterprise software and mobile applications that drive digital transformation and accelerate growth.
           </p>
 
-          <div className="flex flex-wrap gap-4 mb-12">
+          <div className="flex flex-wrap gap-4 mb-12 w-full">
             <Link
               href="/contact"
-              className="group bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold inline-flex items-center gap-3 shadow-lg shadow-orange-600/30 hover:shadow-orange-600/40 hover:-translate-y-1 transition-all duration-300"
+              className="group bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold inline-flex items-center justify-center gap-3 shadow-lg shadow-orange-600/30 hover:shadow-orange-600/40 hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto"
             >
               Get a Free Quote 
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -50,7 +50,7 @@ export default function HeroSection() {
 
             <Link
               href="/services"
-              className="bg-white text-slate-900 border border-slate-300 px-8 py-4 rounded-lg font-semibold inline-flex items-center gap-3 shadow-sm hover:bg-slate-50 hover:shadow-md transition-all duration-300"
+              className="bg-white text-slate-900 border border-slate-300 px-8 py-4 rounded-lg font-semibold inline-flex items-center justify-center gap-3 shadow-sm hover:bg-slate-50 hover:shadow-md transition-all duration-300 w-full sm:w-auto"
             >
               Our Services
             </Link>

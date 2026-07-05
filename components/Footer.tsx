@@ -6,7 +6,7 @@ import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
 export default function Footer() {
   return (
     <footer className="bg-[#0b1120] text-slate-50 pt-8 pb-4 border-t-2 border-orange-600">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-8">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-6">

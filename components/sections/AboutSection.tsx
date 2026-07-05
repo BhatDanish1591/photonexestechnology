@@ -14,7 +14,7 @@ const features = [
 export default function AboutSection() {
   return (
     <section id="about" className="py-24 bg-white relative">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         
         {/* Left Side: Image */}
         <div className="relative group">
@@ -49,7 +49,7 @@ export default function AboutSection() {
 
           <Link 
             href="/about" 
-            className="inline-flex items-center gap-2 bg-orange-600 text-white px-8 py-3.5 rounded-lg font-semibold shadow-md shadow-orange-600/20 hover:shadow-lg hover:shadow-orange-600/30 hover:-translate-y-0.5 transition-all duration-300"
+            className="inline-flex justify-center items-center gap-2 bg-orange-600 text-white px-8 py-3.5 rounded-lg font-semibold shadow-md shadow-orange-600/20 hover:shadow-lg hover:shadow-orange-600/30 hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto"
           >
             Read More About Us
           </Link>

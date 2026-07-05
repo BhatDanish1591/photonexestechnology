@@ -34,7 +34,7 @@ export default function Navbar() {
       <nav 
         className="fixed top-0 left-0 right-0 z-[9999] bg-white shadow-sm border-b border-gray-100 py-4 md:py-5"
       >
-        <div className="max-w-[1400px] mx-auto px-6 md:px-8 flex items-center justify-between">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 no-underline z-50" onClick={() => setMobileOpen(false)}>
