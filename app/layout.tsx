@@ -2,9 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL('https://photonexes.in'),
-  icons: {
-    icon: '/logo.png',
-  },
   title: {
     default: "Photonexes Technologies",
     template: "%s | Photonexes Technologies",
@@ -30,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://photonexes.com",
+    url: "https://photonexes.in",
     siteName: "Photonexes Technologies",
     title: "Photonexes Technologies | Code. Create. Innovate.",
     description:
@@ -66,9 +63,21 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Photonexes",
+    url: "https://photonexes.in",
+    logo: "https://photonexes.in/logo.png",
+  };
+
   return (
     <html lang="en">
       <body className="antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Navbar />
         {children}
         <Footer />
