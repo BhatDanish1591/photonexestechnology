@@ -14,7 +14,7 @@ import BlogSection from "@/components/sections/BlogSection";
 import ContactSection from "@/components/sections/ContactSection";
 
 export const metadata: Metadata = {
-  title: "Photonexes Technologies | Code. Create. Innovate.",
+  title: "Photonexes Technologies",
   description:
     "India's premier IT Software Company and Training Institute. Expert software development, web development, mobile apps, cloud solutions, AI, cybersecurity, and professional IT training with internships, certifications, and guaranteed placement assistance.",
 };
