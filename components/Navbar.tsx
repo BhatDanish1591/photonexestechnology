@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Menu, X, Shield } from "lucide-react";
 import { usePathname } from "next/navigation";
 
@@ -39,15 +38,49 @@ export default function Navbar() {
           
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 no-underline z-50" onClick={() => setMobileOpen(false)}>
-            <div className="flex items-center">
-              <Image 
-                src="/logo.png" 
-                alt="Photonexes Logo" 
-                width={220} 
-                height={60} 
-                className="object-contain"
-                priority
-              />
+            <div style={{ display: "flex", flexDirection: "column", gap: "4px", alignItems: "center" }}>
+              {/* Row: SVG + Photonexes */}
+              <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-400 p-2.5 rounded-full text-white shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center justify-center">
+                  <Shield size={22} className="text-white" />
+                </span>
+                <span style={{
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "1.7rem",
+                  fontWeight: 800,
+                  lineHeight: 1,
+                  background: "linear-gradient(90deg, #9333ea, #ec4899, #eab308)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}>
+                  Photonexes
+                </span>
+              </div>
+              {/* Slogan centered below */}
+              <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+                {["INNOVATION", "TECHNOLOGY", "CONNECTIVITY"].map((word, i) => (
+                  <span key={i} style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+                    <span style={{
+                      fontSize: "0.58rem",
+                      fontWeight: 800,
+                      letterSpacing: "0.15em",
+                      lineHeight: 1,
+                      background: i === 0
+                        ? "linear-gradient(90deg, #9333ea, #ec4899)"
+                        : i === 1
+                        ? "linear-gradient(90deg, #ec4899, #f97316)"
+                        : "linear-gradient(90deg, #f97316, #eab308)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                    }}>
+                      {word}{i < 2 ? "." : "."}
+                    </span>
+                    {i < 2 && <span style={{ display: "inline-block", width: "3px" }} />}
+                  </span>
+                ))}
+              </div>
             </div>
           </Link>
 
