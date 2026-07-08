@@ -24,7 +24,7 @@ export default function NotFound() {
             Oops! Page Not Found
           </h2>
           <p className="text-[#64748b] text-lg max-w-[500px] mx-auto mb-10 leading-relaxed">
-            The page you're looking for doesn't exist or has been moved. Don't worry, you can go back to homepage or explore more from below.
+            The page you&apos;re looking for doesn&apos;t exist or has been moved. Don&apos;t worry, you can go back to homepage or explore more from below.
           </p>
 
         </div>

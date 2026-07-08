@@ -110,7 +110,7 @@ export default function TestimonialsSection() {
         {/* Featured Testimonial */}
         <div className="relative p-10 md:p-12 rounded-3xl bg-white/5 backdrop-blur-3xl border border-white/10 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] mb-12 overflow-hidden group">
           <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/20 rounded-full blur-[80px] pointer-events-none transition-opacity duration-700 opacity-50 group-hover:opacity-100" />
-          <div className="absolute top-6 right-8 text-8xl opacity-10 font-serif leading-none text-orange-500 select-none">"</div>
+          <div className="absolute top-6 right-8 text-8xl opacity-10 font-serif leading-none text-orange-500 select-none">&quot;</div>
           <div className="flex flex-col md:flex-row gap-8 items-start relative z-10">
             <div className="text-6xl shrink-0 drop-shadow-xl">{testimonials[activeIdx].avatar}</div>
             <div className="flex-1">

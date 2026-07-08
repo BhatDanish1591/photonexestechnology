@@ -26,7 +26,7 @@ export default function PortfolioPage() {
               Our Recent Work
             </h2>
             <p style={{ color: "#64748b", fontSize: "1.1rem", maxWidth: "600px", margin: "0 auto" }}>
-              Explore some of the successful digital products and enterprise solutions we've delivered for our global clients.
+              Explore some of the successful digital products and enterprise solutions we&apos;ve delivered for our global clients.
             </p>
           </div>
 
