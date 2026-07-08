@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { ArrowDown, ArrowRight, CheckCircle2, AlertCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactHeroForm() {
   const [formData, setFormData] = useState({
@@ -12,6 +13,7 @@ export default function ContactHeroForm() {
     message: ""
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
 
   const scrollToNext = () => {
     window.scrollBy({ top: window.innerHeight * 0.8, behavior: 'smooth' });
@@ -23,6 +25,12 @@ export default function ContactHeroForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!captchaToken) {
+      alert("Please complete the reCAPTCHA verification.");
+      return;
+    }
+
     setStatus("loading");
     
     try {
@@ -35,13 +43,15 @@ export default function ContactHeroForm() {
         body: JSON.stringify({
             ...formData,
             _subject: "New Contact Form Submission - Photonexes",
-            _template: "table"
+            _template: "table",
+            _captcha: "false" // Disable FormSubmit's native redirect CAPTCHA because we use AJAX
         })
       });
       
       if (response.ok) {
         setStatus("success");
         setFormData({ name: '', company: '', email: '', phone: '', message: '' });
+        // Optional: reset recaptcha using a ref here if desired
         setTimeout(() => setStatus("idle"), 6000);
       } else {
         setStatus("error");
@@ -160,16 +170,23 @@ export default function ContactHeroForm() {
                 value={formData.message}
                 onChange={handleChange}
                 placeholder="How Can We Help?*" 
-                rows={5}
+                rows={4}
                 required
                 className="w-full px-5 py-4 bg-white border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-400 text-gray-700 font-medium placeholder-gray-400 shadow-sm resize-none transition-shadow"
               ></textarea>
             </div>
 
+            <div className="flex justify-center mt-4">
+              <ReCAPTCHA
+                sitekey="6LfIzEktAAAAAId922aJJIBEw7C0xuC-gd8er7_o"
+                onChange={(token) => setCaptchaToken(token)}
+              />
+            </div>
+
             <div className="flex justify-center mt-6">
               <button 
                 type="submit" 
-                disabled={status === "loading"}
+                disabled={status === "loading" || !captchaToken}
                 className="inline-flex items-center justify-center gap-3 px-10 py-4 bg-[#312e81] text-white font-bold rounded-lg shadow-lg hover:bg-[#1e1b4b] transition-all uppercase tracking-wide text-sm disabled:opacity-70 disabled:cursor-not-allowed w-full sm:w-auto min-w-[250px]"
               >
                 {status === "loading" ? "Sending..." : "Submit Message"}
