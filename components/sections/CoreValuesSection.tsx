@@ -108,7 +108,7 @@ export default function CoreValuesSection() {
         {/* Vision & Mission Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-20">
           <ScrollReveal animation="fadeRight" delay={100}>
-            <div className="group relative h-[450px] rounded-[40px] overflow-hidden shadow-2xl">
+            <div className="group relative min-h-[450px] h-auto rounded-[40px] overflow-hidden shadow-2xl flex items-end p-4 md:p-8">
               {/* Background Image */}
               <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800')] bg-cover bg-center transition-transform duration-[1.5s] group-hover:scale-110"></div>
               {/* Animated Overlays */}
@@ -119,14 +119,14 @@ export default function CoreValuesSection() {
               <div className="absolute inset-0 rounded-[40px] border border-white/10 group-hover:border-blue-400/30 transition-colors duration-500 z-20 pointer-events-none"></div>
               
               {/* Glassmorphic Content Box */}
-              <div className="absolute bottom-8 left-8 right-8 p-8 rounded-[24px] bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl transition-transform duration-500 group-hover:-translate-y-2 z-10">
-                <h3 className="text-3xl font-extrabold text-white mb-4 flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center border border-blue-400/30">
-                    <Target className="text-blue-300" size={24} />
+              <div className="relative w-full p-6 md:p-8 rounded-[24px] bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl transition-transform duration-500 group-hover:-translate-y-2 z-10">
+                <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-3 md:mb-4 flex items-center gap-3 md:gap-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-blue-500/20 flex items-center justify-center border border-blue-400/30 shrink-0">
+                    <Target className="text-blue-300 w-5 h-5 md:w-6 md:h-6" />
                   </div>
                   Our Vision
                 </h3>
-                <p className="text-blue-50/90 leading-relaxed text-lg font-light">
+                <p className="text-blue-50/90 leading-relaxed text-base md:text-lg font-light">
                   We believe in establishing our presence through our work. We have been into the global market for years and have been establishing digital transformation for our clients. Our vision is to ensure every customer of ours grows and achieves success in this dynamic and volatile landscape.
                 </p>
               </div>
@@ -134,7 +134,7 @@ export default function CoreValuesSection() {
           </ScrollReveal>
 
           <ScrollReveal animation="fadeLeft" delay={200}>
-            <div className="group relative h-[450px] rounded-[40px] overflow-hidden shadow-2xl">
+            <div className="group relative min-h-[450px] h-auto rounded-[40px] overflow-hidden shadow-2xl flex items-end p-4 md:p-8">
                {/* Background Image */}
                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800')] bg-cover bg-center transition-transform duration-[1.5s] group-hover:scale-110"></div>
               {/* Animated Overlays */}
@@ -145,14 +145,14 @@ export default function CoreValuesSection() {
               <div className="absolute inset-0 rounded-[40px] border border-white/10 group-hover:border-orange-400/30 transition-colors duration-500 z-20 pointer-events-none"></div>
 
               {/* Glassmorphic Content Box */}
-              <div className="absolute bottom-8 left-8 right-8 p-8 rounded-[24px] bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl transition-transform duration-500 group-hover:-translate-y-2 z-10">
-                <h3 className="text-3xl font-extrabold text-white mb-4 flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-orange-500/20 flex items-center justify-center border border-orange-400/30">
-                    <Zap className="text-orange-400" size={24} />
+              <div className="relative w-full p-6 md:p-8 rounded-[24px] bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl transition-transform duration-500 group-hover:-translate-y-2 z-10">
+                <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-3 md:mb-4 flex items-center gap-3 md:gap-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-orange-500/20 flex items-center justify-center border border-orange-400/30 shrink-0">
+                    <Zap className="text-orange-400 w-5 h-5 md:w-6 md:h-6" />
                   </div>
                   Our Mission
                 </h3>
-                <p className="text-orange-50/90 leading-relaxed text-lg font-light">
+                <p className="text-orange-50/90 leading-relaxed text-base md:text-lg font-light">
                   We believe in offering result-driven, scalable and tailored tech solutions to bring desirable impact in your business. We have been helping clients over the globe to grow and expand their business operations, add efficiency in their existing operations and achieve their business goals.
                 </p>
               </div>
