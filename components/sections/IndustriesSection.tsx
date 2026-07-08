@@ -211,7 +211,7 @@ export default function IndustriesSection() {
                 </div>
 
                 {/* Footer Link */}
-                <div style={{
+                <Link href="/services" style={{
                   display: "flex",
                   alignItems: "center",
                   gap: "0.5rem",
@@ -223,7 +223,7 @@ export default function IndustriesSection() {
                   letterSpacing: "0.05em"
                 }}>
                   Explore Solutions <ArrowRight size={18} />
-                </div>
+                </Link>
               </div>
             </ScrollReveal>
           ))}

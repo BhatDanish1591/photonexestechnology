@@ -130,26 +130,34 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Backdrop */}
       <div 
-        className={`fixed inset-0 z-[9998] bg-white/95 backdrop-blur-xl transition-all duration-500 lg:hidden flex flex-col justify-center ${
+        className={`fixed inset-0 z-[9997] bg-slate-900/60 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
           mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
+        onClick={() => setMobileOpen(false)}
+      />
+
+      {/* Mobile Sidebar */}
+      <div 
+        className={`fixed top-0 right-0 bottom-0 w-[80%] max-w-[400px] z-[9998] bg-white shadow-2xl transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] lg:hidden flex flex-col pt-24 pb-8 px-8 ${
+          mobileOpen ? "translate-x-0" : "translate-x-full"
+        }`}
       >
-        <div className="flex flex-col items-center gap-8 px-6">
+        <div className="flex flex-col gap-6 overflow-y-auto">
           {navLinks.map((link, index) => {
              const isActive = pathname === link.href;
              return (
                <Link 
                  key={link.label}
                  href={link.href} 
-                 className={`text-2xl font-bold tracking-tight transition-transform duration-300 ${
-                   isActive ? "text-purple-600" : "text-slate-800 hover:text-purple-600 hover:scale-105"
+                 className={`text-xl font-bold tracking-tight transition-all duration-300 border-b border-gray-100 pb-4 ${
+                   isActive ? "text-purple-600 pl-2 border-purple-200" : "text-slate-800 hover:text-purple-600 hover:pl-2"
                  }`}
                  style={{ 
-                   transform: mobileOpen ? 'translateY(0)' : 'translateY(20px)',
+                   transform: mobileOpen ? 'translateX(0)' : 'translateX(20px)',
                    opacity: mobileOpen ? 1 : 0,
-                   transitionDelay: `${index * 50}ms`
+                   transitionDelay: `${index * 40 + 100}ms`
                  }}
                  onClick={() => setMobileOpen(false)}
                >
@@ -160,11 +168,11 @@ export default function Navbar() {
           
           <Link 
             href="/contact" 
-            className="mt-4 px-8 py-4 rounded-full font-bold text-lg text-white bg-gradient-to-r from-purple-600 to-pink-600 shadow-xl shadow-purple-500/20 active:scale-95 transition-all duration-300 w-full max-w-xs text-center"
+            className="mt-6 px-8 py-4 rounded-full font-bold text-lg text-white bg-gradient-to-r from-purple-600 to-pink-600 shadow-xl shadow-purple-500/20 active:scale-95 transition-all duration-300 w-full text-center"
             style={{ 
-              transform: mobileOpen ? 'translateY(0)' : 'translateY(20px)',
+              transform: mobileOpen ? 'translateX(0)' : 'translateX(20px)',
               opacity: mobileOpen ? 1 : 0,
-              transitionDelay: `${navLinks.length * 50}ms`
+              transitionDelay: `${navLinks.length * 40 + 100}ms`
             }}
             onClick={() => setMobileOpen(false)}
           >
