@@ -132,52 +132,79 @@ export default function Navbar() {
 
       {/* Mobile Backdrop */}
       <div 
-        className={`fixed inset-0 z-[9997] bg-slate-900/60 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
+        className={`fixed inset-0 z-[9997] bg-slate-900/60 backdrop-blur-md transition-opacity duration-400 lg:hidden ${
           mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
         onClick={() => setMobileOpen(false)}
       />
 
-      {/* Mobile Sidebar */}
+      {/* Modern Premium Sidebar */}
       <div 
-        className={`fixed top-0 right-0 bottom-0 w-[80%] max-w-[400px] z-[9998] bg-white shadow-2xl transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] lg:hidden flex flex-col pt-24 pb-8 px-8 ${
+        className={`fixed top-0 right-0 bottom-0 w-[85%] max-w-[400px] z-[9998] bg-white/80 backdrop-blur-3xl border-l border-white/50 shadow-[-20px_0_40px_rgba(0,0,0,0.1)] transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] lg:hidden flex flex-col pt-[100px] pb-8 px-6 overflow-hidden ${
           mobileOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex flex-col gap-6 overflow-y-auto">
-          {navLinks.map((link, index) => {
-             const isActive = pathname === link.href;
-             return (
-               <Link 
-                 key={link.label}
-                 href={link.href} 
-                 className={`text-xl font-bold tracking-tight transition-all duration-300 border-b border-gray-100 pb-4 ${
-                   isActive ? "text-purple-600 pl-2 border-purple-200" : "text-slate-800 hover:text-purple-600 hover:pl-2"
-                 }`}
-                 style={{ 
-                   transform: mobileOpen ? 'translateX(0)' : 'translateX(20px)',
-                   opacity: mobileOpen ? 1 : 0,
-                   transitionDelay: `${index * 40 + 100}ms`
-                 }}
-                 onClick={() => setMobileOpen(false)}
-               >
-                 {link.label}
-               </Link>
-             );
-          })}
+        {/* Decorative Glowing Orbs */}
+        <div className="absolute top-[-10%] right-[-10%] w-64 h-64 bg-purple-500/20 rounded-full blur-[80px] pointer-events-none" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-64 h-64 bg-pink-500/20 rounded-full blur-[80px] pointer-events-none" />
+
+        <div className="flex flex-col h-full overflow-y-auto relative z-10 scrollbar-hide">
+          <div className="flex flex-col gap-2">
+            {navLinks.map((link, index) => {
+               const isActive = pathname === link.href;
+               return (
+                 <Link 
+                   key={link.label}
+                   href={link.href} 
+                   className={`group flex items-center justify-between px-4 py-4 rounded-2xl text-xl font-extrabold tracking-tight transition-all duration-300 ${
+                     isActive 
+                      ? "bg-white shadow-sm text-purple-600 border border-purple-100" 
+                      : "text-slate-800 hover:bg-white/50 hover:text-purple-600 hover:shadow-sm hover:translate-x-2"
+                   }`}
+                   style={{ 
+                     transform: mobileOpen ? 'translateX(0)' : 'translateX(30px)',
+                     opacity: mobileOpen ? 1 : 0,
+                     transitionDelay: `${index * 50 + 100}ms`
+                   }}
+                   onClick={() => setMobileOpen(false)}
+                 >
+                   <span>{link.label}</span>
+                   <span className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${isActive ? "bg-purple-50 text-purple-600 scale-100" : "bg-slate-50 text-slate-400 scale-0 group-hover:scale-100 group-hover:bg-purple-50 group-hover:text-purple-600"}`}>
+                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                   </span>
+                 </Link>
+               );
+            })}
+          </div>
           
-          <Link 
-            href="/contact" 
-            className="mt-6 px-8 py-4 rounded-full font-bold text-lg text-white bg-gradient-to-r from-purple-600 to-pink-600 shadow-xl shadow-purple-500/20 active:scale-95 transition-all duration-300 w-full text-center"
-            style={{ 
-              transform: mobileOpen ? 'translateX(0)' : 'translateX(20px)',
-              opacity: mobileOpen ? 1 : 0,
-              transitionDelay: `${navLinks.length * 40 + 100}ms`
-            }}
-            onClick={() => setMobileOpen(false)}
-          >
-            Enquire Now
-          </Link>
+          <div className="mt-auto pt-8 flex flex-col gap-4">
+            <div 
+              style={{ 
+                transform: mobileOpen ? 'translateY(0)' : 'translateY(20px)',
+                opacity: mobileOpen ? 1 : 0,
+                transitionDelay: `${navLinks.length * 50 + 150}ms`,
+                transitionDuration: "500ms"
+              }}
+              className="px-4 text-center mb-2"
+            >
+              <p className="text-slate-500 text-sm font-semibold mb-1 uppercase tracking-widest">Get in Touch</p>
+              <p className="text-slate-900 font-extrabold text-lg">+91-7006291591</p>
+            </div>
+
+            <Link 
+              href="/contact" 
+              className="px-8 py-4 rounded-2xl font-bold text-lg text-white bg-gradient-to-r from-purple-600 to-pink-600 shadow-xl shadow-purple-500/25 active:scale-95 transition-all duration-300 w-full text-center flex items-center justify-center gap-2 group"
+              style={{ 
+                transform: mobileOpen ? 'translateY(0)' : 'translateY(20px)',
+                opacity: mobileOpen ? 1 : 0,
+                transitionDelay: `${navLinks.length * 50 + 200}ms`
+              }}
+              onClick={() => setMobileOpen(false)}
+            >
+              Enquire Now
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </Link>
+          </div>
         </div>
       </div>
     </>
