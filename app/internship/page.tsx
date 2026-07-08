@@ -12,37 +12,20 @@ export default function InternshipApplicationPage() {
     setMounted(true);
   }, []);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setStatus("loading");
-    
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-    
-    formData.append("_subject", "New Internship Application");
-    formData.append("_captcha", "false"); 
-    formData.append("_template", "table");
+  const [submitted, setSubmitted] = useState(false);
 
-    try {
-      const response = await fetch("https://formsubmit.co/ajax/hcda129@gmail.com", {
-        method: "POST",
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
-      
-      if (response.ok) {
-        setStatus("success");
-        form.reset();
-        setFileName(null);
-        setTimeout(() => setStatus("idle"), 6000);
-      } else {
-        setStatus("error");
-        setTimeout(() => setStatus("idle"), 6000);
-      }
-    } catch (error) {
-      setStatus("error");
+  const handleSubmit = () => {
+    setStatus("loading");
+    setSubmitted(true);
+  };
+
+  const handleIframeLoad = () => {
+    if (submitted) {
+      setStatus("success");
+      const form = document.getElementById("internship-form") as HTMLFormElement;
+      if (form) form.reset();
+      setFileName(null);
+      setSubmitted(false);
       setTimeout(() => setStatus("idle"), 6000);
     }
   };
@@ -155,7 +138,18 @@ export default function InternshipApplicationPage() {
             <div className="relative z-10 w-full max-w-[550px] mx-auto md:mx-0">
               <h2 className="text-2xl font-extrabold text-slate-900 mb-5 tracking-tight">Apply for Internship</h2>
               
-              <form onSubmit={handleSubmit} className="space-y-4" encType="multipart/form-data">
+              <form 
+                id="internship-form"
+                action="https://formsubmit.co/hcda129@gmail.com" 
+                method="POST" 
+                target="hidden_iframe" 
+                onSubmit={handleSubmit} 
+                className="space-y-4" 
+                encType="multipart/form-data"
+              >
+                <input type="hidden" name="_subject" value="New Internship Application With Resume" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_template" value="table" />
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {/* Full Name */}
@@ -290,6 +284,13 @@ export default function InternshipApplicationPage() {
                 </div>
 
               </form>
+              
+              <iframe 
+                name="hidden_iframe" 
+                id="hidden_iframe" 
+                style={{ display: "none" }} 
+                onLoad={handleIframeLoad}
+              ></iframe>
             </div>
           </div>
         </motion.div>
