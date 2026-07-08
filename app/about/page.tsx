@@ -1,6 +1,6 @@
-import PageHeader from "@/components/PageHeader";
 import AboutSection from "@/components/sections/AboutSection";
 import CoreValuesSection from "@/components/sections/CoreValuesSection";
+import WhyChooseUsSection from "@/components/sections/WhyChooseUsSection";
 import StatsBannerSection from "@/components/sections/StatsBannerSection";
 import ClientsSection from "@/components/sections/ClientsSection";
 
@@ -13,16 +13,9 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <main>
-      <PageHeader 
-        title="About Photonexes" 
-        subtitle="We are a leading IT software and training company dedicated to delivering cutting-edge digital solutions and empowering the next generation of tech leaders."
-        breadcrumb="About Us" 
-        badge="Company Overview"
-      />
+      <AboutSection />
       <CoreValuesSection />
-      <div style={{ background: "#f8fafc" }}>
-        <AboutSection />
-      </div>
+      <WhyChooseUsSection />
       <StatsBannerSection />
       <ClientsSection />
     </main>

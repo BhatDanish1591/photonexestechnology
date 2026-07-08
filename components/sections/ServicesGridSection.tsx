@@ -11,37 +11,37 @@ const services = [
   { 
     title: "Enterprise Software", 
     icon: <Code2 size={24} strokeWidth={2} />,
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80",
+    image: "/services/enterprise_software.png",
     description: "Tailored software solutions designed to meet your specific business requirements and accelerate growth."
   },
   { 
     title: "Web Development", 
     icon: <Globe size={24} strokeWidth={2} />,
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80",
+    image: "/services/web_development.png",
     description: "High-performance, responsive websites and web applications built with modern frameworks."
   },
   { 
     title: "Mobile App Solutions", 
     icon: <Smartphone size={24} strokeWidth={2} />,
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80",
+    image: "/services/mobile_app.png",
     description: "Native and cross-platform mobile applications for iOS and Android devices."
   },
   { 
     title: "UI/UX Design", 
     icon: <Palette size={24} strokeWidth={2} />,
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=80",
+    image: "/services/ui_ux_design.png",
     description: "User-centric interface designs that deliver intuitive and engaging digital experiences."
   },
   { 
     title: "FIN-TECH Development", 
     icon: <TrendingUp size={24} strokeWidth={2} />,
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=600&q=80",
+    image: "/services/fin_tech.png",
     description: "Secure, scalable financial technology solutions including payment gateways and banking software."
   },
   { 
     title: "IOT Development", 
     icon: <Plug size={24} strokeWidth={2} />,
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
+    image: "/services/iot_development.png",
     description: "Connected device solutions that gather insights and automate operations securely."
   },
 ];
@@ -51,7 +51,7 @@ export default function ServicesGridSection() {
     <section 
       id="services" 
       style={{ 
-        padding: "6rem 2rem",
+        padding: "3rem 2rem",
         background: "#ffffff",
         position: "relative",
       }}

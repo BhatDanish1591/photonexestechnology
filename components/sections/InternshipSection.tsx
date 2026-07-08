@@ -16,7 +16,7 @@ export default function InternshipSection() {
     <section
       id="internship"
       style={{
-        padding: "8rem 2rem", // Standardized spacing
+        padding: "2rem 2rem", // Standardized spacing
         background: "#fff7ed", 
       }}
     >

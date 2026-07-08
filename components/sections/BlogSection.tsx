@@ -34,7 +34,7 @@ export default function BlogSection() {
     <section
       id="blog"
       style={{
-        padding: "8rem 2rem", // Standardized spacing
+        padding: "2rem 2rem", // Standardized spacing
         background: "#f8fafc",
       }}
     >

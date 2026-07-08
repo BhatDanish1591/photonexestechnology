@@ -69,7 +69,7 @@ export default function TestimonialsSection() {
     <section
       id="testimonials"
       style={{
-        padding: "8rem 2rem", // Standardized padding
+        padding: "2rem 2rem", // Standardized padding
         background: "#09090b", // Deep enterprise black
         position: "relative",
         overflow: "hidden",

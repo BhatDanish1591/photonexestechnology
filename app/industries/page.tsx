@@ -1,4 +1,4 @@
-import PageHeader from "@/components/PageHeader";
+import CustomHeroSection from "@/components/sections/CustomHeroSection";
 import IndustriesSection from "@/components/sections/IndustriesSection";
 import ContactSection from "@/components/sections/ContactSection";
 
@@ -11,11 +11,11 @@ export const metadata = {
 export default function IndustriesPage() {
   return (
     <main style={{ minHeight: "100vh", background: "#f8fafc" }}>
-      <PageHeader 
+      <CustomHeroSection 
         title="Industries We Serve" 
-        subtitle="We provide tailored, enterprise-grade software solutions across a wide range of global industries."
-        breadcrumb="Industries" 
-        badge="Domain Expertise"
+        description="We provide tailored, enterprise-grade software solutions across a wide range of global industries. We have the domain expertise to scale your business."
+        imageSrc="/heroes/hero_industries_1783476347035.png"
+        nextSectionColor="#ffffff"
       />
       <IndustriesSection />
       <ContactSection />

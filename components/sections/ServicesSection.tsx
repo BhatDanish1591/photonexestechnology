@@ -13,7 +13,7 @@ export default function ServicesSection() {
   return (
     <section
       id="services-mini"
-      className="py-16 md:py-24 bg-white relative z-10"
+      className="py-16 md:py-12 bg-white relative z-10"
     >
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         

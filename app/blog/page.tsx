@@ -1,4 +1,4 @@
-import PageHeader from "@/components/PageHeader";
+import CustomHeroSection from "@/components/sections/CustomHeroSection";
 import BlogSection from "@/components/sections/BlogSection";
 
 export const metadata = {
@@ -10,11 +10,11 @@ export const metadata = {
 export default function BlogPage() {
   return (
     <main>
-      <PageHeader 
-        title="Insights & Tech Blog" 
-        subtitle="Stay ahead of the curve with our latest articles, tutorials, and insights on modern software development, AI, and industry trends."
-        breadcrumb="Blog" 
-        badge="Latest Updates"
+      <CustomHeroSection 
+        title="Insights & News" 
+        description="Read the latest updates, tutorials, and insights from our team of tech experts."
+        imageSrc="/heroes/hero_blogs_1783476408570.png"
+        nextSectionColor="#ffffff"
       />
       <div style={{ background: "#ffffff" }}>
         <BlogSection />

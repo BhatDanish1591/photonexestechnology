@@ -58,7 +58,7 @@ export default function CoursesSection() {
     <section
       id="courses"
       style={{
-        padding: "8rem 2rem",
+        padding: "2rem 2rem",
         background: "#ffffff",
         position: "relative",
       }}

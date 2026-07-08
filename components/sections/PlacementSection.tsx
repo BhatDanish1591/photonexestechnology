@@ -16,7 +16,7 @@ export default function PlacementSection() {
     <section
       id="placement"
       style={{
-        padding: "8rem 2rem", // Standardized spacing
+        padding: "2rem 2rem", // Standardized spacing
         background: "#ffffff", 
         borderTop: "1px solid #e2e8f0"
       }}

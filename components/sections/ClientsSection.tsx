@@ -10,7 +10,7 @@ export default function ClientsSection() {
   return (
     <section 
       style={{
-        padding: "4rem 0",
+        padding: "2rem 0",
         background: "#ffffff",
         borderTop: "1px solid #e2e8f0",
         borderBottom: "1px solid #e2e8f0",

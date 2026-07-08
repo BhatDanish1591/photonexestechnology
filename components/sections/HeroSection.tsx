@@ -6,7 +6,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="min-h-screen relative flex items-center justify-center overflow-hidden bg-slate-50 pt-20"
+      className="min-h-screen relative flex items-center justify-center overflow-hidden bg-slate-50 pt-10"
     >
       {/* Light Corporate Grid Background */}
       <div 

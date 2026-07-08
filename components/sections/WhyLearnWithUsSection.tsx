@@ -11,7 +11,7 @@ export default function WhyLearnWithUsSection() {
   ];
 
   return (
-    <section style={{ padding: "6rem 2rem", background: "#ffffff" }}>
+    <section style={{ padding: "3rem 2rem", background: "#ffffff" }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
         
         {/* Left Side: Content */}

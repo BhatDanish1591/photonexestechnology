@@ -7,7 +7,7 @@ export default function WorkProcessSection() {
   ];
 
   return (
-    <section style={{ padding: "6rem 2rem", background: "#f8fafc" }}>
+    <section style={{ padding: "3rem 2rem", background: "#f8fafc" }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
         
         <div style={{ textAlign: "center", marginBottom: "4rem" }}>

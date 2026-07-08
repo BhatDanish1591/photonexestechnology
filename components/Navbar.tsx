@@ -6,11 +6,13 @@ import { usePathname } from "next/navigation";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Services We Offer", href: "/services" },
-  { label: "Industry We Serve", href: "/industries" },
-  { label: "Courses", href: "/courses" },
   { label: "About Us", href: "/about" },
-  { label: "Contact Us", href: "/contact" },
+  { label: "Services", href: "/services" },
+  { label: "Industries", href: "/industries" },
+  { label: "Technologies", href: "/technologies" },
+  { label: "Portfolios", href: "/portfolio" },
+  { label: "Careers", href: "/careers" },
+  { label: "Blogs", href: "/blog" },
 ];
 
 export default function Navbar() {

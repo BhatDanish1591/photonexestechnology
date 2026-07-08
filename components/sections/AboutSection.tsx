@@ -1,61 +1,114 @@
 "use client";
-import Link from "next/link";
-import { CheckCircle2 } from "lucide-react";
-
-const features = [
-  "Software Development",
-  "IT Training & Internship",
-  "Web & Mobile App Development",
-  "Certification Programs",
-  "Cloud, AI & Cybersecurity Solutions",
-  "Placement Assistance",
-];
+import { ArrowDown } from "lucide-react";
 
 export default function AboutSection() {
+  const scrollToNext = () => {
+    window.scrollBy({ top: window.innerHeight * 0.8, behavior: 'smooth' });
+  };
+
   return (
-    <section id="about" className="py-24 bg-white relative">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <section id="about" style={{ 
+      position: "relative", 
+      background: "#f2f6f5", // Matches the solid color of the generated image background
+      paddingTop: "10rem",
+      paddingBottom: "6rem",
+      overflow: "hidden"
+    }}>
+      <div className="max-w-[1400px] mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         
-        {/* Left Side: Image */}
-        <div className="relative group">
-          <div className="absolute top-5 -left-5 w-full h-full bg-slate-100 rounded-2xl -z-10 group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-500" />
-          <img loading="eager" fetchPriority="high" 
-            src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80" 
-            alt="Indian students and professionals working at Photonexes" 
-            className="w-full h-auto rounded-2xl relative z-10 shadow-[0_20px_40px_rgba(0,0,0,0.06)] object-cover aspect-[4/3] group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)] transition-shadow duration-500"
+        {/* Left Side: Content */}
+        <div className="lg:pr-8">
+          <h1 style={{
+            fontFamily: "Inter, sans-serif",
+            fontSize: "clamp(3rem, 5vw, 4.5rem)",
+            fontWeight: 800,
+            color: "#111827",
+            lineHeight: 1.1,
+            marginBottom: "2rem"
+          }}>
+            Who We Are?
+          </h1>
+          
+          <p style={{ 
+            color: "#111827", 
+            fontSize: "1.1rem", 
+            lineHeight: 1.8,
+            fontWeight: 400
+          }}>
+            Photonexes Technologies is a growth-driven IT solutions provider, focusing on bringing digital transformations for businesses at every scale. We are first movers who believe in adding proficiency and innovation in every solution we offer. With more than a decade of being an IT leader, we thrive to build solutions that bring results and impact.
+          </p>
+        </div>
+
+        {/* Right Side: Image */}
+        <div className="relative flex justify-center lg:justify-end">
+          <img 
+            src="/about/team_puzzle.png" 
+            alt="Team collaborating on puzzle pieces" 
+            className="w-full max-w-[500px] h-auto object-contain mix-blend-multiply"
           />
         </div>
-
-        {/* Right Side: Content */}
-        <div>
-          <div className="text-orange-600 text-xs font-bold tracking-[0.1em] uppercase mb-4">
-            ABOUT US
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 leading-[1.2] mb-6">
-            Photonexes Technologies
-          </h2>
-          <p className="text-slate-600 text-lg leading-relaxed mb-8">
-            We are a leading IT Software Company & Training Institute dedicated to delivering innovative software solutions and industry-focused training to students and professionals.
-          </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-            {features.map((feature, i) => (
-              <div key={i} className="flex items-start gap-3">
-                <CheckCircle2 size={20} className="text-orange-600 shrink-0 mt-0.5" strokeWidth={2.5} />
-                <span className="text-slate-700 font-medium">{feature}</span>
-              </div>
-            ))}
-          </div>
-
-          <Link 
-            href="/about" 
-            className="inline-flex justify-center items-center gap-2 bg-orange-600 text-white px-8 py-3.5 rounded-lg font-semibold shadow-md shadow-orange-600/20 hover:shadow-lg hover:shadow-orange-600/30 hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto"
-          >
-            Read More About Us
-          </Link>
-        </div>
-
       </div>
+
+      {/* Bottom Curve Shape Divider */}
+      <div style={{
+        position: "absolute",
+        bottom: 0,
+        left: 0,
+        width: "100%",
+        overflow: "hidden",
+        lineHeight: 0,
+        transform: "rotate(180deg)"
+      }}>
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" style={{
+          position: "relative",
+          display: "block",
+          width: "calc(100% + 1.3px)",
+          height: "80px",
+          fill: "#ffffff" // Matches the light background of the next section (CoreValues)
+        }}>
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+        </svg>
+      </div>
+
+      {/* Scroll Down Button */}
+      <div style={{
+        position: "absolute",
+        bottom: "40px",
+        left: "50%",
+        transform: "translateX(-50%)",
+        zIndex: 10,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        background: "#ffffff", // Match curve color to create cutout illusion
+        borderRadius: "50%",
+        padding: "8px" // Acts as the stroke/cutout
+      }}>
+        <button 
+          onClick={scrollToNext}
+          style={{
+            width: "50px",
+            height: "50px",
+            background: "#10b981", // Vibrant green matching the design
+            border: "none",
+            borderRadius: "50%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            color: "#ffffff",
+            cursor: "pointer",
+            boxShadow: "0 10px 25px -5px rgba(16, 185, 129, 0.4)",
+            transition: "transform 0.3s ease"
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.transform = "translateY(4px)")}
+          onMouseLeave={(e) => (e.currentTarget.style.transform = "translateY(0)")}
+          aria-label="Scroll down"
+        >
+          <ArrowDown size={28} strokeWidth={2.5} />
+        </button>
+      </div>
+
     </section>
   );
 }
