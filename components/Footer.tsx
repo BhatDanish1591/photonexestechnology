@@ -172,9 +172,8 @@ export default function Footer() {
           <div className="text-slate-500 text-sm text-center md:text-left">
             &copy; 2026 Photonexes Technologies. All Rights Reserved.
           </div>
-          <div className="flex gap-6">
-            <Link href="/privacy-policy" className="text-slate-500 hover:text-slate-300 text-sm transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="text-slate-500 hover:text-slate-300 text-sm transition-colors">Terms of Service</Link>
+          <div className="flex gap-12">
+            <Link href="/legal" className="text-slate-500 hover:text-slate-300 text-sm transition-colors">Legal Center (Privacy & Terms)</Link>
           </div>
         </div>
         

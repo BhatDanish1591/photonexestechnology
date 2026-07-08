@@ -108,76 +108,63 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Featured Testimonial */}
-        <div
-          style={{
-            padding: "3rem",
-            borderRadius: "24px",
-            background: "#18181b", // zinc-900 instead of white
-            border: "1px solid rgba(255,255,255,0.1)",
-            marginBottom: "2rem",
-            position: "relative",
-            overflow: "hidden",
-          }}
-        >
-          <div style={{ position: "absolute", top: "1.5rem", right: "2rem", fontSize: "6rem", opacity: 0.08, fontFamily: "Georgia, serif", lineHeight: 1, color: "#ea580c" }}>"</div>
-          <div style={{ display: "flex", gap: "1.5rem", alignItems: "flex-start" }}>
-            <div style={{ fontSize: "3.5rem", flexShrink: 0 }}>{testimonials[activeIdx].avatar}</div>
-            <div>
+        <div className="relative p-10 md:p-12 rounded-3xl bg-white/5 backdrop-blur-3xl border border-white/10 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] mb-12 overflow-hidden group">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/20 rounded-full blur-[80px] pointer-events-none transition-opacity duration-700 opacity-50 group-hover:opacity-100" />
+          <div className="absolute top-6 right-8 text-8xl opacity-10 font-serif leading-none text-orange-500 select-none">"</div>
+          <div className="flex flex-col md:flex-row gap-8 items-start relative z-10">
+            <div className="text-6xl shrink-0 drop-shadow-xl">{testimonials[activeIdx].avatar}</div>
+            <div className="flex-1">
               <StarRating count={testimonials[activeIdx].rating} />
-              <p style={{ color: "#d4d4d8", fontSize: "1.05rem", lineHeight: 1.8, margin: "1rem 0", fontStyle: "italic" }}>
+              <p className="text-slate-300 text-lg md:text-xl leading-relaxed my-6 font-medium italic">
                 &ldquo;{testimonials[activeIdx].text}&rdquo;
               </p>
               <div>
-                <div style={{ fontFamily: "Outfit, sans-serif", fontWeight: 700, color: "#ffffff", fontSize: "1rem" }}>{testimonials[activeIdx].name}</div>
-                <div style={{ color: "#a1a1aa", fontSize: "0.85rem" }}>{testimonials[activeIdx].role}</div>
+                <div className="font-sans font-extrabold text-white text-xl tracking-tight mb-1">{testimonials[activeIdx].name}</div>
+                <div className="text-slate-400 font-medium">{testimonials[activeIdx].role}</div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Testimonial Grid */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
-            gap: "1.5rem",
-          }}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((t, idx) => (
             <div
               key={t.name}
               onClick={() => setActiveIdx(idx)}
-              style={{
-                cursor: "pointer",
-                padding: "1.5rem",
-                borderRadius: "16px",
-                border: "1px solid rgba(255,255,255,0.05)",
-                borderColor: activeIdx === idx ? "rgba(234, 88, 12, 0.5)" : "rgba(255,255,255,0.05)",
-                background: activeIdx === idx ? "rgba(234, 88, 12, 0.08)" : "#18181b",
-                transition: "all 0.2s ease"
-              }}
+              className={`group relative flex flex-col p-6 md:p-8 rounded-3xl cursor-pointer overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+                activeIdx === idx 
+                  ? "bg-orange-500/10 border-orange-500/50 shadow-[0_20px_40px_-10px_rgba(234,88,12,0.15)] -translate-y-2" 
+                  : "bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20 hover:-translate-y-1 hover:shadow-2xl"
+              } backdrop-blur-xl border`}
             >
-              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "1rem" }}>
+              {activeIdx === idx && (
+                <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/20 rounded-full blur-[40px] pointer-events-none" />
+              )}
+              
+              <div className="flex justify-between items-center mb-5 relative z-10">
                 <StarRating count={t.rating} />
-                <span style={{ 
-                  background: t.type === "Student" ? "rgba(59, 130, 246, 0.15)" : "rgba(168, 85, 247, 0.15)",
-                  color: t.type === "Student" ? "#60a5fa" : "#c084fc",
-                  padding: "0.2rem 0.6rem",
-                  borderRadius: "50px",
-                  fontSize: "0.7rem",
-                  fontWeight: 600
-                }}>
+                <span 
+                  className="px-3 py-1 rounded-full text-[0.65rem] font-bold tracking-wider uppercase shadow-sm"
+                  style={{ 
+                    background: t.type === "Student" ? "rgba(59,130,246,0.15)" : "rgba(168,85,247,0.15)",
+                    color: t.type === "Student" ? "#60a5fa" : "#c084fc",
+                    border: `1px solid ${t.type === "Student" ? "rgba(59,130,246,0.3)" : "rgba(168,85,247,0.3)"}`
+                  }}
+                >
                   {t.type}
                 </span>
               </div>
-              <p style={{ color: "#a1a1aa", fontSize: "0.85rem", lineHeight: 1.7, marginBottom: "1.2rem" }}>
-                &ldquo;{t.text.slice(0, 100)}...&rdquo;
+              
+              <p className="text-slate-400 text-sm leading-relaxed mb-6 relative z-10 transition-colors duration-300 group-hover:text-slate-300 flex-1">
+                &ldquo;{t.text.length > 110 ? t.text.slice(0, 110) + '...' : t.text}&rdquo;
               </p>
-              <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                <span style={{ fontSize: "1.8rem" }}>{t.avatar}</span>
+              
+              <div className="flex items-center gap-4 relative z-10 mt-auto pt-5 border-t border-white/10">
+                <span className="text-4xl drop-shadow-md transition-transform duration-300 group-hover:scale-110">{t.avatar}</span>
                 <div>
-                  <div style={{ fontFamily: "Outfit, sans-serif", fontWeight: 700, color: "#ffffff", fontSize: "0.875rem" }}>{t.name}</div>
-                  <div style={{ color: "#71717a", fontSize: "0.75rem" }}>{t.role}</div>
+                  <div className="font-sans font-extrabold text-white text-[0.95rem] tracking-tight">{t.name}</div>
+                  <div className="text-slate-500 text-xs font-medium mt-0.5">{t.role}</div>
                 </div>
               </div>
             </div>

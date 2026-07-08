@@ -45,21 +45,9 @@ export default function ScrollReveal({
   style = {},
   className,
 }: ScrollRevealProps) {
-  const { ref, isVisible } = useScrollAnimation({ threshold });
-
-  const animatedStyle: CSSProperties = {
-    ...style,
-    ...(isVisible ? getVisibleStyles(animation) : getInitialStyles(animation)),
-    transition: `opacity ${duration}ms cubic-bezier(0.4,0,0.2,1) ${delay}ms, transform ${duration}ms cubic-bezier(0.4,0,0.2,1) ${delay}ms`,
-    willChange: "opacity, transform",
-  };
-
+  // Bypassing scroll animations to keep content always visible
   return (
-    <div
-      ref={ref as React.RefObject<HTMLDivElement>}
-      style={animatedStyle}
-      className={className}
-    >
+    <div style={style} className={className}>
       {children}
     </div>
   );

@@ -146,78 +146,40 @@ export default function CoursesSection() {
             <ScrollReveal key={idx} animation="fadeUp" delay={idx * 100} threshold={0.1}>
             <Link 
               href="/courses"
-              key={idx} style={{
-              background: course.gradient,
-              border: `1px solid ${course.border}`,
-              borderRadius: "16px",
-              padding: "2rem",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              minHeight: "220px",
-              transition: "transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s, border-color 0.4s",
-              cursor: "pointer",
-              position: "relative",
-              overflow: "hidden",
-              boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)",
-              textDecoration: "none"
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.transform = "translateY(-5px)";
-              (e.currentTarget as HTMLElement).style.boxShadow = "0 20px 25px -5px rgba(0, 0, 0, 0.12)";
-              const iconBox = e.currentTarget.querySelector('.bento-icon') as HTMLElement;
-              if (iconBox) {
-                iconBox.style.transform = "scale(1.1)";
-              }
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
-              (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 6px -1px rgba(0, 0, 0, 0.05)";
-              const iconBox = e.currentTarget.querySelector('.bento-icon') as HTMLElement;
-              if (iconBox) {
-                iconBox.style.transform = "scale(1)";
-              }
-            }}
+              className="group relative flex flex-col justify-between min-h-[260px] bg-white/70 backdrop-blur-3xl border border-white/60 rounded-3xl p-8 overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] no-underline cursor-pointer"
+              style={{
+                borderBottom: `4px solid ${course.border}`
+              }}
             >
-              <div>
-                <div className="bento-icon" style={{ 
-                  marginBottom: "1.5rem",
-                  transition: "transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
-                }}>
+              {/* Decorative Orb */}
+              <div 
+                className="absolute -top-10 -right-10 w-48 h-48 rounded-full blur-[60px] opacity-0 group-hover:opacity-50 transition-opacity duration-700 pointer-events-none"
+                style={{ background: course.border }}
+              />
+
+              <div className="relative z-10">
+                <div className="mb-6 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3 origin-left drop-shadow-sm">
                   {course.icon}
                 </div>
-                <h3 style={{ 
-                  color: "#0f172a", 
-                  fontFamily: "Inter, sans-serif",
-                  fontSize: "1.25rem", 
-                  fontWeight: 800, 
-                  lineHeight: 1.2,
-                  whiteSpace: "pre-line",
-                  marginBottom: "0.75rem"
-                }}>
+                <h3 className="text-slate-900 font-sans text-xl font-extrabold leading-tight whitespace-pre-line mb-3 transition-colors duration-300">
                   {course.name}
                 </h3>
-                <p style={{
-                  color: "#475569",
-                  fontSize: "0.9rem",
-                  lineHeight: 1.6,
-                  maxWidth: "90%",
-                  margin: 0
-                }}>
+                <p className="text-slate-600 text-[0.95rem] leading-relaxed m-0">
                   {course.desc}
                 </p>
               </div>
-              <div style={{ 
-                color: "#334155", 
-                fontSize: "0.85rem", 
-                fontWeight: 600,
-                marginTop: "1.5rem",
-                display: "flex",
-                alignItems: "center",
-                gap: "8px"
-              }}>
-                <div style={{ width: "20px", height: "2px", background: "#ea580c" }}></div>
-                {course.duration}
+              
+              <div className="mt-8 flex items-center justify-between relative z-10 pt-6 border-t border-slate-200/50">
+                <div className="flex items-center gap-3 text-slate-700 text-[0.85rem] font-bold">
+                  <div className="w-5 h-0.5 rounded-full" style={{ background: course.border }}></div>
+                  {course.duration}
+                </div>
+                <div 
+                  className="w-8 h-8 rounded-full flex items-center justify-center text-white opacity-0 -translate-x-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0"
+                  style={{ background: course.border }}
+                >
+                  <ArrowRight size={14} strokeWidth={3} />
+                </div>
               </div>
             </Link>
             </ScrollReveal>

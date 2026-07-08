@@ -22,32 +22,30 @@ export default function WorkProcessSection() {
           </h2>
         </div>
 
-        <div style={{ 
-          display: "flex", flexWrap: "wrap", gap: "2rem", justifyContent: "space-between", position: "relative"
-        }}>
-          {/* Connecting Line (Desktop only - simplified via CSS) */}
-          <div style={{
-            position: "absolute", top: "40px", left: "10%", right: "10%", 
-            height: "2px", background: "rgba(234, 88, 12, 0.2)", zIndex: 0
-          }} className="hidden md:block"></div>
+        <div className="flex flex-wrap gap-8 justify-between relative">
+          {/* Connecting Line (Desktop only) */}
+          <div className="hidden md:block absolute top-[48px] left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-orange-100 via-orange-300 to-orange-100 z-0"></div>
 
           {steps.map((step, i) => (
-            <div key={i} style={{ flex: "1 1 200px", textAlign: "center", position: "relative", zIndex: 1 }}>
-              <div style={{
-                width: "80px", height: "80px", margin: "0 auto 1.5rem",
-                background: "#ffffff", border: "2px solid #ea580c", borderRadius: "50%",
-                display: "flex", alignItems: "center", justifyContent: "center",
-                fontSize: "1.5rem", fontWeight: 800, color: "#ea580c",
-                boxShadow: "0 10px 20px rgba(234, 88, 12, 0.1)"
-              }}>
-                {step.num}
+            <div key={i} className="group relative flex-1 min-w-[220px] text-center z-10">
+              <div className="relative w-24 h-24 mx-auto mb-8">
+                {/* Glowing Background Ring */}
+                <div className="absolute inset-0 bg-orange-500/20 rounded-full blur-xl scale-50 opacity-0 group-hover:scale-125 group-hover:opacity-100 transition-all duration-700" />
+                
+                {/* Number Circle */}
+                <div className="relative w-full h-full bg-white/80 backdrop-blur-md rounded-full border border-orange-200 shadow-xl shadow-orange-500/10 flex items-center justify-center text-2xl font-extrabold text-orange-600 transition-all duration-500 group-hover:-translate-y-2 group-hover:border-orange-500 group-hover:shadow-2xl group-hover:shadow-orange-500/20 group-hover:bg-white">
+                  {step.num}
+                </div>
               </div>
-              <h3 style={{ fontSize: "1.2rem", fontWeight: 700, color: "#0f172a", marginBottom: "0.5rem" }}>
-                {step.title}
-              </h3>
-              <p style={{ color: "#475569", fontSize: "0.95rem", lineHeight: 1.5 }}>
-                {step.desc}
-              </p>
+              
+              <div className="bg-white/50 backdrop-blur-sm border border-slate-100 p-6 rounded-3xl transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-xl group-hover:shadow-slate-200/50 group-hover:bg-white/80 group-hover:border-orange-100 relative">
+                <h3 className="font-sans text-xl font-extrabold text-slate-900 mb-3 transition-colors duration-300 group-hover:text-orange-600">
+                  {step.title}
+                </h3>
+                <p className="text-slate-600 text-[0.95rem] leading-relaxed">
+                  {step.desc}
+                </p>
+              </div>
             </div>
           ))}
         </div>

@@ -74,63 +74,48 @@ export default function BlogSection() {
           marginBottom: "3rem"
         }}>
           {blogs.map((blog, i) => (
-            <div key={i} style={{
-              background: "#ffffff",
-              border: "1px solid rgba(0,0,0,0.05)",
-              borderRadius: "16px",
-              padding: "2rem",
-              transition: "transform 0.2s, box-shadow 0.2s",
-              cursor: "pointer",
-              display: "flex",
-              flexDirection: "column",
-              height: "100%"
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.transform = "translateY(-5px)";
-              (e.currentTarget as HTMLElement).style.boxShadow = "0 20px 40px rgba(0,0,0,0.06)"; // Softened
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
-              (e.currentTarget as HTMLElement).style.boxShadow = "none";
-            }}
+            <Link 
+              key={i} 
+              href="/blog"
+              className="group relative flex flex-col bg-white/70 backdrop-blur-3xl border border-white/60 rounded-3xl overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] p-8 no-underline cursor-pointer"
             >
+              {/* Glowing Orb */}
+              <div 
+                className="absolute top-0 right-0 w-48 h-48 rounded-full blur-[80px] opacity-0 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none"
+                style={{ background: blog.color }}
+              />
+
               {/* Meta */}
-              <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1.5rem" }}>
-                <span style={{ 
-                  background: `${blog.color}15`, 
-                  color: blog.color, 
-                  padding: "0.3rem 0.8rem", 
-                  borderRadius: "50px",
-                  fontSize: "0.75rem",
-                  fontWeight: 700
-                }}>
+              <div className="flex items-center gap-4 mb-6 relative z-10">
+                <span 
+                  className="px-4 py-1.5 rounded-full text-xs font-bold shadow-sm transition-all duration-300 group-hover:shadow-md"
+                  style={{ background: `${blog.color}15`, color: blog.color, border: `1px solid ${blog.color}30` }}
+                >
                   {blog.category}
                 </span>
-                <span style={{ color: "#94a3b8", fontSize: "0.8rem" }}>{blog.date}</span>
-                <span style={{ color: "#94a3b8", fontSize: "0.8rem", display: "flex", alignItems: "center", gap: "4px" }}>
+                <span className="text-slate-500 text-xs font-medium">{blog.date}</span>
+                <span className="text-slate-500 text-xs font-medium flex items-center gap-1.5">
                   <Clock size={12} /> {blog.readTime}
                 </span>
               </div>
               
-              <h3 style={{
-                fontFamily: "Outfit, sans-serif",
-                fontSize: "1.2rem",
-                fontWeight: 700,
-                color: "#0f172a",
-                lineHeight: 1.4,
-                marginBottom: "1rem"
-              }}>
+              <h3 className="font-sans text-xl font-extrabold text-slate-900 leading-snug mb-4 transition-colors duration-300 group-hover:text-purple-700 relative z-10">
                 {blog.title}
               </h3>
               
-              <p style={{ color: "#475569", fontSize: "0.9rem", lineHeight: 1.6, flexGrow: 1, marginBottom: "1.5rem" }}>
+              <p className="text-slate-600 text-[0.95rem] leading-relaxed flex-grow mb-8 relative z-10">
                 {blog.desc}
               </p>
 
-              <div style={{ color: "#ea580c", fontSize: "0.9rem", fontWeight: 600, display: "flex", alignItems: "center", gap: "6px" }}>
-                Read Article <span style={{ fontSize: "1.1rem" }}>→</span>
+              <div className="mt-auto flex items-center justify-between pt-6 border-t border-slate-100/50 relative z-10">
+                <span className="font-bold text-sm tracking-wide text-orange-600 transition-colors duration-300">
+                  Read Article
+                </span>
+                <span className="w-8 h-8 rounded-full bg-orange-50 text-orange-600 flex items-center justify-center transition-all duration-300 group-hover:bg-orange-600 group-hover:text-white group-hover:translate-x-1">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

@@ -110,121 +110,80 @@ export default function IndustriesSection() {
         }}>
           {industries.map((ind, idx) => (
             <ScrollReveal key={idx} animation="fadeUp" delay={idx * 50} threshold={0.1}>
-              <div style={{
-                background: `linear-gradient(145deg, #ffffff 0%, ${ind.color} 150%)`,
-                border: "1px solid #f1f5f9",
-                borderTop: "4px solid transparent",
-                borderRadius: "24px",
-                padding: "2.5rem",
-                display: "flex",
-                flexDirection: "column",
-                height: "100%",
-                boxShadow: "0 10px 40px -10px rgba(0,0,0,0.05)",
-                transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                cursor: "pointer",
-                position: "relative",
-                overflow: "hidden"
-              }}
-              onMouseEnter={(e) => {
-                const el = e.currentTarget as HTMLElement;
-                el.style.transform = "translateY(-10px) scale(1.02)";
-                el.style.boxShadow = `0 25px 50px -12px ${ind.iconColor}30`;
-                el.style.borderTopColor = ind.iconColor;
-                el.style.borderColor = `${ind.iconColor}40`;
-                const iconBox = el.querySelector('.icon-box') as HTMLElement;
-                if(iconBox) {
-                  iconBox.style.transform = "scale(1.1) rotate(5deg)";
-                  iconBox.style.background = ind.iconColor;
-                  iconBox.style.color = "#ffffff";
-                }
-              }}
-              onMouseLeave={(e) => {
-                const el = e.currentTarget as HTMLElement;
-                el.style.transform = "translateY(0) scale(1)";
-                el.style.boxShadow = "0 10px 40px -10px rgba(0,0,0,0.05)";
-                el.style.borderTopColor = "transparent";
-                el.style.borderColor = "#f1f5f9";
-                const iconBox = el.querySelector('.icon-box') as HTMLElement;
-                if(iconBox) {
-                  iconBox.style.transform = "scale(1) rotate(0deg)";
-                  iconBox.style.background = ind.color;
-                  iconBox.style.color = ind.iconColor;
-                }
-              }}
+              <Link 
+                href="/services"
+                className="group relative flex flex-col h-full bg-white/70 backdrop-blur-3xl border border-white/60 rounded-[32px] overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-3 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] p-10 no-underline cursor-pointer"
+                style={{
+                  borderTop: "4px solid transparent"
+                }}
+                onMouseEnter={(e) => {
+                  const el = e.currentTarget as HTMLElement;
+                  el.style.borderTopColor = ind.iconColor;
+                  el.style.borderColor = `${ind.iconColor}40`;
+                }}
+                onMouseLeave={(e) => {
+                  const el = e.currentTarget as HTMLElement;
+                  el.style.borderTopColor = "transparent";
+                  el.style.borderColor = "rgba(255,255,255,0.6)";
+                }}
               >
+                {/* Decorative Background Glow based on industry color */}
+                <div 
+                  className="absolute top-0 right-0 w-64 h-64 rounded-full blur-[80px] opacity-0 group-hover:opacity-40 transition-opacity duration-700 pointer-events-none"
+                  style={{ background: ind.iconColor }}
+                />
+
                 {/* Top: Icon & Title */}
-                <div style={{ display: "flex", alignItems: "center", gap: "1.5rem", marginBottom: "1.5rem" }}>
+                <div className="flex items-center gap-6 mb-6 relative z-10">
                   <div 
-                    className="icon-box"
-                    style={{ 
-                      width: "72px", 
-                      height: "72px", 
-                      borderRadius: "20px", 
-                      background: ind.color,
-                      color: ind.iconColor,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      flexShrink: 0,
-                      transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
-                    }}>
+                    className="w-20 h-20 rounded-2xl flex items-center justify-center shrink-0 transition-all duration-500 group-hover:scale-110 group-hover:-rotate-3 group-hover:shadow-lg"
+                    style={{ background: ind.color, color: ind.iconColor }}
+                  >
                     {ind.icon}
                   </div>
-                  <h3 style={{ 
-                    fontFamily: "Inter, sans-serif", 
-                    fontSize: "1.5rem", 
-                    fontWeight: 800, 
-                    color: "#0f172a",
-                    margin: 0
-                  }}>
+                  <h3 className="font-sans text-2xl font-extrabold text-slate-900 transition-colors duration-300">
                     {ind.name}
                   </h3>
                 </div>
 
                 {/* Middle: Description */}
-                <p style={{ 
-                  color: "#64748b", 
-                  fontSize: "1rem", 
-                  lineHeight: 1.7, 
-                  marginBottom: "2rem",
-                  flex: 1
-                }}>
+                <p className="text-slate-600 text-[1.05rem] leading-relaxed mb-8 flex-1 relative z-10">
                   {ind.desc}
                 </p>
 
                 {/* Bottom: Features */}
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem", marginBottom: "2rem" }}>
+                <div className="flex flex-wrap gap-3 mb-10 relative z-10">
                   {ind.features.map((feat, i) => (
-                    <span key={i} style={{ 
-                      padding: "0.4rem 0.8rem", 
-                      background: "#ffffff", 
-                      border: `1px solid ${ind.iconColor}20`,
-                      borderRadius: "50px",
-                      color: ind.iconColor,
-                      fontWeight: 700,
-                      fontSize: "0.85rem",
-                      boxShadow: "0 2px 4px rgba(0,0,0,0.02)"
-                    }}>
+                    <span key={i} 
+                      className="px-4 py-1.5 bg-white/80 backdrop-blur-md rounded-full font-bold text-sm shadow-sm transition-all duration-300 group-hover:bg-white"
+                      style={{ 
+                        border: `1px solid ${ind.iconColor}30`,
+                        color: ind.iconColor,
+                      }}
+                    >
                       {feat}
                     </span>
                   ))}
                 </div>
 
                 {/* Footer Link */}
-                <Link href="/services" style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "0.5rem",
-                  color: ind.iconColor,
-                  fontWeight: 800,
-                  fontSize: "1rem",
-                  marginTop: "auto",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.05em"
-                }}>
-                  Explore Solutions <ArrowRight size={18} />
-                </Link>
-              </div>
+                <div 
+                  className="mt-auto flex items-center justify-between pt-6 border-t border-slate-100/50 relative z-10"
+                >
+                  <span 
+                    className="font-extrabold text-[0.95rem] tracking-wider uppercase transition-all duration-300"
+                    style={{ color: ind.iconColor }}
+                  >
+                    Explore Solutions
+                  </span>
+                  <span 
+                    className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 group-hover:translate-x-2"
+                    style={{ background: ind.color, color: ind.iconColor }}
+                  >
+                    <ArrowRight size={18} strokeWidth={2.5} />
+                  </span>
+                </div>
+              </Link>
             </ScrollReveal>
           ))}
         </div>

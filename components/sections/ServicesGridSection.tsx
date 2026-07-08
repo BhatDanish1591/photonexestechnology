@@ -118,111 +118,45 @@ export default function ServicesGridSection() {
             <ScrollReveal key={idx} animation="scaleUp" delay={idx * 100} threshold={0.1}>
             <Link 
               href="/services"
-              className="service-card"
-              style={{
-                background: "#ffffff",
-                border: "1px solid #e2e8f0",
-                borderRadius: "16px",
-                overflow: "hidden",
-                transition: "all 0.3s ease",
-                position: "relative",
-                display: "flex",
-                flexDirection: "column",
-                boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)",
-                cursor: "pointer",
-                textDecoration: "none"
-              }}
-              onMouseEnter={(e) => {
-                const el = e.currentTarget as HTMLElement;
-                el.style.transform = "translateY(-8px)";
-                el.style.boxShadow = "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)";
-                el.style.borderColor = "#cbd5e1";
-                const iconBox = el.querySelector('.icon-box') as HTMLElement;
-                if(iconBox) {
-                  iconBox.style.background = "#ea580c";
-                  iconBox.style.color = "#ffffff";
-                }
-                const img = el.querySelector('.service-img') as HTMLElement;
-                if(img) img.style.transform = "scale(1.05)";
-              }}
-              onMouseLeave={(e) => {
-                const el = e.currentTarget as HTMLElement;
-                el.style.transform = "translateY(0)";
-                el.style.boxShadow = "0 4px 6px -1px rgba(0, 0, 0, 0.05)";
-                el.style.borderColor = "#e2e8f0";
-                const iconBox = el.querySelector('.icon-box') as HTMLElement;
-                if(iconBox) {
-                  iconBox.style.background = "#eff6ff";
-                  iconBox.style.color = "#2563eb";
-                }
-                const img = el.querySelector('.service-img') as HTMLElement;
-                if(img) img.style.transform = "scale(1)";
-              }}
+              className="group relative flex flex-col bg-white/70 backdrop-blur-2xl border border-white/60 rounded-3xl overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-3 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] hover:border-purple-200/60 cursor-pointer no-underline"
             >
+              {/* Decorative Glow */}
+              <div className="absolute top-0 right-0 w-48 h-48 bg-purple-500/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-orange-500/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+
               {/* Image Container */}
-              <div style={{ height: "200px", width: "100%", overflow: "hidden", position: "relative" }}>
+              <div className="h-[220px] w-full overflow-hidden relative">
                 <img loading="eager" fetchPriority="high" 
-                  className="service-img"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   src={service.image} 
                   alt={service.title} 
-                  style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.5s ease" }}
                 />
-                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.4), transparent)" }}></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/10 to-transparent"></div>
               </div>
 
               {/* Content Container */}
-              <div style={{ padding: "2rem", flex: 1, display: "flex", flexDirection: "column" }}>
+              <div className="p-8 flex-1 flex flex-col relative z-10">
                 <div 
-                  className="icon-box"
-                  style={{ 
-                    width: "56px", 
-                    height: "56px", 
-                    borderRadius: "12px", 
-                    background: "#eff6ff", 
-                    color: "#2563eb",
-                    display: "flex", 
-                    alignItems: "center", 
-                    justifyContent: "center",
-                    marginTop: "-3.5rem", // Overlap the image
-                    marginBottom: "1.5rem",
-                    position: "relative",
-                    zIndex: 2,
-                    boxShadow: "0 4px 6px -1px rgba(0,0,0,0.1)",
-                    transition: "all 0.3s ease"
-                  }}
+                  className="w-16 h-16 rounded-2xl bg-white text-orange-600 flex items-center justify-center -mt-16 mb-6 relative z-10 shadow-xl shadow-black/5 transition-all duration-500 group-hover:bg-gradient-to-br group-hover:from-orange-500 group-hover:to-purple-600 group-hover:text-white group-hover:-translate-y-2 group-hover:shadow-purple-500/25"
                 >
                   {service.icon}
                 </div>
                 
-                <h3 style={{ 
-                  color: "#0f172a", 
-                  fontFamily: "Inter, sans-serif",
-                  fontSize: "1.25rem", 
-                  fontWeight: 800, 
-                  marginBottom: "1rem" 
-                }}>
+                <h3 className="text-slate-900 font-extrabold text-xl mb-3 font-sans transition-colors duration-300 group-hover:text-purple-700">
                   {service.title}
                 </h3>
                 
-                <p style={{ 
-                  color: "#475569", 
-                  fontSize: "0.95rem", 
-                  lineHeight: 1.6,
-                  flex: 1
-                }}>
+                <p className="text-slate-600 text-[0.95rem] leading-relaxed flex-1">
                   {service.description}
                 </p>
 
-                <div style={{ 
-                  marginTop: "1.5rem",
-                  color: "#2563eb", 
-                  fontSize: "0.9rem", 
-                  fontWeight: 600,
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "6px"
-                }}>
-                  Explore Service <ArrowRight size={14} />
+                <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between">
+                  <span className="text-slate-800 font-bold text-sm tracking-wide transition-colors duration-300 group-hover:text-purple-600">
+                    Explore Service
+                  </span>
+                  <span className="w-10 h-10 rounded-full bg-slate-50 text-slate-400 flex items-center justify-center transition-all duration-300 group-hover:bg-purple-100 group-hover:text-purple-600 group-hover:translate-x-1">
+                    <ArrowRight size={18} strokeWidth={2.5} />
+                  </span>
                 </div>
               </div>
             </Link>

@@ -54,11 +54,19 @@ export default function PlacementSection() {
             Our dedicated placement cell works tirelessly to connect you with top IT companies. We ensure you are fully prepared for the corporate world.
           </p>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "1rem", marginBottom: "2.5rem" }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
             {features.map((feature, i) => (
-              <div key={i} style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                <CheckCircle2 size={20} color="#2563eb" strokeWidth={2.5} />
-                <span style={{ color: "#334155", fontSize: "0.95rem", fontWeight: 600 }}>{feature}</span>
+              <div 
+                key={i} 
+                className="group relative bg-white/70 backdrop-blur-3xl border border-white/60 p-4 rounded-2xl flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-blue-200 overflow-hidden cursor-pointer"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300 relative z-10 shadow-sm group-hover:bg-blue-600 group-hover:text-white">
+                  <CheckCircle2 size={18} strokeWidth={2.5} />
+                </div>
+                <span className="text-slate-700 text-[0.9rem] font-extrabold relative z-10 transition-colors duration-300 group-hover:text-blue-700">
+                  {feature}
+                </span>
               </div>
             ))}
           </div>

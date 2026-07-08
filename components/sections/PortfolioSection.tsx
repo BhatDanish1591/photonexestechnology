@@ -95,56 +95,35 @@ export default function PortfolioSection() {
           {filtered.map((project) => (
             <div
               key={project.title}
-              style={{
-                borderRadius: "20px",
-                background: "#ffffff",
-                border: "1px solid #e2e8f0",
-                overflow: "hidden",
-                transition: "all 0.3s ease",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.borderColor = "rgba(124,58,237,0.35)";
-                (e.currentTarget as HTMLElement).style.transform = "translateY(-5px)";
-                (e.currentTarget as HTMLElement).style.boxShadow = "0 25px 50px rgba(0,0,0,0.4)";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.borderColor = "#e2e8f0";
-                (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
-                (e.currentTarget as HTMLElement).style.boxShadow = "none";
-              }}
+              className="group relative bg-white/70 backdrop-blur-3xl border border-white/60 rounded-3xl overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(124,58,237,0.25)] hover:border-purple-300/60 cursor-pointer"
             >
               {/* Project Banner */}
               <div
+                className="h-[180px] w-full relative flex items-center justify-center text-[4.5rem] transition-transform duration-700 group-hover:scale-105"
                 style={{
-                  height: "160px",
-                  background: "linear-gradient(135deg, rgba(37,99,235,0.15), rgba(124,58,237,0.2))",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "4rem",
-                  position: "relative",
+                  background: "linear-gradient(135deg, rgba(37,99,235,0.08), rgba(124,58,237,0.15))",
                 }}
               >
-                {project.icon}
+                <div className="absolute inset-0 bg-white/20 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <span className="relative z-10 drop-shadow-xl transition-transform duration-500 group-hover:-translate-y-2 group-hover:scale-110">{project.icon}</span>
                 <span
-                  className="badge badge-purple"
-                  style={{ position: "absolute", top: "1rem", right: "1rem" }}
+                  className="badge badge-purple absolute top-4 right-4 z-10 shadow-lg shadow-purple-500/20"
                 >
                   {project.category}
                 </span>
               </div>
 
               {/* Content */}
-              <div style={{ padding: "1.5rem" }}>
-                <h3 style={{ fontFamily: "Outfit, sans-serif", fontWeight: 700, color: "#0f172a", marginBottom: "0.5rem", fontSize: "1rem" }}>
+              <div className="p-6 relative bg-white/50 backdrop-blur-xl border-t border-white/60 flex flex-col h-full z-20">
+                <h3 className="font-sans font-extrabold text-slate-900 mb-2 text-lg transition-colors duration-300 group-hover:text-purple-700">
                   {project.title}
                 </h3>
-                <p style={{ color: "#64748b", fontSize: "0.825rem", lineHeight: 1.6, marginBottom: "1rem" }}>
+                <p className="text-slate-600 text-sm leading-relaxed mb-5">
                   {project.desc}
                 </p>
-                <div style={{ display: "flex", gap: "0.4rem", flexWrap: "wrap" }}>
+                <div className="flex gap-2 flex-wrap mt-auto">
                   {project.tech.map((t) => (
-                    <span key={t} className={`badge ${techColors[t] || "badge-blue"}`} style={{ fontSize: "0.68rem" }}>{t}</span>
+                    <span key={t} className={`badge ${techColors[t] || "badge-blue"} shadow-sm bg-white/80 backdrop-blur-sm border border-white/50`} style={{ fontSize: "0.7rem", padding: "0.25rem 0.6rem" }}>{t}</span>
                   ))}
                 </div>
               </div>

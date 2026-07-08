@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 import { FaReact, FaPython, FaAws, FaJava, FaFigma } from "react-icons/fa";
 import { SiFlutter } from "react-icons/si";
 import { BrainCircuit, ChevronDown, Clock, CheckCircle2, MonitorPlay } from "lucide-react";
@@ -130,171 +131,47 @@ export default function DetailedCourseList() {
   };
 
   return (
-    <section style={{ padding: "6rem 2rem", background: "#f8fafc" }}>
-      <div style={{ maxWidth: "1000px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "1.5rem" }}>
-        
-        {allCourses.map((course) => {
-          const isExpanded = expandedId === course.id;
-
-          return (
+    <section style={{ padding: "3rem 2rem 4rem", background: "#f8fafc" }}>
+      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {allCourses.map((course) => (
             <div 
               key={course.id}
-              style={{
-                background: "#ffffff",
-                border: "1px solid",
-                borderColor: isExpanded ? course.border : "#e2e8f0",
-                borderRadius: "16px",
-                overflow: "hidden",
-                transition: "all 0.3s ease",
-                boxShadow: isExpanded ? "0 20px 25px -5px rgba(0, 0, 0, 0.1)" : "0 4px 6px -1px rgba(0, 0, 0, 0.05)"
-              }}
+              className="group relative bg-white/70 backdrop-blur-3xl border border-white/60 p-8 rounded-3xl flex flex-col overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-2 hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] hover:border-slate-300/50"
             >
-              {/* Header (Clickable) */}
+              {/* Glowing Background Ring */}
               <div 
-                onClick={() => toggleCourse(course.id)}
-                style={{
-                  padding: "2rem",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  cursor: "pointer",
-                  gap: "2rem"
-                }}
-              >
-                <div style={{ display: "flex", alignItems: "center", gap: "1.5rem", flex: 1 }}>
-                  <div style={{ 
-                    width: "60px", 
-                    height: "60px", 
-                    borderRadius: "12px", 
-                    background: course.color,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    flexShrink: 0
-                  }}>
-                    {course.icon}
-                  </div>
-                  <div>
-                    <h3 style={{ 
-                      fontSize: "1.25rem", 
-                      fontWeight: 800, 
-                      color: "#0f172a", 
-                      marginBottom: "0.25rem",
-                      fontFamily: "Inter, sans-serif"
-                    }}>
-                      {course.name}
-                    </h3>
-                    <p style={{ color: "#475569", fontSize: "0.95rem", margin: 0 }}>
-                      {course.shortDesc}
-                    </p>
-                  </div>
+                className="absolute -top-12 -right-12 w-48 h-48 rounded-full blur-[60px] opacity-0 group-hover:opacity-40 transition-opacity duration-700 pointer-events-none" 
+                style={{ background: course.border }} 
+              />
+              
+              <div className="flex justify-between items-start mb-6 relative z-10">
+                <div 
+                  className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-sm transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3"
+                  style={{ background: course.color }}
+                >
+                  {course.icon}
                 </div>
-
-                <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
-                  <div style={{ textAlign: "right", display: "none" }} className="md-flex-block">
-                    {/* These labels are hidden on mobile to save space, but we'll show them on desktop */}
-                    <div style={{ color: "#64748b", fontSize: "0.85rem", fontWeight: 600, display: "flex", alignItems: "center", gap: "4px", justifyContent: "flex-end" }}>
-                      <Clock size={14} /> {course.duration}
-                    </div>
-                  </div>
-                  <div style={{
-                    width: "40px",
-                    height: "40px",
-                    borderRadius: "50%",
-                    background: isExpanded ? course.color : "#f1f5f9",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: isExpanded ? "#000" : "#64748b",
-                    transition: "transform 0.3s ease",
-                    transform: isExpanded ? "rotate(180deg)" : "rotate(0deg)"
-                  }}>
-                    <ChevronDown size={20} />
-                  </div>
+                <div className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-100/80 backdrop-blur-sm text-slate-600 border border-slate-200 rounded-full text-xs font-bold tracking-wide">
+                  <Clock size={14} /> {course.duration}
                 </div>
               </div>
 
-              {/* Expandable Content */}
-              <div style={{ 
-                height: isExpanded ? "auto" : 0, 
-                opacity: isExpanded ? 1 : 0, 
-                overflow: "hidden",
-                transition: "all 0.3s ease"
-              }}>
-                <div style={{ 
-                  padding: "0 2rem 2rem", 
-                  borderTop: "1px solid #e2e8f0",
-                  marginTop: "1rem",
-                  paddingTop: "2rem" 
-                }}>
-                  
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: "3rem" }}>
-                    
-                    {/* Left Column: Description */}
-                    <div style={{ flex: "1 1 400px" }}>
-                      <h4 style={{ color: "#0f172a", fontSize: "1.1rem", fontWeight: 700, marginBottom: "1rem" }}>
-                        Course Overview
-                      </h4>
-                      <p style={{ color: "#475569", lineHeight: 1.7, fontSize: "1rem", marginBottom: "1.5rem" }}>
-                        {course.longDesc}
-                      </p>
-                      
-                      <div style={{ display: "flex", gap: "2rem", marginBottom: "2rem" }}>
-                        <div>
-                          <div style={{ color: "#64748b", fontSize: "0.85rem", fontWeight: 600, marginBottom: "4px" }}>Duration</div>
-                          <div style={{ color: "#0f172a", fontWeight: 700 }}>{course.duration}</div>
-                        </div>
-                        <div>
-                          <div style={{ color: "#64748b", fontSize: "0.85rem", fontWeight: 600, marginBottom: "4px" }}>Difficulty Level</div>
-                          <div style={{ color: "#0f172a", fontWeight: 700 }}>{course.level}</div>
-                        </div>
-                      </div>
-
-                      <button style={{
-                        background: "#ea580c",
-                        color: "#ffffff",
-                        border: "none",
-                        padding: "0.8rem 2rem",
-                        borderRadius: "6px",
-                        fontSize: "0.95rem",
-                        fontWeight: 600,
-                        cursor: "pointer",
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: "8px",
-                        transition: "background 0.2s"
-                      }}
-                      onMouseEnter={(e) => (e.currentTarget.style.background = "#c2410c")}
-                      onMouseLeave={(e) => (e.currentTarget.style.background = "#ea580c")}
-                      >
-                        Enroll Now
-                      </button>
-                    </div>
-
-                    {/* Right Column: Curriculum */}
-                    <div style={{ flex: "1 1 300px", background: "#f8fafc", padding: "1.5rem", borderRadius: "12px" }}>
-                      <h4 style={{ color: "#0f172a", fontSize: "1.1rem", fontWeight: 700, marginBottom: "1rem", display: "flex", alignItems: "center", gap: "8px" }}>
-                        <MonitorPlay size={18} color="#2563eb" />
-                        Curriculum Highlights
-                      </h4>
-                      <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-                        {course.curriculum.map((item, i) => (
-                          <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: "8px" }}>
-                            <CheckCircle2 size={16} color="#2563eb" style={{ marginTop: "4px", flexShrink: 0 }} />
-                            <span style={{ color: "#475569", fontSize: "0.95rem", lineHeight: 1.5 }}>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                  </div>
-
-                </div>
-              </div>
+              <h3 className="text-xl font-extrabold text-slate-900 mb-3 font-sans transition-colors duration-300 group-hover:text-slate-800 relative z-10">
+                {course.name}
+              </h3>
+              
+              <p className="text-slate-600 text-[0.95rem] leading-relaxed mb-8 flex-1 relative z-10">
+                {course.shortDesc}
+              </p>
+              
+              <Link href="/contact" className="group/btn w-full relative overflow-hidden bg-slate-900 text-white border-none py-3.5 rounded-xl text-[0.95rem] font-bold cursor-pointer flex items-center justify-center shadow-lg shadow-slate-900/20 transition-transform duration-300 hover:-translate-y-1 relative z-10" style={{ textDecoration: 'none' }}>
+                <span className="relative z-10">Enroll Now</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-purple-600 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
+              </Link>
             </div>
-          );
-        })}
-
+          ))}
+        </div>
       </div>
     </section>
   );
