@@ -71,7 +71,7 @@ export default function PlacementSection() {
             ))}
           </div>
 
-          <Link href="/placement" style={{
+          <Link href="/contact" style={{
             background: "#ea580c",
             color: "#ffffff",
             padding: "0.9rem 2.5rem", // Standardized button padding

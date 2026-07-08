@@ -91,6 +91,7 @@ export default function Footer() {
                 { label: "Services", href: "/services" },
                 { label: "Industries", href: "/industries" },
                 { label: "Courses", href: "/courses" },
+                { label: "Placement", href: "/placement" },
                 { label: "Portfolio", href: "/portfolio" },
                 { label: "Contact Us", href: "/contact" }
               ].map((link) => (

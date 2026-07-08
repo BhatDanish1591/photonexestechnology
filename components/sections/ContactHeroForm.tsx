@@ -1,9 +1,56 @@
 "use client";
-import { ArrowDown, ArrowRight, ShieldCheck, Award } from "lucide-react";
+import { useState } from "react";
+import { ArrowDown, ArrowRight, CheckCircle2, AlertCircle } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function ContactHeroForm() {
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    email: "",
+    phone: "",
+    message: ""
+  });
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
   const scrollToNext = () => {
     window.scrollBy({ top: window.innerHeight * 0.8, behavior: 'smooth' });
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+    
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/hcda129@gmail.com", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify({
+            ...formData,
+            _subject: "New Contact Form Submission - Photonexes",
+            _template: "table"
+        })
+      });
+      
+      if (response.ok) {
+        setStatus("success");
+        setFormData({ name: '', company: '', email: '', phone: '', message: '' });
+        setTimeout(() => setStatus("idle"), 6000);
+      } else {
+        setStatus("error");
+        setTimeout(() => setStatus("idle"), 6000);
+      }
+    } catch (error) {
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 6000);
+    }
   };
 
   return (
@@ -14,6 +61,32 @@ export default function ContactHeroForm() {
       paddingBottom: "5rem",
       overflow: "hidden"
     }}>
+      {/* Success/Error Popup */}
+      <AnimatePresence>
+        {status === "success" && (
+          <motion.div 
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            className="fixed top-24 left-1/2 -translate-x-1/2 z-[9999] bg-emerald-500 text-white px-6 py-4 rounded-xl shadow-2xl flex items-center gap-3 font-bold"
+          >
+            <CheckCircle2 size={24} />
+            Message Submitted Successfully!
+          </motion.div>
+        )}
+        {status === "error" && (
+          <motion.div 
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            className="fixed top-24 left-1/2 -translate-x-1/2 z-[9999] bg-red-500 text-white px-6 py-4 rounded-xl shadow-2xl flex items-center gap-3 font-bold"
+          >
+            <AlertCircle size={24} />
+            Something went wrong. Please try again.
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <div className="max-w-[1400px] mx-auto px-4 sm:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         
         {/* Left Side: Content */}
@@ -29,33 +102,41 @@ export default function ContactHeroForm() {
 
         {/* Right Side: Form */}
         <div className="w-full relative z-10">
-          <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4 relative">
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <input 
                 type="text" 
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
                 placeholder="Name*" 
                 required
-                className="w-full px-5 py-4 bg-white border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-400 text-gray-700 font-medium placeholder-gray-400 shadow-sm"
+                className="w-full px-5 py-4 bg-white border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-400 text-gray-700 font-medium placeholder-gray-400 shadow-sm transition-shadow"
               />
               <input 
                 type="text" 
+                name="company"
+                value={formData.company}
+                onChange={handleChange}
                 placeholder="Company Name*" 
                 required
-                className="w-full px-5 py-4 bg-white border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-400 text-gray-700 font-medium placeholder-gray-400 shadow-sm"
+                className="w-full px-5 py-4 bg-white border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-400 text-gray-700 font-medium placeholder-gray-400 shadow-sm transition-shadow"
               />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <input 
                 type="email" 
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
                 placeholder="Email*" 
                 required
-                className="w-full px-5 py-4 bg-white border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-400 text-gray-700 font-medium placeholder-gray-400 shadow-sm"
+                className="w-full px-5 py-4 bg-white border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-400 text-gray-700 font-medium placeholder-gray-400 shadow-sm transition-shadow"
               />
               
               <div className="relative flex">
-                {/* Custom India Flag Dropdown mock */}
                 <div className="absolute left-0 top-0 bottom-0 flex items-center justify-center px-4 bg-gray-50 border-r border-gray-100 rounded-l-xl z-10">
                   <span className="mr-2 text-lg">🇮🇳</span>
                   <span className="text-gray-600 font-semibold text-sm">+91</span>
@@ -63,28 +144,36 @@ export default function ContactHeroForm() {
                 </div>
                 <input 
                   type="tel" 
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
                   placeholder="Phone Number*" 
                   required
-                  className="w-full pl-[110px] pr-5 py-4 bg-white border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-400 text-gray-700 font-medium placeholder-gray-400 shadow-sm"
+                  className="w-full pl-[110px] pr-5 py-4 bg-white border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-400 text-gray-700 font-medium placeholder-gray-400 shadow-sm transition-shadow"
                 />
               </div>
             </div>
 
             <div>
               <textarea 
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 placeholder="How Can We Help?*" 
                 rows={5}
                 required
-                className="w-full px-5 py-4 bg-white border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-400 text-gray-700 font-medium placeholder-gray-400 shadow-sm resize-none"
+                className="w-full px-5 py-4 bg-white border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-400 text-gray-700 font-medium placeholder-gray-400 shadow-sm resize-none transition-shadow"
               ></textarea>
             </div>
 
-            <div>
+            <div className="flex justify-center mt-6">
               <button 
                 type="submit" 
-                className="inline-flex items-center gap-3 px-8 py-4 bg-[#312e81] text-white font-bold rounded-lg shadow-lg hover:bg-[#1e1b4b] transition-colors uppercase tracking-wide text-sm"
+                disabled={status === "loading"}
+                className="inline-flex items-center justify-center gap-3 px-10 py-4 bg-[#312e81] text-white font-bold rounded-lg shadow-lg hover:bg-[#1e1b4b] transition-all uppercase tracking-wide text-sm disabled:opacity-70 disabled:cursor-not-allowed w-full sm:w-auto min-w-[250px]"
               >
-                Submit Message <ArrowRight size={18} strokeWidth={2.5} />
+                {status === "loading" ? "Sending..." : "Submit Message"}
+                {!status.includes("loading") && <ArrowRight size={18} strokeWidth={2.5} />}
               </button>
             </div>
             
