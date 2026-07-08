@@ -64,13 +64,7 @@ export default function ContactHeroForm() {
   };
 
   return (
-    <section style={{ 
-      position: "relative", 
-      background: "#f2f6f5", 
-      paddingTop: "10rem",
-      paddingBottom: "5rem",
-      overflow: "hidden"
-    }}>
+    <section className="relative bg-[#f2f6f5] pt-[10rem] pb-[10rem] md:pb-[5rem] overflow-hidden">
       {/* Success/Error Popup */}
       <AnimatePresence>
         {status === "success" && (
