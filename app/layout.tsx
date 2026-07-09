@@ -48,6 +48,9 @@ export const metadata: Metadata = {
       "India's premier IT software company and training institute.",
     images: ["/logo.png"],
   },
+  icons: {
+    icon: '/logo.png',
+  },
   robots: {
     index: true,
     follow: true,
