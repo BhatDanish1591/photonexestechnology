@@ -65,30 +65,7 @@ export default function LegalPage() {
       {/* Hero Section */}
       <div className="relative pt-[10rem] pb-12 px-4 md:px-8 max-w-[1200px] mx-auto z-10 flex flex-col items-center text-center">
         
-        <motion.h1 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-5xl md:text-7xl font-extrabold text-slate-900 mb-6 tracking-tight"
-        >
-          Legal <motion.span 
-            animate={{ 
-              color: activeTab === "privacy" ? "#c026d3" : "#ea580c" 
-            }}
-            className="transition-colors duration-500"
-          >
-            Center
-          </motion.span>
-        </motion.h1>
-        
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-lg md:text-xl text-slate-500 max-w-2xl leading-relaxed mb-12 font-medium"
-        >
-          Everything you need to know about our policies, terms, and how we protect your data, built with transparency.
-        </motion.p>
+
 
         {/* Flow Tabs */}
         <motion.div 
