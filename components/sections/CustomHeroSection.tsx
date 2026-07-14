@@ -33,7 +33,7 @@ export default function CustomHeroSection({
     }}>
       <div className="max-w-[1400px] mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
         {/* Content */}
-        <div className="lg:pr-8 text-left -mt-10 lg:-mt-24">
+        <div className="lg:pr-8 text-left pt-2 lg:pt-4">
 
           <ScrollReveal animation="fadeRight" delay={100}>
             <h1 className="font-extrabold text-[clamp(2.2rem,4vw,3.8rem)] leading-[1.05] mb-6 tracking-tight">
