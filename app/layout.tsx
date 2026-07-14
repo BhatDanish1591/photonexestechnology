@@ -57,6 +57,7 @@ export const metadata: Metadata = {
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ChatBot from "@/components/ChatBot";
 
 export default function RootLayout({
   children,
@@ -93,7 +94,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className="antialiased">
+      <body className="antialiased relative">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -101,6 +102,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <ChatBot />
       </body>
     </html>
   );

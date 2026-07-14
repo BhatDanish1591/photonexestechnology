@@ -104,7 +104,7 @@ export default function HeroSection() {
           {/* Floating UI Elements */}
           <div className="absolute bottom-[10%] left-0 lg:-left-[10%] bg-white border border-slate-200 p-5 rounded-xl flex items-center gap-4 shadow-xl animate-[float_5s_ease-in-out_infinite]">
             <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center">
-              <span className="text-blue-600 font-extrabold text-xl">5+</span>
+              <span className="text-blue-600 font-extrabold text-xl pl-1">5+</span>
             </div>
             <div>
               <div className="text-slate-900 font-extrabold text-lg">Years Experience</div>
