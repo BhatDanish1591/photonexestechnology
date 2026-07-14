@@ -35,7 +35,6 @@ export default function CustomHeroSection({
         {/* Content */}
         <div className="lg:pr-8 text-left pt-2 lg:pt-4">
 
-          <ScrollReveal animation="fadeRight" delay={100}>
             <h1 className="font-extrabold text-[clamp(2.2rem,4vw,3.8rem)] leading-[1.05] mb-6 tracking-tight">
               <span className="text-slate-900">{firstPart}</span>{" "}
               {lastWord && (
@@ -44,13 +43,10 @@ export default function CustomHeroSection({
                 </span>
               )}
             </h1>
-          </ScrollReveal>
           
-          <ScrollReveal animation="fadeUp" delay={200}>
             <p className="text-slate-600 text-[1.1rem] leading-[1.7] font-medium border-l-4 border-teal-400 pl-6 py-1 bg-gradient-to-r from-slate-50 to-transparent">
               {description}
             </p>
-          </ScrollReveal>
         </div>
 
         {/* Image */}

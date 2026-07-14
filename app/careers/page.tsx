@@ -36,7 +36,7 @@ const jobs = [
 
 export default function CareersPage() {
   return (
-    <main className="bg-slate-50 min-h-screen">
+    <main>
       <CustomHeroSection 
         title="Join Our Team" 
         description="Build your career with a team of passionate innovators. We're always looking for talented individuals to join our mission."

@@ -12,7 +12,7 @@ const projects = [
 
 export default function PortfolioPage() {
   return (
-    <main className="bg-slate-50 min-h-screen">
+    <main>
       <CustomHeroSection 
         title="Our Success Stories" 
         description="Explore our portfolio of successful digital transformations. See how we've helped businesses achieve their goals."

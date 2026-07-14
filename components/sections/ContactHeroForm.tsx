@@ -50,13 +50,15 @@ export default function ContactHeroForm() {
       if (response.ok) {
         setStatus("success");
         setFormData({ name: '', company: '', email: '', phone: '', message: '' });
-        // Optional: reset recaptcha using a ref here if desired
         setTimeout(() => setStatus("idle"), 6000);
       } else {
+        const errorData = await response.json().catch(() => null);
+        console.error("Web3Forms API Error:", response.status, errorData);
         setStatus("error");
         setTimeout(() => setStatus("idle"), 6000);
       }
     } catch (error) {
+      console.error("Web3Forms Network Error:", error);
       setStatus("error");
       setTimeout(() => setStatus("idle"), 6000);
     }

@@ -61,7 +61,7 @@ const blogs = [
 
 export default function BlogPage() {
   return (
-    <main className="bg-slate-50 min-h-screen">
+    <main>
       <CustomHeroSection 
         title="Insights & News" 
         description="Read the latest updates, tutorials, and insights from our team of tech experts."
