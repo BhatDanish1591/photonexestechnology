@@ -1,29 +1,7 @@
 "use client";
 import CustomHeroSection from "@/components/sections/CustomHeroSection";
 
-const jobs = [
-  {
-    title: "Senior Full Stack Developer",
-    department: "Engineering",
-    type: "Full-Time",
-    location: "Remote / On-site",
-    description: "Looking for an experienced MERN stack developer to lead enterprise projects."
-  },
-  {
-    title: "UI/UX Designer",
-    department: "Design",
-    type: "Full-Time",
-    location: "On-site",
-    description: "Creative designer needed with strong experience in Figma and user-centric design principles."
-  },
-  {
-    title: "Digital Marketing Specialist",
-    department: "Marketing",
-    type: "Full-Time",
-    location: "Remote",
-    description: "Expert in SEO, SEM, and social media campaigns to drive our digital footprint."
-  }
-];
+const jobs: any[] = [];
 
 export default function CareersPage() {
   return (
