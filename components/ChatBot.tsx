@@ -44,21 +44,20 @@ export default function ChatBot() {
 
   const submitLead = async (finalData: typeof formData) => {
     try {
-      const response = await fetch("https://formsubmit.co/ajax/hcda129@gmail.com", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
             "Accept": "application/json"
         },
         body: JSON.stringify({
+            access_key: "3bf0b3cf-d842-42eb-9543-05030f042a6c",
             name: finalData.name,
             company: "Chatbot Lead",
             email: finalData.email,
             phone: finalData.phone,
             message: finalData.message,
-            _subject: "New ChatBot Lead - Photonexes",
-            _template: "table",
-            _captcha: "false"
+            subject: "New ChatBot Lead - Photonexes"
         })
       });
       console.log("Email Status:", response.status);

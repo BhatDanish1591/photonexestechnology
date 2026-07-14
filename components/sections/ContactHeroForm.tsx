@@ -34,17 +34,16 @@ export default function ContactHeroForm() {
     setStatus("loading");
     
     try {
-      const response = await fetch("https://formsubmit.co/ajax/hcda129@gmail.com", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
             "Accept": "application/json"
         },
         body: JSON.stringify({
+            access_key: "3bf0b3cf-d842-42eb-9543-05030f042a6c",
             ...formData,
-            _subject: "New Contact Form Submission - Photonexes",
-            _template: "table",
-            _captcha: "false" // Disable FormSubmit's native redirect CAPTCHA because we use AJAX
+            subject: "New Contact Form Submission - Photonexes"
         })
       });
       
