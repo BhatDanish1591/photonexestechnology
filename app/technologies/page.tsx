@@ -63,19 +63,27 @@ export default function TechnologiesPage() {
         imageSrc="/heroes/hero_technologies_1783476359581.png"
         nextSectionColor="#ffffff"
       />
-      <section style={{ padding: "6rem 2rem", background: "#f8fafc", minHeight: "60vh" }}>
+      <section style={{ padding: "3rem 2rem", background: "#ffffff", minHeight: "60vh" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           
-          <div style={{ textAlign: "center", marginBottom: "4rem" }}>
-            <h2 style={{ fontFamily: "Inter, sans-serif", fontSize: "2.5rem", fontWeight: 700, color: "#0f172a", marginBottom: "1rem" }}>
-              Empowering Innovation with Modern Tech
+          {/* Editorial Left-Aligned Header */}
+          <div className="max-w-4xl mb-8">
+            <div className="w-20 h-1.5 bg-[#ea580c] mb-6 rounded-full"></div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-6 tracking-tight leading-[1.1]">
+              Empowering Innovation with <br className="hidden md:block" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2dd4bf] to-[#0284c7]">
+                Modern Tech
+              </span>
             </h2>
-            <p style={{ color: "#475569", fontSize: "1rem", maxWidth: "700px", margin: "0 auto" }}>
-              Our expert developers stay ahead of the curve, utilizing a diverse range of programming languages, frameworks, and tools to deliver enterprise-grade software.
-            </p>
+            
+            <div className="relative pl-6 md:pl-8 border-l-4 border-[#2dd4bf] py-4 bg-gradient-to-r from-teal-50/60 to-transparent rounded-r-2xl mt-6">
+              <p className="text-lg md:text-xl text-slate-700 leading-relaxed">
+                Our expert developers stay ahead of the curve, utilizing a diverse range of programming languages, frameworks, and tools to deliver enterprise-grade software.
+              </p>
+            </div>
           </div>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "5rem" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "3rem" }}>
             {techCategories.map((group, i) => (
               <div key={i}>
                 <h3 style={{ 
@@ -95,65 +103,23 @@ export default function TechnologiesPage() {
                   gap: "2rem" 
                 }}>
                   {group.technologies.map((tech, j) => (
-                    <div key={j} style={{
-                      background: "linear-gradient(135deg, #ffffff 0%, #fff7ed 100%)",
-                      border: "1px solid #fed7aa",
-                      borderBottom: "3px solid transparent",
-                      borderRadius: "16px",
-                      padding: "2rem",
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "flex-start",
-                      gap: "1.25rem",
-                      boxShadow: "0 4px 6px -1px rgba(234, 88, 12, 0.05)",
-                      transition: "all 0.3s ease",
-                      cursor: "pointer"
-                    }}
-                    onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLElement).style.transform = "translateY(-5px)";
-                      (e.currentTarget as HTMLElement).style.boxShadow = "0 15px 30px -5px rgba(234, 88, 12, 0.15)";
-                      (e.currentTarget as HTMLElement).style.borderBottom = "3px solid #ea580c";
-                      (e.currentTarget as HTMLElement).style.background = "linear-gradient(135deg, #ffffff 0%, #ffedd5 100%)";
-                    }}
-                    onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
-                      (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 6px -1px rgba(234, 88, 12, 0.05)";
-                      (e.currentTarget as HTMLElement).style.borderBottom = "3px solid transparent";
-                      (e.currentTarget as HTMLElement).style.background = "linear-gradient(135deg, #ffffff 0%, #fff7ed 100%)";
-                    }}
+                    <div 
+                      key={j} 
+                      className="group bg-[#f4f7f9] rounded-[24px] p-8 flex flex-col h-full transition-all duration-300 hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-transparent hover:border-slate-100"
                     >
-                      <div style={{ 
-                        display: "flex", 
-                        alignItems: "center",
-                        gap: "1rem"
-                      }}>
-                        <div style={{
-                          background: "#f8fafc",
-                          padding: "0.75rem",
-                          borderRadius: "12px",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          border: "1px solid #f1f5f9"
-                        }}>
-                          {tech.icon}
+                      {/* Header: Icon + Title horizontally aligned */}
+                      <div className="flex items-center gap-5 mb-6">
+                        {/* Icon Box with white background and soft shadow */}
+                        <div className="w-16 h-16 rounded-2xl bg-white shadow-[0_8px_24px_rgb(0,0,0,0.05)] flex items-center justify-center flex-shrink-0 group-hover:shadow-[0_8px_24px_rgb(0,0,0,0.09)] transition-all duration-300">
+                          <div className="group-hover:scale-110 transition-transform duration-300">
+                            {tech.icon}
+                          </div>
                         </div>
-                        <h4 style={{ 
-                          color: "#0f172a", 
-                          fontWeight: 700, 
-                          fontSize: "1.2rem",
-                          margin: 0
-                        }}>
-                          {tech.name}
-                        </h4>
+                        <h4 className="text-2xl font-black text-slate-900 tracking-tight">{tech.name}</h4>
                       </div>
-                      
-                      <p style={{
-                        color: "#64748b",
-                        fontSize: "0.95rem",
-                        lineHeight: 1.6,
-                        margin: 0
-                      }}>
+
+                      {/* Description text */}
+                      <p className="text-[#5f6c7b] text-[1.05rem] leading-relaxed flex-1">
                         {tech.desc}
                       </p>
                     </div>

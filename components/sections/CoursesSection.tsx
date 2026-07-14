@@ -146,7 +146,7 @@ export default function CoursesSection() {
             <ScrollReveal key={idx} animation="fadeUp" delay={idx * 100} threshold={0.1}>
             <Link 
               href="/courses"
-              className="group relative flex flex-col justify-between min-h-[260px] bg-white/70 backdrop-blur-3xl border border-white/60 rounded-3xl p-8 overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] no-underline cursor-pointer"
+                className="neu-card group relative flex flex-col justify-between min-h-[260px] p-8 overflow-hidden no-underline cursor-pointer"
               style={{
                 borderBottom: `4px solid ${course.border}`
               }}

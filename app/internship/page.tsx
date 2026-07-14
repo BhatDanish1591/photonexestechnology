@@ -48,7 +48,7 @@ export default function InternshipApplicationPage() {
   ];
 
   return (
-    <main className="relative min-h-screen bg-slate-50 overflow-hidden pt-[100px] md:pt-[130px] pb-24 selection:bg-purple-500/30">
+    <main className="relative min-h-screen bg-transparent overflow-hidden pt-[100px] md:pt-[130px] pb-24 selection:bg-purple-500/30">
       
       {/* Fluid Background Animation */}
       <motion.div 

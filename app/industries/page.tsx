@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function IndustriesPage() {
   return (
-    <main style={{ minHeight: "100vh", background: "#f8fafc" }}>
+    <main style={{ minHeight: "100vh", background: "transparent" }}>
       <CustomHeroSection 
         title="Industries We Serve" 
         description="We provide tailored, enterprise-grade software solutions across a wide range of global industries. We have the domain expertise to scale your business."

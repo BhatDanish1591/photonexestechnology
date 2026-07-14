@@ -131,7 +131,7 @@ export default function DetailedCourseList() {
   };
 
   return (
-    <section style={{ padding: "3rem 2rem 4rem", background: "#f8fafc" }}>
+    <section style={{ padding: "3rem 2rem 4rem", background: "transparent" }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {allCourses.map((course) => (

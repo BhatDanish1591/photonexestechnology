@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import ScrollReveal from "@/components/ScrollReveal";
 import HeroSection from "@/components/sections/HeroSection";
 import CoursesSection from "@/components/sections/CoursesSection";
-import AboutSection from "@/components/sections/AboutSection";
 import ServicesGridSection from "@/components/sections/ServicesGridSection";
 import IndustriesSection from "@/components/sections/IndustriesSection";
 import InternshipSection from "@/components/sections/InternshipSection";
@@ -12,6 +11,11 @@ import StatsBannerSection from "@/components/sections/StatsBannerSection";
 import ClientsSection from "@/components/sections/ClientsSection";
 import BlogSection from "@/components/sections/BlogSection";
 import ContactSection from "@/components/sections/ContactSection";
+import GlobalCTASection from "@/components/sections/GlobalCTASection";
+
+import BestCompanySection from "@/components/sections/BestCompanySection";
+
+import FeaturesBannerSection from "@/components/sections/FeaturesBannerSection";
 
 export const metadata: Metadata = {
   title: "Photonexes Technologies",
@@ -23,36 +27,12 @@ export default function HomePage() {
   return (
     <main>
       <HeroSection />
+      <BestCompanySection />
       <ScrollReveal>
         <ServicesGridSection />
       </ScrollReveal>
-      <ScrollReveal>
-        <IndustriesSection />
-      </ScrollReveal>
-      <ScrollReveal>
-        <CoursesSection />
-      </ScrollReveal>
-      <ScrollReveal>
-        <AboutSection />
-      </ScrollReveal>
-      <ScrollReveal>
-        <InternshipSection />
-      </ScrollReveal>
-      <ScrollReveal>
-        <PlacementSection />
-      </ScrollReveal>
-      <ScrollReveal>
-        <StatsBannerSection />
-      </ScrollReveal>
-      <ScrollReveal>
-        <ClientsSection />
-      </ScrollReveal>
-      <ScrollReveal>
-        <BlogSection />
-      </ScrollReveal>
-      <ScrollReveal>
-        <ContactSection />
-      </ScrollReveal>
+      <GlobalCTASection />
+      <FeaturesBannerSection />
     </main>
   );
 }

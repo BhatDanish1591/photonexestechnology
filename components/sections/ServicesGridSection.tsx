@@ -1,170 +1,123 @@
 "use client";
 import Link from "next/link";
 import { 
-  Code2, Globe, ShoppingCart, Factory, Smartphone, Palette, 
-  Cloud, BrainCircuit, ShieldCheck, TrendingUp, Settings, Plug,
-  ArrowRight
+  Globe, Smartphone, Monitor, Layers, 
+  Megaphone, Palette, ShieldCheck, Cloud 
 } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const services = [
-  { 
-    title: "Enterprise Software", 
-    icon: <Code2 size={24} strokeWidth={2} />,
-    image: "/services/enterprise_software.png",
-    description: "Tailored software solutions designed to meet your specific business requirements and accelerate growth."
+  {
+    title: "Web Development",
+    slug: "web-development",
+    icon: <Globe size={32} strokeWidth={1.5} />,
+    desc: "Building and maintaining responsive websites to ensure functionality and a good user experience.",
   },
-  { 
-    title: "Web Development", 
-    icon: <Globe size={24} strokeWidth={2} />,
-    image: "/services/web_development.png",
-    description: "High-performance, responsive websites and web applications built with modern frameworks."
+  {
+    title: "Mobile Development",
+    slug: "mobile-development",
+    icon: <Smartphone size={32} strokeWidth={1.5} />,
+    desc: "Developing applications for mobile devices focused on performance and user experience.",
   },
-  { 
-    title: "Mobile App Solutions", 
-    icon: <Smartphone size={24} strokeWidth={2} />,
-    image: "/services/mobile_app.png",
-    description: "Native and cross-platform mobile applications for iOS and Android devices."
+  {
+    title: "Software Development",
+    slug: "software-development",
+    icon: <Monitor size={32} strokeWidth={1.5} />,
+    desc: "Creating and maintaining software through programming, testing, debugging, and bug fixing.",
   },
-  { 
-    title: "UI/UX Design", 
-    icon: <Palette size={24} strokeWidth={2} />,
-    image: "/services/ui_ux_design.png",
-    description: "User-centric interface designs that deliver intuitive and engaging digital experiences."
+  {
+    title: "Stack Development",
+    slug: "stack-development",
+    icon: <Layers size={32} strokeWidth={1.5} />,
+    desc: "Building complete tech stacks from front-end to back-end to support complex application architectures.",
   },
-  { 
-    title: "FIN-TECH Development", 
-    icon: <TrendingUp size={24} strokeWidth={2} />,
-    image: "/services/fin_tech.png",
-    description: "Secure, scalable financial technology solutions including payment gateways and banking software."
+  {
+    title: "Digital Marketing",
+    slug: "digital-marketing",
+    icon: <Megaphone size={32} strokeWidth={1.5} />,
+    desc: "Boosting brand awareness and growth through innovative online marketing strategies and audience engagement.",
   },
-  { 
-    title: "IOT Development", 
-    icon: <Plug size={24} strokeWidth={2} />,
-    image: "/services/iot_development.png",
-    description: "Connected device solutions that gather insights and automate operations securely."
+  {
+    title: "UI UX Design",
+    slug: "ui-ux-design",
+    icon: <Palette size={32} strokeWidth={1.5} />,
+    desc: "Crafting intuitive and visually appealing designs to enhance user experience and satisfaction.",
+  },
+  {
+    title: "Cyber Security",
+    slug: "cyber-security",
+    icon: <ShieldCheck size={32} strokeWidth={1.5} />,
+    desc: "Protecting digital assets and systems from unauthorized access, attacks, and data breaches.",
+  },
+  {
+    title: "Cloud Computing",
+    slug: "cloud-computing",
+    icon: <Cloud size={32} strokeWidth={1.5} />,
+    desc: "Storing and accessing data and applications over the internet instead of local servers.",
   },
 ];
 
 export default function ServicesGridSection() {
   return (
-    <section 
-      id="services" 
-      style={{ 
-        padding: "3rem 2rem",
-        background: "#ffffff",
-        position: "relative",
-      }}
-    >
-      <div style={{ maxWidth: "1400px", margin: "0 auto" }}>
+    <section id="services" className="py-12 lg:py-16 bg-transparent relative z-10">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Left-aligned Split Header */}
+        {/* Two-Column Header */}
         <ScrollReveal animation="fadeUp">
-        <div style={{ 
-          display: "flex", 
-          justifyContent: "space-between",
-          alignItems: "flex-end",
-          flexWrap: "wrap",
-          gap: "2rem",
-          marginBottom: "4rem",
-          borderBottom: "1px solid #e2e8f0",
-          paddingBottom: "3rem"
-        }}>
-          {/* Left: Heading */}
-          <div style={{ flex: "1 1 400px" }}>
-            <div style={{
-              width: "48px",
-              height: "4px",
-              background: "#ea580c",
-              borderRadius: "2px",
-              marginBottom: "1.5rem"
-            }} />
-            <h2 style={{
-              fontFamily: "Inter, sans-serif",
-              fontSize: "clamp(2rem, 4vw, 3rem)",
-              fontWeight: 800,
-              color: "#0f172a",
-              lineHeight: 1.2,
-              margin: 0
-            }}>
-              Transforming Ideas Into <br/>
-              <span style={{ color: "#ea580c" }}>Digital Reality</span>
-            </h2>
+          <div className="mb-16 lg:mb-20 border-b border-slate-200 pb-12 lg:pb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-8 lg:gap-20 items-end">
+              <div>
+                <div className="w-12 h-1 bg-[#ea580c] mb-6 lg:mb-8 rounded-full"></div>
+                <h2 className="text-4xl md:text-5xl lg:text-[3.25rem] font-black text-slate-900 leading-[1.15] tracking-tight">
+                  Transforming Ideas Into <br className="hidden md:block" />
+                  <span className="text-[#ea580c]">Digital Reality</span>
+                </h2>
+              </div>
+              <div className="lg:pb-2">
+                <p className="text-slate-600 text-[1.1rem] md:text-lg leading-[1.8] font-medium">
+                  We provide end-to-end technology solutions tailored to your business needs, ensuring scalability, security, and exceptional user experiences.
+                </p>
+              </div>
+            </div>
           </div>
-
-          {/* Right: Description + CTA */}
-          <div style={{ flex: "1 1 380px", maxWidth: "480px" }}>
-            <p style={{
-              color: "#475569",
-              fontSize: "1.05rem",
-              lineHeight: 1.7,
-              margin: "0 0 1.5rem 0"
-            }}>
-              We provide end-to-end technology solutions tailored to your business needs, ensuring scalability, security, and exceptional user experiences.
-            </p>
-
-          </div>
-        </div>
         </ScrollReveal>
 
-        {/* CSS Grid for robust layout */}
-        <div style={{ 
-          display: "grid", 
-          gridTemplateColumns: "repeat(auto-fill, minmax(350px, 1fr))", 
-          gap: "2rem",
-          marginBottom: "4rem"
-        }}>
+        {/* 8-Item Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, idx) => (
-            <ScrollReveal key={idx} animation="scaleUp" delay={idx * 100} threshold={0.1}>
-            <Link 
-              href="/services"
-              className="group relative flex flex-col bg-white/70 backdrop-blur-2xl border border-white/60 rounded-3xl overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-3 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] hover:border-purple-200/60 cursor-pointer no-underline"
-            >
-              {/* Decorative Glow */}
-              <div className="absolute top-0 right-0 w-48 h-48 bg-purple-500/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-orange-500/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-
-              {/* Image Container */}
-              <div className="h-[220px] w-full overflow-hidden relative">
-                <img loading="eager" fetchPriority="high" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  src={service.image} 
-                  alt={service.title} 
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/10 to-transparent"></div>
-              </div>
-
-              {/* Content Container */}
-              <div className="p-8 flex-1 flex flex-col relative z-10">
-                <div 
-                  className="w-16 h-16 rounded-2xl bg-white text-orange-600 flex items-center justify-center -mt-16 mb-6 relative z-10 shadow-xl shadow-black/5 transition-all duration-500 group-hover:bg-gradient-to-br group-hover:from-orange-500 group-hover:to-purple-600 group-hover:text-white group-hover:-translate-y-2 group-hover:shadow-purple-500/25"
-                >
+            <ScrollReveal key={idx} animation="scaleUp" delay={idx * 50} threshold={0.1}>
+              <div className="neu-card group flex flex-col items-center text-center p-8 h-full transition-transform duration-300 hover:-translate-y-2">
+                
+                {/* Icon */}
+                <div className="text-[#2dd4bf] mb-6 transform transition-transform duration-500 group-hover:scale-110">
                   {service.icon}
                 </div>
-                
-                <h3 className="text-slate-900 font-extrabold text-xl mb-3 font-sans transition-colors duration-300 group-hover:text-purple-700">
+
+                {/* Title */}
+                <h3 className="text-[#0f172a] font-bold text-xl mb-4 tracking-tight">
                   {service.title}
                 </h3>
                 
-                <p className="text-slate-600 text-[0.95rem] leading-relaxed flex-1">
-                  {service.description}
+                {/* Description */}
+                <p className="text-slate-600 text-[0.95rem] leading-relaxed mb-8 flex-1">
+                  {service.desc}
                 </p>
 
-                <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between">
-                  <span className="text-slate-800 font-bold text-sm tracking-wide transition-colors duration-300 group-hover:text-purple-600">
-                    Explore Service
-                  </span>
-                  <span className="w-10 h-10 rounded-full bg-slate-50 text-slate-400 flex items-center justify-center transition-all duration-300 group-hover:bg-purple-100 group-hover:text-purple-600 group-hover:translate-x-1">
-                    <ArrowRight size={18} strokeWidth={2.5} />
-                  </span>
+                {/* Learn More Link */}
+                <div className="mt-auto">
+                  <Link 
+                    href={`/services/${service.slug}`}
+                    className="inline-flex flex-col items-center group-hover:text-[#2dd4bf] transition-colors font-bold text-sm text-[#0f172a]"
+                  >
+                    Learn More
+                    <span className="w-8 h-[3px] bg-[#2dd4bf] mt-1.5 rounded-full transition-all duration-300 group-hover:w-full"></span>
+                  </Link>
                 </div>
+
               </div>
-            </Link>
             </ScrollReveal>
           ))}
         </div>
-
-
 
       </div>
     </section>

@@ -35,7 +35,7 @@ export default function BlogSection() {
       id="blog"
       style={{
         padding: "2rem 2rem", // Standardized spacing
-        background: "#f8fafc",
+        background: "transparent",
       }}
     >
       <div style={{ maxWidth: "1400px", margin: "0 auto" }}>

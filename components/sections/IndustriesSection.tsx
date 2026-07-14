@@ -77,7 +77,7 @@ export default function IndustriesSection() {
         
         {/* Header */}
         <ScrollReveal animation="fadeUp">
-          <div style={{ textAlign: "center", marginBottom: "5rem", maxWidth: "800px", margin: "0 auto 5rem" }}>
+          <div style={{ textAlign: "center", marginBottom: "5rem", maxWidth: "900px", margin: "0 auto 5rem" }}>
             <div style={{
               width: "48px",
               height: "4px",
@@ -87,7 +87,7 @@ export default function IndustriesSection() {
             }} />
             <h2 style={{
               fontFamily: "Inter, sans-serif",
-              fontSize: "clamp(2.5rem, 4vw, 3.5rem)",
+              fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
               fontWeight: 800,
               color: "#0f172a",
               lineHeight: 1.2,
@@ -96,7 +96,7 @@ export default function IndustriesSection() {
               Delivering Excellence Across <br />
               <span style={{ color: "#9333ea" }}>Diverse Sectors</span>
             </h2>
-            <p style={{ color: "#475569", fontSize: "1.1rem", lineHeight: 1.7 }}>
+            <p style={{ color: "#475569", fontSize: "1.1rem", lineHeight: 1.7, whiteSpace: "normal" }}>
               We engineer highly specialized, industry-specific software solutions that address the unique challenges of your market. From healthcare to finance, we have the domain expertise to scale your business.
             </p>
           </div>
@@ -110,54 +110,33 @@ export default function IndustriesSection() {
         }}>
           {industries.map((ind, idx) => (
             <ScrollReveal key={idx} animation="fadeUp" delay={idx * 50} threshold={0.1}>
-              <Link 
-                href="/services"
-                className="group relative flex flex-col h-full bg-white/70 backdrop-blur-3xl border border-white/60 rounded-[32px] overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-3 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] p-10 no-underline cursor-pointer"
-                style={{
-                  borderTop: "4px solid transparent"
-                }}
-                onMouseEnter={(e) => {
-                  const el = e.currentTarget as HTMLElement;
-                  el.style.borderTopColor = ind.iconColor;
-                  el.style.borderColor = `${ind.iconColor}40`;
-                }}
-                onMouseLeave={(e) => {
-                  const el = e.currentTarget as HTMLElement;
-                  el.style.borderTopColor = "transparent";
-                  el.style.borderColor = "rgba(255,255,255,0.6)";
-                }}
+              <div 
+                className="group bg-[#f4f7f9] rounded-[24px] p-8 flex flex-col h-full transition-all duration-300 hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-transparent hover:border-slate-100"
               >
-                {/* Decorative Background Glow based on industry color */}
-                <div 
-                  className="absolute top-0 right-0 w-64 h-64 rounded-full blur-[80px] opacity-0 group-hover:opacity-40 transition-opacity duration-700 pointer-events-none"
-                  style={{ background: ind.iconColor }}
-                />
-
-                {/* Top: Icon & Title */}
-                <div className="flex items-center gap-6 mb-6 relative z-10">
-                  <div 
-                    className="w-20 h-20 rounded-2xl flex items-center justify-center shrink-0 transition-all duration-500 group-hover:scale-110 group-hover:-rotate-3 group-hover:shadow-lg"
-                    style={{ background: ind.color, color: ind.iconColor }}
-                  >
-                    {ind.icon}
+                {/* Header: Icon + Title horizontally aligned */}
+                <div className="flex items-center gap-5 mb-6">
+                  {/* Icon Box with white background and soft shadow */}
+                  <div className="w-16 h-16 rounded-2xl bg-white shadow-[0_8px_24px_rgb(0,0,0,0.05)] flex items-center justify-center flex-shrink-0 group-hover:shadow-[0_8px_24px_rgb(0,0,0,0.09)] transition-all duration-300" style={{ color: ind.iconColor }}>
+                    <div className="group-hover:scale-110 transition-transform duration-300">
+                      {ind.icon}
+                    </div>
                   </div>
-                  <h3 className="font-sans text-2xl font-extrabold text-slate-900 transition-colors duration-300">
-                    {ind.name}
-                  </h3>
+                  <h4 className="text-2xl font-black text-slate-900 tracking-tight">{ind.name}</h4>
                 </div>
 
-                {/* Middle: Description */}
-                <p className="text-slate-600 text-[1.05rem] leading-relaxed mb-8 flex-1 relative z-10">
+                {/* Description text */}
+                <p className="text-[#5f6c7b] text-[1.05rem] leading-relaxed flex-1 mb-8">
                   {ind.desc}
                 </p>
 
-                {/* Bottom: Features */}
-                <div className="flex flex-wrap gap-3 mb-10 relative z-10">
+                {/* Features Badges */}
+                <div className="flex flex-wrap gap-2 mt-auto">
                   {ind.features.map((feat, i) => (
-                    <span key={i} 
-                      className="px-4 py-1.5 bg-white/80 backdrop-blur-md rounded-full font-bold text-sm shadow-sm transition-all duration-300 group-hover:bg-white"
+                    <span 
+                      key={i} 
+                      className="px-3 py-1 bg-white rounded-full font-bold text-xs shadow-sm transition-all duration-300"
                       style={{ 
-                        border: `1px solid ${ind.iconColor}30`,
+                        border: `1px solid ${ind.iconColor}20`,
                         color: ind.iconColor,
                       }}
                     >
@@ -165,25 +144,7 @@ export default function IndustriesSection() {
                     </span>
                   ))}
                 </div>
-
-                {/* Footer Link */}
-                <div 
-                  className="mt-auto flex items-center justify-between pt-6 border-t border-slate-100/50 relative z-10"
-                >
-                  <span 
-                    className="font-extrabold text-[0.95rem] tracking-wider uppercase transition-all duration-300"
-                    style={{ color: ind.iconColor }}
-                  >
-                    Explore Solutions
-                  </span>
-                  <span 
-                    className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 group-hover:translate-x-2"
-                    style={{ background: ind.color, color: ind.iconColor }}
-                  >
-                    <ArrowRight size={18} strokeWidth={2.5} />
-                  </span>
-                </div>
-              </Link>
+              </div>
             </ScrollReveal>
           ))}
         </div>

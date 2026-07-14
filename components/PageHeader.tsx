@@ -11,15 +11,11 @@ interface PageHeaderProps {
 
 export default function PageHeader({ title, subtitle, breadcrumb, badge }: PageHeaderProps) {
   return (
-    <section
+    <section className="pt-32 lg:pt-32 pb-16 px-8"
       style={{
-        background: "#f8fafc",
+        background: "transparent",
         position: "relative",
         overflow: "hidden",
-        paddingTop: "7rem",
-        paddingBottom: "4rem",
-        paddingLeft: "2rem",
-        paddingRight: "2rem",
         borderBottom: "1px solid #e2e8f0",
       }}
     >

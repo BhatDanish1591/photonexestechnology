@@ -24,42 +24,48 @@ export default function ContactSection() {
           </div>
 
           {/* Right Side: Contact Cards */}
-          <div className="flex flex-col gap-4 justify-between h-full">
+          <div className="flex flex-col gap-6 justify-between h-full">
             
             {/* Email Card */}
-            <div className="bg-[#fff1f2] p-8 rounded-2xl flex items-center gap-6 shadow-sm border border-[#ffe4e6] hover:-translate-y-1 transition-transform">
-              <div className="w-16 h-16 rounded-full border-2 border-[#fda4af] flex items-center justify-center flex-shrink-0 bg-white/50">
-                <Mail className="text-[#be123c]" size={32} strokeWidth={1.5} />
+            <div className="group bg-[#f4f7f9] p-8 rounded-[24px] flex items-center gap-6 border border-transparent hover:border-slate-100 hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300">
+              <div className="w-16 h-16 rounded-2xl bg-white shadow-[0_8px_24px_rgb(0,0,0,0.05)] flex items-center justify-center flex-shrink-0 group-hover:shadow-[0_8px_24px_rgb(0,0,0,0.09)] transition-all duration-300">
+                <div className="group-hover:scale-110 transition-transform duration-300">
+                  <Mail className="text-[#ea580c]" size={28} strokeWidth={2} />
+                </div>
               </div>
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-1">E-Mail</h3>
-                <p className="text-gray-700 font-medium text-sm md:text-base">
-                  info@photonexes.com <span className="text-gray-300 mx-2">|</span> hr@photonexes.com
+                <h3 className="text-xl font-black text-slate-900 mb-1">E-Mail</h3>
+                <p className="text-[#5f6c7b] font-medium text-[0.95rem]">
+                  info@photonexes.com <br /> hr@photonexes.com
                 </p>
               </div>
             </div>
 
             {/* Phone Card */}
-            <div className="bg-[#ecfdf5] p-8 rounded-2xl flex items-center gap-6 shadow-sm border border-[#d1fae5] hover:-translate-y-1 transition-transform">
-              <div className="w-16 h-16 rounded-full border-2 border-[#6ee7b7] flex items-center justify-center flex-shrink-0 bg-white/50">
-                <Phone className="text-[#059669]" size={32} strokeWidth={1.5} />
+            <div className="group bg-[#f4f7f9] p-8 rounded-[24px] flex items-center gap-6 border border-transparent hover:border-slate-100 hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300">
+              <div className="w-16 h-16 rounded-2xl bg-white shadow-[0_8px_24px_rgb(0,0,0,0.05)] flex items-center justify-center flex-shrink-0 group-hover:shadow-[0_8px_24px_rgb(0,0,0,0.09)] transition-all duration-300">
+                <div className="group-hover:scale-110 transition-transform duration-300">
+                  <Phone className="text-[#2dd4bf]" size={28} strokeWidth={2} />
+                </div>
               </div>
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-1">Call us at</h3>
-                <p className="text-gray-700 font-medium text-sm md:text-base">
+                <h3 className="text-xl font-black text-slate-900 mb-1">Call us at</h3>
+                <p className="text-[#5f6c7b] font-medium text-[0.95rem]">
                   +91-7006291591
                 </p>
               </div>
             </div>
 
             {/* Address Card */}
-            <div className="bg-[#eff6ff] p-8 rounded-2xl flex items-center gap-6 shadow-sm border border-[#dbeafe] hover:-translate-y-1 transition-transform">
-              <div className="w-16 h-16 rounded-full border-2 border-[#93c5fd] flex items-center justify-center flex-shrink-0 bg-white/50">
-                <MapPin className="text-[#4338ca]" size={32} strokeWidth={1.5} />
+            <div className="group bg-[#f4f7f9] p-8 rounded-[24px] flex items-center gap-6 border border-transparent hover:border-slate-100 hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300">
+              <div className="w-16 h-16 rounded-2xl bg-white shadow-[0_8px_24px_rgb(0,0,0,0.05)] flex items-center justify-center flex-shrink-0 group-hover:shadow-[0_8px_24px_rgb(0,0,0,0.09)] transition-all duration-300">
+                <div className="group-hover:scale-110 transition-transform duration-300">
+                  <MapPin className="text-[#0284c7]" size={28} strokeWidth={2} />
+                </div>
               </div>
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-1">Reach us at</h3>
-                <p className="text-gray-700 font-medium text-sm md:text-base leading-relaxed">
+                <h3 className="text-xl font-black text-slate-900 mb-1">Reach us at</h3>
+                <p className="text-[#5f6c7b] font-medium text-[0.95rem] leading-relaxed">
                   Near VIP Road<br />
                   Zirakpur, Punjab
                 </p>

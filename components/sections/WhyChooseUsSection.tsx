@@ -61,7 +61,7 @@ export default function WhyChooseUsSection() {
           {reasons.map((reason, i) => (
             <ScrollReveal key={i} animation="fadeUp" delay={i * 100}>
               <div 
-                className="group relative h-full bg-white p-10 rounded-[32px] overflow-hidden transition-all duration-500 cursor-pointer"
+                className="neu-card group relative h-full p-10 overflow-hidden cursor-pointer"
                 style={{
                   boxShadow: "0 10px 40px -10px rgba(0,0,0,0.05)",
                   border: "1px solid rgba(0,0,0,0.03)"

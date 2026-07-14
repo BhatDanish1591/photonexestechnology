@@ -1,8 +1,6 @@
 import AboutSection from "@/components/sections/AboutSection";
-import CoreValuesSection from "@/components/sections/CoreValuesSection";
-import WhyChooseUsSection from "@/components/sections/WhyChooseUsSection";
-import StatsBannerSection from "@/components/sections/StatsBannerSection";
-import ClientsSection from "@/components/sections/ClientsSection";
+import AboutDetailsSection from "@/components/sections/AboutDetailsSection";
+import AboutCTASection from "@/components/sections/AboutCTASection";
 
 export const metadata = {
   title: "About Us",
@@ -14,10 +12,8 @@ export default function AboutPage() {
   return (
     <main>
       <AboutSection />
-      <CoreValuesSection />
-      <WhyChooseUsSection />
-      <StatsBannerSection />
-      <ClientsSection />
+      <AboutDetailsSection />
+      <AboutCTASection />
     </main>
   );
 }

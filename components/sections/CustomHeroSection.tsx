@@ -1,11 +1,13 @@
 "use client";
 import { ArrowDown } from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
 
 interface CustomHeroSectionProps {
   title: string;
   description: string;
   imageSrc: string;
   nextSectionColor?: string; // Optional color for the curve below, default #ffffff
+  badgeText?: string;
 }
 
 export default function CustomHeroSection({
@@ -13,28 +15,42 @@ export default function CustomHeroSection({
   description,
   imageSrc,
   nextSectionColor = "#ffffff",
+  badgeText = "Our Expertise",
 }: CustomHeroSectionProps) {
   const scrollToNext = () => {
     window.scrollBy({ top: window.innerHeight * 0.8, behavior: 'smooth' });
   };
 
+  const words = title.trim().split(" ");
+  const lastWord = words.length > 1 ? words.pop() : "";
+  const firstPart = words.join(" ");
+
   return (
-    <section style={{ 
+    <section className="pt-32 lg:pt-28 pb-10 lg:pb-12" style={{ 
       position: "relative", 
-      background: "#f2f6f5", 
-      paddingTop: "10rem",
-      paddingBottom: "5rem",
+      background: "transparent", 
       overflow: "hidden"
     }}>
-      <div className="max-w-[1400px] mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      <div className="max-w-[1400px] mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
         {/* Content */}
-        <div>
-          <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] font-extrabold text-slate-900 leading-[1.15] mb-6">
-            {title}
-          </h1>
-          <p className="text-slate-800 text-lg md:text-xl leading-[1.8] font-normal">
-            {description}
-          </p>
+        <div className="lg:pr-8 text-left -mt-10 lg:-mt-24">
+
+          <ScrollReveal animation="fadeRight" delay={100}>
+            <h1 className="font-extrabold text-[clamp(2.2rem,4vw,3.8rem)] leading-[1.05] mb-6 tracking-tight">
+              <span className="text-slate-900">{firstPart}</span>{" "}
+              {lastWord && (
+                <span className="bg-gradient-to-r from-[#2dd4bf] to-[#3b82f6] text-transparent bg-clip-text">
+                  {lastWord}
+                </span>
+              )}
+            </h1>
+          </ScrollReveal>
+          
+          <ScrollReveal animation="fadeUp" delay={200}>
+            <p className="text-slate-600 text-[1.1rem] leading-[1.7] font-medium border-l-4 border-teal-400 pl-6 py-1 bg-gradient-to-r from-slate-50 to-transparent">
+              {description}
+            </p>
+          </ScrollReveal>
         </div>
 
         {/* Image */}
@@ -42,7 +58,7 @@ export default function CustomHeroSection({
           <img 
             src={imageSrc} 
             alt={title}
-            className="w-full max-w-[500px] h-auto object-contain mix-blend-multiply"
+            className="w-full max-w-[380px] h-auto object-contain mix-blend-multiply"
           />
         </div>
       </div>

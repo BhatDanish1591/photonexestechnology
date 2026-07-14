@@ -7,7 +7,7 @@ export default function WorkProcessSection() {
   ];
 
   return (
-    <section style={{ padding: "3rem 2rem", background: "#f8fafc" }}>
+    <section style={{ padding: "3rem 2rem", background: "transparent" }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
         
         <div style={{ textAlign: "center", marginBottom: "4rem" }}>
@@ -38,7 +38,7 @@ export default function WorkProcessSection() {
                 </div>
               </div>
               
-              <div className="bg-white/50 backdrop-blur-sm border border-slate-100 p-6 rounded-3xl transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-xl group-hover:shadow-slate-200/50 group-hover:bg-white/80 group-hover:border-orange-100 relative">
+              <div className="neu-card p-6 relative">
                 <h3 className="font-sans text-xl font-extrabold text-slate-900 mb-3 transition-colors duration-300 group-hover:text-orange-600">
                   {step.title}
                 </h3>

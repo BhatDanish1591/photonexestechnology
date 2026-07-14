@@ -1,12 +1,29 @@
 "use client";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
+const heroImages = [
+  "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80"
+];
+
 export default function HeroSection() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section
       id="home"
-      className="min-h-screen relative flex items-center justify-center overflow-hidden bg-slate-50 pt-10"
+      className="min-h-screen relative flex items-center justify-center overflow-hidden bg-transparent pt-10"
     >
       {/* Light Corporate Grid Background */}
       <div 
@@ -50,7 +67,7 @@ export default function HeroSection() {
 
             <Link
               href="/services"
-              className="bg-white text-slate-900 border border-slate-300 px-8 py-4 rounded-lg font-semibold inline-flex items-center justify-center gap-3 shadow-sm hover:bg-slate-50 hover:shadow-md transition-all duration-300 w-full sm:w-auto"
+              className="bg-white text-slate-900 border border-slate-300 px-8 py-4 rounded-lg font-semibold inline-flex items-center justify-center gap-3 shadow-sm hover:bg-transparent hover:shadow-md transition-all duration-300 w-full sm:w-auto"
             >
               Our Services
             </Link>
@@ -71,18 +88,23 @@ export default function HeroSection() {
         {/* Right Side: Professional Corporate Imagery */}
         <div className="relative flex justify-center items-center">
           
-          <div className="relative w-full max-w-[500px] aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
-            <img loading="eager" fetchPriority="high" 
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80" 
-              alt="Corporate Tech Professionals" 
-              className="w-full h-full object-cover"
-            />
+          <div className="relative w-full max-w-[500px] aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border-8 border-white bg-slate-100">
+            {heroImages.map((src, idx) => (
+              <img 
+                key={src}
+                loading={idx === 0 ? "eager" : "lazy"} 
+                fetchPriority={idx === 0 ? "high" : "auto"}
+                src={src} 
+                alt={`Corporate Tech Professionals ${idx + 1}`}
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${idx === currentImageIndex ? 'opacity-100' : 'opacity-0'}`}
+              />
+            ))}
           </div>
 
           {/* Floating UI Elements */}
           <div className="absolute bottom-[10%] left-0 lg:-left-[10%] bg-white border border-slate-200 p-5 rounded-xl flex items-center gap-4 shadow-xl animate-[float_5s_ease-in-out_infinite]">
             <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center">
-              <span className="text-blue-600 font-extrabold text-xl">10+</span>
+              <span className="text-blue-600 font-extrabold text-xl">5+</span>
             </div>
             <div>
               <div className="text-slate-900 font-extrabold text-lg">Years Experience</div>

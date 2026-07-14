@@ -64,7 +64,7 @@ export default function ContactHeroForm() {
   };
 
   return (
-    <section className="relative bg-[#f2f6f5] pt-[10rem] pb-[10rem] md:pb-[5rem] overflow-hidden">
+    <section className="relative bg-slate-50 pt-[6rem] lg:pt-[8rem] pb-[10rem] md:pb-[5rem] overflow-hidden">
       {/* Success/Error Popup */}
       <AnimatePresence>
         {status === "success" && (
@@ -91,12 +91,13 @@ export default function ContactHeroForm() {
         )}
       </AnimatePresence>
 
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start lg:pt-8">
         
         {/* Left Side: Content */}
         <div>
-          <h1 className="text-[clamp(3rem,5vw,4.5rem)] font-extrabold text-[#1f2937] leading-[1.1] mb-6">
-            Collaborate <span style={{ color: "#10b981" }}>With</span><br/>Us!
+          <h1 className="text-[clamp(3rem,5vw,4.5rem)] font-extrabold text-[#1f2937] leading-[1.1] mb-6 tracking-tight">
+            Collaborate <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2dd4bf] to-[#0284c7]">With Us!</span>
           </h1>
           
           <p className="text-[#1f2937] text-xl leading-[1.6] font-medium mb-10 max-w-[500px]">
@@ -116,7 +117,7 @@ export default function ContactHeroForm() {
                 onChange={handleChange}
                 placeholder="Name*" 
                 required
-                className="w-full px-5 py-4 bg-white border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-400 text-gray-700 font-medium placeholder-gray-400 shadow-sm transition-shadow"
+                className="w-full px-5 py-4 neu-inset focus:outline-none text-gray-700 font-medium placeholder-gray-400"
               />
               <input 
                 type="text" 
@@ -125,7 +126,7 @@ export default function ContactHeroForm() {
                 onChange={handleChange}
                 placeholder="Company Name*" 
                 required
-                className="w-full px-5 py-4 bg-white border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-400 text-gray-700 font-medium placeholder-gray-400 shadow-sm transition-shadow"
+                className="w-full px-5 py-4 neu-inset focus:outline-none text-gray-700 font-medium placeholder-gray-400"
               />
             </div>
 
@@ -137,7 +138,7 @@ export default function ContactHeroForm() {
                 onChange={handleChange}
                 placeholder="Email*" 
                 required
-                className="w-full px-5 py-4 bg-white border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-400 text-gray-700 font-medium placeholder-gray-400 shadow-sm transition-shadow"
+                className="w-full px-5 py-4 neu-inset focus:outline-none text-gray-700 font-medium placeholder-gray-400"
               />
               
               <div className="relative flex">
@@ -153,7 +154,7 @@ export default function ContactHeroForm() {
                   onChange={handleChange}
                   placeholder="Phone Number*" 
                   required
-                  className="w-full pl-[110px] pr-5 py-4 bg-white border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-400 text-gray-700 font-medium placeholder-gray-400 shadow-sm transition-shadow"
+                  className="w-full pl-[110px] pr-5 py-4 neu-inset focus:outline-none text-gray-700 font-medium placeholder-gray-400"
                 />
               </div>
             </div>
@@ -166,7 +167,7 @@ export default function ContactHeroForm() {
                 placeholder="How Can We Help?*" 
                 rows={4}
                 required
-                className="w-full px-5 py-4 bg-white border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-400 text-gray-700 font-medium placeholder-gray-400 shadow-sm resize-none transition-shadow"
+                className="w-full px-5 py-4 neu-inset focus:outline-none text-gray-700 font-medium placeholder-gray-400 resize-none"
               ></textarea>
             </div>
 
@@ -181,7 +182,7 @@ export default function ContactHeroForm() {
               <button 
                 type="submit" 
                 disabled={status === "loading" || !captchaToken}
-                className="inline-flex items-center justify-center gap-3 px-10 py-4 bg-[#312e81] text-white font-bold rounded-lg shadow-lg hover:bg-[#1e1b4b] transition-all uppercase tracking-wide text-sm disabled:opacity-70 disabled:cursor-not-allowed w-full sm:w-auto min-w-[250px]"
+                className="inline-flex items-center justify-center gap-3 px-10 py-4 bg-slate-900 hover:bg-[#ea580c] hover:shadow-[0_8px_20px_-5px_rgba(234,88,12,0.4)] text-white font-bold rounded-full shadow-lg transition-all uppercase tracking-wide text-sm disabled:opacity-70 disabled:cursor-not-allowed w-full sm:w-auto min-w-[250px]"
               >
                 {status === "loading" ? "Sending..." : "Submit Message"}
                 {!status.includes("loading") && <ArrowRight size={18} strokeWidth={2.5} />}

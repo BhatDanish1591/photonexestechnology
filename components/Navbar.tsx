@@ -21,7 +21,17 @@ export default function Navbar() {
   const pathname = usePathname();
 
   useEffect(() => {
+    if (typeof window !== "undefined") {
+      if ('scrollRestoration' in window.history) {
+        window.history.scrollRestoration = 'manual';
+      }
+      window.scrollTo(0, 0);
+    }
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
+    handleScroll(); // Check initial scroll position on mount
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -36,8 +46,8 @@ export default function Navbar() {
       <nav 
         className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-400 ${
           scrolled 
-            ? "bg-white/85 backdrop-blur-2xl border-b border-white/50 shadow-[0_10px_40px_rgba(0,0,0,0.05)] py-3" 
-            : "bg-white/60 backdrop-blur-xl border-b border-white/30 py-5"
+            ? "bg-[#eef2f6] shadow-[6px_6px_14px_#d0d4d8,-6px_-6px_14px_#ffffff] py-3" 
+            : "bg-transparent py-5"
         }`}
       >
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -100,8 +110,8 @@ export default function Navbar() {
                   href={link.href}
                   className={`px-4 py-2 rounded-full font-bold text-sm tracking-wide transition-all duration-300 flex items-center group ${
                     isActive 
-                      ? "bg-purple-50 text-purple-600 shadow-sm border border-purple-100/50" 
-                      : "text-slate-700 hover:bg-white/80 hover:text-purple-600 hover:shadow-sm"
+                      ? "neu-inset text-[#6366f1]" 
+                      : "text-[#0f172a] hover:text-[#6366f1]"
                   }`}
                 >
                   <span>{link.label}</span>
@@ -120,9 +130,10 @@ export default function Navbar() {
           <div className="hidden lg:flex">
             <Link 
               href="/contact" 
-              className="px-6 py-2.5 rounded-full font-semibold text-sm text-white bg-gradient-to-r from-purple-600 to-pink-600 shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+              className="flex items-center gap-2 bg-slate-900 text-white px-7 py-3 rounded-full font-bold text-sm tracking-wide transition-all duration-300 hover:bg-[#ea580c] hover:shadow-[0_8px_20px_-5px_rgba(234,88,12,0.4)] group/btn"
             >
               Enquire Now
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover/btn:translate-x-1 transition-transform duration-300"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </Link>
           </div>
 
@@ -147,7 +158,7 @@ export default function Navbar() {
 
       {/* Modern Premium Sidebar */}
       <div 
-        className={`fixed top-0 right-0 bottom-0 w-[85%] max-w-[400px] z-[9998] bg-white/80 backdrop-blur-3xl border-l border-white/50 shadow-[-20px_0_40px_rgba(0,0,0,0.1)] transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] lg:hidden flex flex-col pt-[100px] pb-8 px-6 overflow-hidden ${
+        className={`fixed top-0 right-0 bottom-0 w-[85%] max-w-[400px] z-[9998] bg-[#eef2f6] shadow-[-20px_0_40px_rgba(0,0,0,0.1)] transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] lg:hidden flex flex-col pt-[100px] pb-8 px-6 overflow-hidden ${
           mobileOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -165,8 +176,8 @@ export default function Navbar() {
                    href={link.href} 
                    className={`group flex items-center justify-between px-4 py-4 rounded-2xl text-xl font-extrabold tracking-tight transition-all duration-300 ${
                      isActive 
-                      ? "bg-white shadow-sm text-purple-600 border border-purple-100" 
-                      : "text-slate-800 hover:bg-white/50 hover:text-purple-600 hover:shadow-sm hover:translate-x-2"
+                      ? "neu-inset text-[#6366f1]" 
+                      : "text-[#0f172a] hover:text-[#6366f1] hover:translate-x-2"
                    }`}
                    style={{ 
                      transform: mobileOpen ? 'translateX(0)' : 'translateX(30px)',
@@ -176,7 +187,7 @@ export default function Navbar() {
                    onClick={() => setMobileOpen(false)}
                  >
                    <span>{link.label}</span>
-                   <span className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${isActive ? "bg-purple-50 text-purple-600 scale-100" : "bg-slate-50 text-slate-400 scale-0 group-hover:scale-100 group-hover:bg-purple-50 group-hover:text-purple-600"}`}>
+                   <span className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${isActive ? "bg-purple-50 text-purple-600 scale-100" : "bg-transparent text-slate-400 scale-0 group-hover:scale-100 group-hover:bg-purple-50 group-hover:text-purple-600"}`}>
                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                    </span>
                  </Link>
@@ -200,7 +211,7 @@ export default function Navbar() {
 
             <Link 
               href="/contact" 
-              className="px-8 py-4 rounded-2xl font-bold text-lg text-white bg-gradient-to-r from-purple-600 to-pink-600 shadow-xl shadow-purple-500/25 active:scale-95 transition-all duration-300 w-full text-center flex items-center justify-center gap-2 group"
+              className="neu-btn px-8 py-4 font-bold text-lg w-full text-center flex items-center justify-center gap-2 group"
               style={{ 
                 transform: mobileOpen ? 'translateY(0)' : 'translateY(20px)',
                 opacity: mobileOpen ? 1 : 0,

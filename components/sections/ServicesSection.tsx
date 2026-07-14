@@ -22,7 +22,7 @@ export default function ServicesSection() {
           {services.map((service, index) => (
             <div
               key={index}
-              className={`bg-white rounded-xl p-6 flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-4 items-start border border-slate-100 border-b-4 ${service.color} shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group`}
+              className={`neu-card p-6 flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-4 items-start border-b-4 ${service.color} cursor-pointer group`}
             >
               <div
                 className={`w-12 h-12 rounded-lg ${service.bg} flex items-center justify-center text-white shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-md`}

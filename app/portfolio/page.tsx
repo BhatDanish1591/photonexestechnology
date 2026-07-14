@@ -2,104 +2,74 @@
 import CustomHeroSection from "@/components/sections/CustomHeroSection";
 
 const projects = [
-  { name: "Enterprise ERP System", client: "TechCorp Industries", category: "Software Development", image: "/services/enterprise_software.png" },
-  { name: "Healthcare Management App", client: "MediCare Plus", category: "Mobile App", image: "/portfolio/portfolio_healthcare.png" },
-  { name: "E-Commerce Platform", client: "RetailGiant", category: "Web Development", image: "/portfolio/portfolio_ecommerce.png" },
-  { name: "AI Predictive Analytics", client: "FinTech Solutions", category: "Machine Learning", image: "/portfolio/portfolio_ai.png" },
-  { name: "Cloud Migration Strategy", client: "Global Logistics", category: "Cloud Services", image: "/portfolio/portfolio_cloud.png" },
-  { name: "Student Portal Portal", client: "EduTech Academy", category: "Web Development", image: "/services/web_development.png" },
+  { name: "Enterprise ERP System", client: "TechCorp Industries", category: "Software Development", image: "/portfolio/erp_dashboard_1784054055654.png" },
+  { name: "Healthcare Management App", client: "MediCare Plus", category: "Mobile App", image: "/portfolio/healthcare_app_1784054064616.png" },
+  { name: "E-Commerce Platform", client: "RetailGiant", category: "Web Development", image: "/portfolio/ecommerce_platform_1784054075390.png" },
+  { name: "AI Predictive Analytics", client: "FinTech Solutions", category: "Machine Learning", image: "/portfolio/ai_analytics_1784054086182.png" },
+  { name: "Cloud Migration Strategy", client: "Global Logistics", category: "Cloud Services", image: "/portfolio/cloud_migration_1784054096177.png" },
+  { name: "Student Portal", client: "EduTech Academy", category: "Web Development", image: "/portfolio/student_portal_1784054106685.png" },
 ];
 
 export default function PortfolioPage() {
   return (
-    <main>
+    <main className="bg-slate-50 min-h-screen">
       <CustomHeroSection 
         title="Our Success Stories" 
         description="Explore our portfolio of successful digital transformations. See how we've helped businesses achieve their goals."
         imageSrc="/heroes/hero_portfolios_1783476385535.png"
         nextSectionColor="#f8fafc"
       />
-      <section style={{ padding: "8rem 2rem", background: "#f8fafc", minHeight: "60vh" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-          <div style={{ textAlign: "center", marginBottom: "5rem" }}>
-            <h2 style={{ fontFamily: "Inter, sans-serif", fontSize: "3rem", fontWeight: 800, color: "#0f172a", marginBottom: "1rem", letterSpacing: "-0.02em" }}>
-              Our Recent Work
+      <section className="pt-0 pb-12 -mt-8 bg-slate-50 relative z-10">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
+          
+          {/* Editorial Left-Aligned Header */}
+          <div className="max-w-4xl mb-8">
+            <div className="w-20 h-1.5 bg-[#ea580c] mb-6 rounded-full"></div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-6 tracking-tight leading-[1.1]">
+              Our Recent <br className="hidden md:block" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2dd4bf] to-[#0284c7]">
+                Work & Case Studies
+              </span>
             </h2>
-            <p style={{ color: "#64748b", fontSize: "1.1rem", maxWidth: "600px", margin: "0 auto" }}>
-              Explore some of the successful digital products and enterprise solutions we&apos;ve delivered for our global clients.
-            </p>
+            
+            <div className="relative pl-6 md:pl-8 border-l-4 border-[#2dd4bf] py-4 bg-gradient-to-r from-teal-50/60 to-transparent rounded-r-2xl mt-6">
+              <p className="text-lg md:text-xl text-slate-700 leading-relaxed">
+                Explore some of the successful digital products and enterprise solutions we&apos;ve delivered for our global clients, driving innovation and measurable growth.
+              </p>
+            </div>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(350px, 1fr))", gap: "2.5rem" }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((p, i) => (
-              <div key={i} style={{
-                background: "#ffffff",
-                borderRadius: "20px",
-                overflow: "hidden",
-                boxShadow: "0 10px 30px -10px rgba(0,0,0,0.05)",
-                transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                cursor: "pointer",
-                border: "1px solid rgba(0,0,0,0.02)",
-                position: "relative"
-              }}
-              onMouseEnter={(e) => {
-                const el = e.currentTarget as HTMLElement;
-                el.style.transform = "translateY(-10px)";
-                el.style.boxShadow = "0 20px 40px -10px rgba(0,0,0,0.1)";
-                const img = el.querySelector('img');
-                if (img) img.style.transform = "scale(1.05)";
-              }}
-              onMouseLeave={(e) => {
-                const el = e.currentTarget as HTMLElement;
-                el.style.transform = "translateY(0)";
-                el.style.boxShadow = "0 10px 30px -10px rgba(0,0,0,0.05)";
-                const img = el.querySelector('img');
-                if (img) img.style.transform = "scale(1)";
-              }}
+              <div 
+                key={i} 
+                className="group bg-white rounded-[32px] overflow-hidden flex flex-col h-full transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] border border-slate-100"
               >
                 {/* Image Container */}
-                <div style={{ width: "100%", height: "240px", overflow: "hidden", position: "relative", background: "#ffffff", padding: "1.5rem" }}>
+                <div className="w-full h-[280px] overflow-hidden relative bg-[#f4f7f9] p-8 flex items-center justify-center">
                   <img 
                     src={p.image} 
                     alt={p.name}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "contain",
-                      transition: "transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)"
-                    }}
+                    className="w-full h-full object-contain mix-blend-multiply transition-transform duration-700 group-hover:scale-110"
                   />
                   {/* Category Badge overlaying the image */}
-                  <div style={{
-                    position: "absolute",
-                    top: "1rem",
-                    left: "1rem",
-                    background: "rgba(255, 255, 255, 0.9)",
-                    backdropFilter: "blur(4px)",
-                    color: "#ea580c",
-                    padding: "0.4rem 1rem",
-                    borderRadius: "50px",
-                    fontSize: "0.75rem",
-                    fontWeight: 700,
-                    letterSpacing: "0.05em",
-                    textTransform: "uppercase",
-                    boxShadow: "0 4px 6px -1px rgba(0,0,0,0.1)"
-                  }}>
+                  <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-md text-[#ea580c] px-4 py-1.5 rounded-full text-[0.75rem] font-black uppercase tracking-wider shadow-sm border border-orange-100/50">
                     {p.category}
                   </div>
                 </div>
 
                 {/* Content Container */}
-                <div style={{ padding: "2rem" }}>
-                  <h3 style={{ fontSize: "1.4rem", fontWeight: 800, color: "#0f172a", marginBottom: "0.75rem", lineHeight: 1.3 }}>{p.name}</h3>
-                  <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                    <span style={{ color: "#94a3b8", fontSize: "0.9rem" }}>Client:</span>
-                    <span style={{ color: "#334155", fontSize: "0.95rem", fontWeight: 600 }}>{p.client}</span>
+                <div className="p-8 flex flex-col flex-1 relative">
+                  {/* Decorative orange line */}
+                  <div className="absolute top-0 left-8 w-16 h-1.5 bg-gradient-to-r from-[#ea580c] to-[#f97316] rounded-b-md opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                  
+                  <h3 className="text-[1.65rem] font-black text-slate-900 mb-4 leading-tight tracking-tight mt-2">{p.name}</h3>
+                  
+                  <div className="mt-auto flex items-center gap-2 pt-6 border-t border-slate-100/60">
+                    <span className="text-slate-400 text-[0.95rem] font-medium uppercase tracking-wide">Client:</span>
+                    <span className="text-slate-700 text-[1.05rem] font-extrabold">{p.client}</span>
                   </div>
                 </div>
-                
-                {/* Bottom colored border accent */}
-                <div style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: "4px", background: "linear-gradient(to right, #ea580c, #f97316)" }}></div>
               </div>
             ))}
           </div>
