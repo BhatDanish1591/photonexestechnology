@@ -69,7 +69,7 @@ export default function Footer() {
                 { Icon: FaFacebook, href: "https://facebook.com/photonexes" },
                 { Icon: FaTwitter, href: "https://twitter.com/photonexes" },
                 { Icon: FaLinkedin, href: "https://www.linkedin.com/company/photonexes-technologies/" },
-                { Icon: FaInstagram, href: "https://www.instagram.com/photonexes?igsh=MThuNnYxanVmYzA3aw==" }
+                { Icon: FaInstagram, href: "https://www.instagram.com/photonexes" }
               ].map((social, i) => (
                 <a
                   key={i}
@@ -117,11 +117,11 @@ export default function Footer() {
             </h4>
             <ul className="flex flex-col gap-3">
               {[
-                { label: "Web Development", href: "/services" },
-                { label: "Mobile App Solutions", href: "/services" },
-                { label: "Enterprise Software", href: "/services" },
-                { label: "UI/UX Design", href: "/services" },
-                { label: "IOT Development", href: "/services" }
+                { label: "Web Development", href: "/services/web-development" },
+                { label: "Mobile App Solutions", href: "/services/mobile-development" },
+                { label: "Enterprise Software", href: "/services/software-development" },
+                { label: "UI/UX Design", href: "/services/ui-ux-design" },
+                { label: "IOT Development", href: "/services/stack-development" }
               ].map((link) => (
                 <li key={link.label}>
                   <Link 
@@ -179,7 +179,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-slate-400 font-bold text-sm text-center md:text-left">
-            &copy; 2026 Photonexes Technologies. All Rights Reserved.
+            &copy; {new Date().getFullYear()} Photonexes Technologies. All Rights Reserved.
           </div>
           <div className="flex gap-8">
             <Link href="/privacy-policy" className="text-slate-400 hover:text-[#ea580c] font-bold text-sm transition-colors">Privacy Policy</Link>

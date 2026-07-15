@@ -5,9 +5,9 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 const sideImages = [
   "/about/team_puzzle.png",
-  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80"
+  "/assets/stock_1784102776367_11.jpg",
+  "/assets/stock_1784102776424_12.jpg",
+  "/assets/stock_1784102776935_13.jpg"
 ];
 
 export default function AboutSection() {

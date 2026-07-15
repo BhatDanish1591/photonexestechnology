@@ -8,56 +8,56 @@ const values = [
     title: "Excellence",
     description: "We are focused to deliver the greatest standard of work and efficiency to every solution we offer.",
     color: "#ec4899",
-    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=600"
+    image: "/assets/stock_1784102777361_15.jpg"
   },
   {
     icon: <Lightbulb size={24} />,
     title: "Innovation",
     description: "We keep on pushing our boundaries and bringing innovative IT Solutions.",
     color: "#a855f7",
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=600"
+    image: "/assets/stock_1784102777672_16.jpg"
   },
   {
     icon: <ShieldCheck size={24} />,
     title: "Integrity",
     description: "With an end-to-end comprehensive process, we believe in practicing ethical and transparent business operations.",
     color: "#3b82f6",
-    image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&q=80&w=600"
+    image: "/assets/stock_1784102777902_17.jpg"
   },
   {
     icon: <Users size={24} />,
     title: "Collaboration",
     description: "For us, teamwork is the best work. We believe in working and growing together.",
     color: "#10b981",
-    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=600"
+    image: "/assets/stock_1784102778117_18.jpg"
   },
   {
     icon: <BookOpen size={24} />,
     title: "Continuous Learning",
     description: "We learn every day to ensure growth remains constant for us in every stage.",
     color: "#eab308",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=600"
+    image: "/assets/stock_1784102778318_19.jpg"
   },
   {
     icon: <Heart size={24} />,
     title: "Customer Focus",
     description: "For us, clients are the decision makers. We deliver solutions that prioritize client’s requirements.",
     color: "#ef4444",
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=600"
+    image: "/assets/stock_1784102778363_20.jpg"
   },
   {
     icon: <Zap size={24} />,
     title: "Agility",
     description: "We are quite adaptive to change and are focused to ensure efficiency in execution.",
     color: "#f97316",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600"
+    image: "/assets/stock_1784102778614_21.jpg"
   },
   {
     icon: <Leaf size={24} />,
     title: "Social Responsibility",
     description: "We believe in giving back to society. We actively take participation in contributing back through our various corporate social activities.",
     color: "#14b8a6",
-    image: "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?auto=format&fit=crop&q=80&w=600"
+    image: "/assets/stock_1784102778862_22.jpg"
   }
 ];
 
@@ -110,7 +110,7 @@ export default function CoreValuesSection() {
           <ScrollReveal animation="fadeRight" delay={100}>
             <div className="group relative min-h-[450px] h-auto rounded-[40px] overflow-hidden shadow-2xl flex items-end p-4 md:p-8">
               {/* Background Image */}
-              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800')] bg-cover bg-center transition-transform duration-[1.5s] group-hover:scale-110"></div>
+              <div className="absolute inset-0 bg-[url('/assets/stock_1784102779085_23.jpg')] bg-cover bg-center transition-transform duration-[1.5s] group-hover:scale-110"></div>
               {/* Animated Overlays */}
               <div className="absolute inset-0 bg-blue-950/60 backdrop-blur-[2px] transition-colors duration-500 group-hover:bg-blue-900/40"></div>
               <div className="absolute inset-0 bg-gradient-to-t from-blue-950/90 via-transparent to-transparent"></div>
@@ -136,7 +136,7 @@ export default function CoreValuesSection() {
           <ScrollReveal animation="fadeLeft" delay={200}>
             <div className="group relative min-h-[450px] h-auto rounded-[40px] overflow-hidden shadow-2xl flex items-end p-4 md:p-8">
                {/* Background Image */}
-               <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800')] bg-cover bg-center transition-transform duration-[1.5s] group-hover:scale-110"></div>
+               <div className="absolute inset-0 bg-[url('/assets/stock_1784102779152_24.jpg')] bg-cover bg-center transition-transform duration-[1.5s] group-hover:scale-110"></div>
               {/* Animated Overlays */}
               <div className="absolute inset-0 bg-orange-950/70 backdrop-blur-[2px] transition-colors duration-500 group-hover:bg-orange-900/50"></div>
               <div className="absolute inset-0 bg-gradient-to-t from-orange-950/90 via-transparent to-transparent"></div>

@@ -41,7 +41,7 @@ export default function BestCompanySection() {
             {/* The Image (Large circle/rounded right side) */}
             <div className="relative w-full aspect-[4/3] overflow-hidden rounded-l-[150px] rounded-r-3xl shadow-2xl border-4 border-white z-10">
               <img 
-                src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" 
+                src="/assets/stock_1784102777283_14.jpg" 
                 alt="IT Training and Office in Zirakpur" 
                 className="w-full h-full object-cover"
               />

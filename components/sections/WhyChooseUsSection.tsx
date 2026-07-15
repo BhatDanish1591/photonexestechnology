@@ -7,37 +7,37 @@ const reasons = [
     icon: <Briefcase size={24} />,
     title: "Proven Expertise and Experience",
     description: "We have been blessed with the best of the talent in the industry. At CS Soft Solutions, get business solutions from experts who have a thorough experience and exposure of diverse sectors in the IT industry. We understand and ensure every customer of ours is served with the best of solutions without any fall.",
-    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=600"
+    image: "/assets/stock_1784102780760_35.jpg"
   },
   {
     icon: <Puzzle size={24} />,
     title: "Tailored Solutions for Your Business",
     description: "We understand that no two businesses are the same. Ask our experts to offer you experienced and custom-fit solutions that match your business requirements in every aspect.",
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=600"
+    image: "/assets/stock_1784102780839_36.jpg"
   },
   {
     icon: <CheckCircle size={24} />,
     title: "Uncompromising Quality Assurance",
     description: "Quality is our priority. Ours is a team of firm believers of ensuring error-free solutions that serves the best of the quality in the market. We have a dedicated set of QA analysts that focus on checking the highest standard of quality in our deliverables.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=600"
+    image: "/assets/stock_1784102781045_37.jpg"
   },
   {
     icon: <Clock size={24} />,
     title: "On-Time, Every Time",
     description: "We believe in our commitments. Through our structured project management approach, we ensure deliveries are done on time, every time without compromising with the quality of the work and the expected impact.",
-    image: "https://images.unsplash.com/photo-1506784926709-22f1ec395907?auto=format&fit=crop&q=80&w=600"
+    image: "/assets/stock_1784102781103_38.jpg"
   },
   {
     icon: <RefreshCw size={24} />,
     title: "Agile & Adaptive Development",
     description: "We adopt agile methodologies to deliver solutions that resonate with growth and efficiency. We keep on refining our work to ensure we become the better version of ourselves. Our iterative approach helps us to stay competitive and result-driven in the market.",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=600"
+    image: "/assets/stock_1784102781324_39.jpg"
   },
   {
     icon: <Rocket size={24} />,
     title: "Innovation at the Core",
     description: "We thrive on innovation. We focus on building tech solutions that speak for our work and excellence. With future-ready solutions, we offer innovation and accomplishment in our deliverables.",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=600"
+    image: "/assets/stock_1784102781408_40.jpg"
   }
 ];
 

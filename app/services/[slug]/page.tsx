@@ -18,7 +18,7 @@ const serviceDetails: Record<string, any> = {
   "web-development": {
     title: "Web Development",
     description: "Building and maintaining highly responsive, scalable, and secure websites to ensure exceptional functionality and user experiences.",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=80",
+    image: "/assets/stock_1784102773850_2.jpg",
     techStack: [
       { name: "React", icon: <SiReact color="#61DAFB" size={32} />, desc: "Component-based library for building highly interactive and dynamic user interfaces." },
       { name: "Next.js", icon: <SiNextdotjs color="#000000" size={32} />, desc: "React framework for production-grade, server-side rendered applications." },
@@ -32,7 +32,7 @@ const serviceDetails: Record<string, any> = {
   "mobile-development": {
     title: "Mobile App Development",
     description: "Developing powerful, intuitive applications for iOS and Android focused on unparalleled performance and user engagement.",
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1000&q=80",
+    image: "/assets/stock_1784102774086_3.jpg",
     techStack: [
       { name: "React Native", icon: <SiReact color="#61DAFB" size={32} />, desc: "Building native apps for iOS and Android using a single JavaScript codebase." },
       { name: "Flutter", icon: <SiFlutter color="#02569B" size={32} />, desc: "Google's UI toolkit for natively compiled applications from a single codebase." },
@@ -45,7 +45,7 @@ const serviceDetails: Record<string, any> = {
   "software-development": {
     title: "Software Development",
     description: "Creating and maintaining robust enterprise software through rigorous programming, testing, debugging, and bug fixing.",
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1000&q=80",
+    image: "/assets/stock_1784102774153_4.jpg",
     techStack: [
       { name: "Python", icon: <SiPython color="#3776AB" size={32} />, desc: "High-level programming language perfect for enterprise logic and data science." },
       { name: "Java", icon: <FaJava color="#5382A1" size={32} />, desc: "Object-oriented programming language designed to have minimal implementation dependencies." },
@@ -58,7 +58,7 @@ const serviceDetails: Record<string, any> = {
   "stack-development": {
     title: "Full-Stack Development",
     description: "Building complete, end-to-end tech stacks from modern front-ends to scalable back-ends to support complex architectures.",
-    image: "https://images.unsplash.com/photo-1627398225058-f4a40695869d?auto=format&fit=crop&w=1000&q=80",
+    image: "/assets/stock_1784102774196_5.jpg",
     techStack: [
       { name: "MERN Stack", icon: <SiReact color="#61DAFB" size={32} />, desc: "MongoDB, Express, React, Node.js tailored for seamless JavaScript development." },
       { name: "MEAN Stack", icon: <SiAngular color="#DD0031" size={32} />, desc: "Dynamic web apps built on MongoDB, Express, Angular, and Node.js." },
@@ -71,7 +71,7 @@ const serviceDetails: Record<string, any> = {
   "digital-marketing": {
     title: "Digital Marketing",
     description: "Boosting brand awareness and exponential growth through innovative online marketing strategies and deep audience engagement.",
-    image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&w=1000&q=80",
+    image: "/assets/stock_1784102774875_6.jpg",
     techStack: [
       { name: "Google Analytics", icon: <SiGoogleanalytics color="#E37400" size={32} />, desc: "Advanced web analytics service that tracks and reports website traffic." },
       { name: "SEMrush", icon: <FaChartLine color="#FF642D" size={32} />, desc: "All-in-one tool suite for improving online visibility and discovering marketing insights." },
@@ -84,7 +84,7 @@ const serviceDetails: Record<string, any> = {
   "ui-ux-design": {
     title: "UI/UX Design",
     description: "Crafting intuitive, user-centric, and visually stunning designs to enhance digital experiences and drive customer satisfaction.",
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1000&q=80",
+    image: "/assets/stock_1784102775379_7.jpg",
     techStack: [
       { name: "Figma", icon: <SiFigma color="#F24E1E" size={32} />, desc: "Collaborative web application for interface design, prototyping, and vector graphics." },
       { name: "Adobe XD", icon: <FaLayerGroup color="#FF61F6" size={32} />, desc: "Vector-based user experience design tool for web apps and mobile apps." },
@@ -97,7 +97,7 @@ const serviceDetails: Record<string, any> = {
   "cyber-security": {
     title: "Cyber Security",
     description: "Protecting your most valuable digital assets and systems from unauthorized access, advanced attacks, and data breaches.",
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1000&q=80",
+    image: "/assets/stock_1784102775645_8.jpg",
     techStack: [
       { name: "Kali Linux", icon: <SiKalilinux color="#557C94" size={32} />, desc: "Advanced penetration testing Linux distribution used for ethical hacking." },
       { name: "Wireshark", icon: <SiWireshark color="#1679A7" size={32} />, desc: "Network protocol analyzer that lets you capture and interactively browse traffic." },
@@ -110,7 +110,7 @@ const serviceDetails: Record<string, any> = {
   "cloud-computing": {
     title: "Cloud Computing",
     description: "Modernizing your infrastructure by migrating, storing, and seamlessly accessing data and applications over the cloud.",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&q=80",
+    image: "/assets/stock_1784102775890_9.jpg",
     techStack: [
       { name: "AWS", icon: <FaAws color="#FF9900" size={32} />, desc: "The world's most comprehensive and broadly adopted cloud platform." },
       { name: "Microsoft Azure", icon: <FaMicrosoft color="#0089D6" size={32} />, desc: "Cloud computing service for building, testing, and managing applications." },

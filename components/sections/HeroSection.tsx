@@ -5,10 +5,10 @@ import Image from "next/image";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 const heroImages = [
-  "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80"
+  "/assets/stock_1784102780359_29.jpg",
+  "/assets/stock_1784102780407_30.jpg",
+  "/assets/stock_1784102780472_31.jpg",
+  "/assets/stock_1784102780539_32.jpg"
 ];
 
 export default function HeroSection() {

@@ -85,7 +85,7 @@ export default function InternshipSection() {
         {/* Right Side: Image */}
         <div style={{ flex: "1 1 500px", position: "relative", display: "flex", justifyContent: "flex-end" }}>
            <img loading="eager" fetchPriority="high" 
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" 
+            src="/assets/stock_1784102780626_33.jpg" 
             alt="Indian students in IT internship" 
             style={{ 
               width: "90%", 

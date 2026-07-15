@@ -94,7 +94,7 @@ export default function PlacementSection() {
         {/* Right Side: Image */}
         <div style={{ flex: "1 1 500px", position: "relative", display: "flex", justifyContent: "flex-end" }}>
            <img loading="eager" fetchPriority="high" 
-            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" 
+            src="/assets/stock_1784102780692_34.jpg" 
             alt="Happy Indian professional placed" 
             style={{ 
               width: "90%", 

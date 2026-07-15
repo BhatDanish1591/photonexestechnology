@@ -5,7 +5,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 const slides = [
   {
-    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1920&q=80",
+    image: "/assets/stock_1784102779272_25.jpg",
     heading: (
       <>
         From Local to Global <br className="hidden md:block" />
@@ -15,7 +15,7 @@ const slides = [
     )
   },
   {
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1920&q=80",
+    image: "/assets/stock_1784102779534_26.jpg",
     heading: (
       <>
         Driving Innovation <br className="hidden md:block" />
@@ -25,7 +25,7 @@ const slides = [
     )
   },
   {
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1920&q=80",
+    image: "/assets/stock_1784102779668_27.jpg",
     heading: (
       <>
         Future-Ready IT <br className="hidden md:block" />
@@ -35,7 +35,7 @@ const slides = [
     )
   },
   {
-    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1920&q=80",
+    image: "/assets/stock_1784102780085_28.jpg",
     heading: (
       <>
         Accelerate Growth <br className="hidden md:block" />

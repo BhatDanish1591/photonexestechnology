@@ -36,7 +36,7 @@ export default function ContactSection() {
               <div>
                 <h3 className="text-xl font-black text-slate-900 mb-1">E-Mail</h3>
                 <p className="text-[#5f6c7b] font-medium text-[0.95rem]">
-                  info@photonexes.com <br /> hr@photonexes.com
+                  info@photonexes.in <br /> hr@photonexes.in
                 </p>
               </div>
             </div>

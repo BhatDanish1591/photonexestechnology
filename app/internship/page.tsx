@@ -111,7 +111,7 @@ export default function InternshipApplicationPage() {
             
             {/* Main Image */}
             <img 
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" 
+              src="/assets/stock_1784102773402_1.jpg" 
               alt="Interns collaborating at Photonexes" 
               className="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-700 hover:scale-105"
             />

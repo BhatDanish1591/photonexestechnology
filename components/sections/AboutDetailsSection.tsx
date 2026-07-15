@@ -52,7 +52,7 @@ export default function AboutDetailsSection() {
           <ScrollReveal animation="scaleUp" delay={100} className="w-full h-full order-1 lg:order-2">
             <div className="group relative rounded-3xl overflow-hidden shadow-2xl h-full min-h-[400px] border-[6px] border-white ring-1 ring-slate-100">
               <img 
-                src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&w=1000&q=80" 
+                src="/assets/stock_1784102776130_10.jpg" 
                 alt="Why choose us - IT Professional in Server Room" 
                 className="w-full h-full object-cover absolute inset-0 transform transition-transform duration-700 ease-out group-hover:scale-110"
               />
