@@ -58,7 +58,6 @@ export const metadata: Metadata = {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ChatBot from "@/components/ChatBot";
-import PageTransition from "@/components/PageTransition";
 
 export default function RootLayout({
   children,
@@ -101,7 +100,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <Navbar />
-        <PageTransition>{children}</PageTransition>
+        {children}
         <Footer />
         <ChatBot />
       </body>

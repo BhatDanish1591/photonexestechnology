@@ -40,6 +40,20 @@
     scroll-padding-top: 80px;
   }
 
+  /* Smooth page transition — plays on every route navigation */
+  .page-enter {
+    animation: pageEnter 250ms ease-out both;
+  }
+
+  @keyframes pageEnter {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
   body {
     background: var(--bg-primary);
     color: var(--text-primary);
