@@ -97,7 +97,7 @@ export default function HeroSection() {
                 alt={`Corporate Tech Professionals ${idx + 1}`}
                 fill
                 sizes="(max-width: 768px) 100vw, 500px"
-                priority={idx === 0}
+                priority={true}
                 className={`object-cover transition-opacity duration-1000 ease-in-out ${idx === currentImageIndex ? 'opacity-100' : 'opacity-0'}`}
               />
             ))}

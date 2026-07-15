@@ -52,6 +52,7 @@ export default function PortfolioPage() {
                     alt={p.name}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority={i < 3}
                     className="object-contain mix-blend-multiply transition-transform duration-700 group-hover:scale-110 p-8"
                   />
                   {/* Category Badge overlaying the image */}
