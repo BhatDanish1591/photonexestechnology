@@ -11,6 +11,7 @@ export const metadata = {
 const blogs = [
   {
     category: "AI",
+    slug: "the-future-of-ai-in-software-development",
     date: "Dec 15, 2026",
     readTime: "5 min",
     title: "The Future of AI in Software Development",
@@ -19,6 +20,7 @@ const blogs = [
   },
   {
     category: "Web Dev",
+    slug: "top-10-web-development-trends-for-2027",
     date: "Dec 10, 2026",
     readTime: "7 min",
     title: "Top 10 Web Development Trends for 2027",
@@ -27,6 +29,7 @@ const blogs = [
   },
   {
     category: "Programming",
+    slug: "python-vs-javascript-which-should-you-learn-first",
     date: "Dec 5, 2026",
     readTime: "6 min",
     title: "Python vs JavaScript: Which Should You Learn First?",
@@ -35,6 +38,7 @@ const blogs = [
   },
   {
     category: "Cloud",
+    slug: "aws-vs-azure-vs-google-cloud-in-2027",
     date: "Nov 28, 2026",
     readTime: "8 min",
     title: "AWS vs Azure vs Google Cloud in 2027",
@@ -43,6 +47,7 @@ const blogs = [
   },
   {
     category: "Careers",
+    slug: "how-to-ace-your-next-technical-interview",
     date: "Nov 20, 2026",
     readTime: "4 min",
     title: "How to Ace Your Next Technical Interview",
@@ -51,6 +56,7 @@ const blogs = [
   },
   {
     category: "Security",
+    slug: "zero-trust-architecture-explained",
     date: "Nov 12, 2026",
     readTime: "9 min",
     title: "Zero Trust Architecture Explained",
@@ -92,7 +98,7 @@ export default function BlogPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogs.map((blog, i) => (
               <Link 
-                href={`/blog#${i}`}
+                href={`/blog/${blog.slug}`}
                 key={i} 
                 className="group bg-[#f4f7f9] p-8 rounded-[32px] flex flex-col h-full border border-transparent hover:border-slate-100 hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 relative overflow-hidden"
               >

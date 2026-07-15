@@ -9,12 +9,12 @@ export const metadata = {
 };
 
 const projects = [
-  { name: "Enterprise ERP System", client: "TechCorp Industries", category: "Software Development", image: "/portfolio/erp_dashboard_1784054055654.png" },
-  { name: "Healthcare Management App", client: "MediCare Plus", category: "Mobile App", image: "/portfolio/healthcare_app_1784054064616.png" },
-  { name: "E-Commerce Platform", client: "RetailGiant", category: "Web Development", image: "/portfolio/ecommerce_platform_1784054075390.png" },
-  { name: "AI Predictive Analytics", client: "FinTech Solutions", category: "Machine Learning", image: "/portfolio/ai_analytics_1784054086182.png" },
-  { name: "Cloud Migration Strategy", client: "Global Logistics", category: "Cloud Services", image: "/portfolio/cloud_migration_1784054096177.png" },
-  { name: "Student Portal", client: "EduTech Academy", category: "Web Development", image: "/portfolio/student_portal_1784054106685.png" },
+  { slug: "enterprise-erp-system", name: "Enterprise ERP System", client: "TechCorp Industries", category: "Software Development", image: "/portfolio/erp_dashboard_1784054055654.png" },
+  { slug: "healthcare-management-app", name: "Healthcare Management App", client: "MediCare Plus", category: "Mobile App", image: "/portfolio/healthcare_app_1784054064616.png" },
+  { slug: "e-commerce-platform", name: "E-Commerce Platform", client: "RetailGiant", category: "Web Development", image: "/portfolio/ecommerce_platform_1784054075390.png" },
+  { slug: "ai-predictive-analytics", name: "AI Predictive Analytics", client: "FinTech Solutions", category: "Machine Learning", image: "/portfolio/ai_analytics_1784054086182.png" },
+  { slug: "cloud-migration-strategy", name: "Cloud Migration Strategy", client: "Global Logistics", category: "Cloud Services", image: "/portfolio/cloud_migration_1784054096177.png" },
+  { slug: "student-portal", name: "Student Portal", client: "EduTech Academy", category: "Web Development", image: "/portfolio/student_portal_1784054106685.png" },
 ];
 
 export default function PortfolioPage() {
@@ -49,7 +49,7 @@ export default function PortfolioPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((p, i) => (
               <Link 
-                href={`/portfolio#${i}`}
+                href={`/portfolio/${p.slug}`}
                 key={i} 
                 className="group bg-white rounded-[32px] overflow-hidden flex flex-col h-full transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] border border-slate-100"
               >

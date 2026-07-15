@@ -40,8 +40,41 @@ const jobs = [
 ];
 
 export default function CareersPage() {
+  const jsonLd = jobs.map(job => ({
+    "@context": "https://schema.org/",
+    "@type": "JobPosting",
+    "title": job.title,
+    "description": job.description,
+    "identifier": {
+      "@type": "PropertyValue",
+      "name": "Photonexes Technologies"
+    },
+    "datePosted": "2026-07-15",
+    "validThrough": "2026-12-31",
+    "employmentType": job.type === "Full-time" ? "FULL_TIME" : "CONTRACTOR",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Photonexes Technologies",
+      "sameAs": "https://photonexes.in",
+      "logo": "https://photonexes.in/logo.png"
+    },
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Zirakpur",
+        "addressRegion": "Punjab",
+        "addressCountry": "IN"
+      }
+    }
+  }));
+
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <CustomHeroSection 
         title="Join Our Team" 
         description="Build your career with a team of passionate innovators. We're always looking for talented individuals to join our mission."
