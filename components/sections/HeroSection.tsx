@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 const heroImages = [
@@ -90,13 +91,14 @@ export default function HeroSection() {
           
           <div className="relative w-full max-w-[500px] aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border-8 border-white bg-slate-100">
             {heroImages.map((src, idx) => (
-              <img 
+              <Image 
                 key={src}
-                loading={idx === 0 ? "eager" : "lazy"} 
-                fetchPriority={idx === 0 ? "high" : "auto"}
-                src={src} 
+                src={src}
                 alt={`Corporate Tech Professionals ${idx + 1}`}
-                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${idx === currentImageIndex ? 'opacity-100' : 'opacity-0'}`}
+                fill
+                sizes="(max-width: 768px) 100vw, 500px"
+                priority={idx === 0}
+                className={`object-cover transition-opacity duration-1000 ease-in-out ${idx === currentImageIndex ? 'opacity-100' : 'opacity-0'}`}
               />
             ))}
           </div>

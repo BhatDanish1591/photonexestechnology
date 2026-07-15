@@ -1,4 +1,4 @@
-"use client";
+import Image from "next/image";
 import CustomHeroSection from "@/components/sections/CustomHeroSection";
 
 const projects = [
@@ -47,13 +47,15 @@ export default function PortfolioPage() {
               >
                 {/* Image Container */}
                 <div className="w-full h-[280px] overflow-hidden relative bg-[#f4f7f9] p-8 flex items-center justify-center">
-                  <img 
+                  <Image 
                     src={p.image} 
                     alt={p.name}
-                    className="w-full h-full object-contain mix-blend-multiply transition-transform duration-700 group-hover:scale-110"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-contain mix-blend-multiply transition-transform duration-700 group-hover:scale-110 p-8"
                   />
                   {/* Category Badge overlaying the image */}
-                  <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-md text-[#ea580c] px-4 py-1.5 rounded-full text-[0.75rem] font-black uppercase tracking-wider shadow-sm border border-orange-100/50">
+                  <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-md text-[#ea580c] px-4 py-1.5 rounded-full text-[0.75rem] font-black uppercase tracking-wider shadow-sm border border-orange-100/50 z-10">
                     {p.category}
                   </div>
                 </div>

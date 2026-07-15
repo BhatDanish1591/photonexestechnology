@@ -1,6 +1,6 @@
 "use client";
 import { ArrowDown } from "lucide-react";
-import ScrollReveal from "@/components/ScrollReveal";
+import Image from "next/image";
 
 interface CustomHeroSectionProps {
   title: string;
@@ -51,9 +51,12 @@ export default function CustomHeroSection({
 
         {/* Image */}
         <div className="relative flex justify-center md:justify-end">
-          <img 
+          <Image 
             src={imageSrc} 
             alt={title}
+            width={380}
+            height={380}
+            priority
             className="w-full max-w-[380px] h-auto object-contain mix-blend-multiply"
           />
         </div>

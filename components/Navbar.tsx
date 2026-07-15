@@ -52,7 +52,7 @@ export default function Navbar() {
                   <Shield size={22} className="text-white" />
                 </span>
                 <span style={{
-                  fontFamily: "Inter, sans-serif",
+                  fontFamily: "var(--font-inter), sans-serif",
                   fontSize: "1.7rem",
                   fontWeight: 800,
                   lineHeight: 1,

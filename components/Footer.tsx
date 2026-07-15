@@ -21,7 +21,7 @@ export default function Footer() {
                     <Shield size={20} className="text-white" />
                   </span>
                   <span style={{
-                    fontFamily: "Inter, sans-serif",
+                    fontFamily: "var(--font-inter), sans-serif",
                     fontSize: "1.7rem",
                     fontWeight: 900,
                     lineHeight: 1,
