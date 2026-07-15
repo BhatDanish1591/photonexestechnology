@@ -54,7 +54,7 @@ export default function AboutSection() {
             <p className="text-slate-600 text-[1.15rem] leading-[1.8] font-medium border-l-4 border-teal-400 pl-6 py-1 bg-gradient-to-r from-slate-50 to-transparent">
               <strong className="text-slate-900 font-bold">Photonexes Technologies</strong> is a growth-driven IT solutions provider, focusing on bringing digital transformations for businesses at every scale. We are first movers who believe in adding proficiency and innovation in every solution we offer. 
               <br/><br/>
-              With more than a decade of being an IT leader, we thrive to build solutions that bring <span className="text-teal-600 font-semibold">results and impact.</span>
+              With over 5+ years of being an IT leader, we thrive to build solutions that bring <span className="text-teal-600 font-semibold">results and impact.</span>
             </p>
           </ScrollReveal>
         </div>

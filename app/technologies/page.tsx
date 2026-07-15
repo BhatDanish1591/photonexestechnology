@@ -1,4 +1,3 @@
-"use client";
 import CustomHeroSection from "@/components/sections/CustomHeroSection";
 import { 
   FaReact, FaAngular, FaVuejs, FaHtml5, FaNodeJs, FaPython, 
@@ -8,6 +7,12 @@ import {
   SiNextdotjs, SiTailwindcss, SiDotnet, SiGo, SiFlutter, 
   SiMongodb, SiPostgresql, SiMysql 
 } from "react-icons/si";
+
+export const metadata = {
+  title: "Our Technologies",
+  description: "Discover the modern technology stack we use at Photonexes Technologies, including React, Next.js, Node.js, Python, AWS, and more.",
+  keywords: ["tech stack", "software technologies", "web frameworks", "cloud platforms"],
+};
 
 const techCategories = [
   {

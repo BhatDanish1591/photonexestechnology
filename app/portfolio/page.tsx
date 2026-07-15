@@ -1,5 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 import CustomHeroSection from "@/components/sections/CustomHeroSection";
+
+export const metadata = {
+  title: "Our Portfolio",
+  description: "Explore our recent success stories, case studies, and enterprise solutions delivered by Photonexes Technologies.",
+  keywords: ["software portfolio", "case studies", "enterprise solutions", "IT success stories"],
+};
 
 const projects = [
   { name: "Enterprise ERP System", client: "TechCorp Industries", category: "Software Development", image: "/portfolio/erp_dashboard_1784054055654.png" },
@@ -41,7 +48,8 @@ export default function PortfolioPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((p, i) => (
-              <div 
+              <Link 
+                href={`/portfolio#${i}`}
                 key={i} 
                 className="group bg-white rounded-[32px] overflow-hidden flex flex-col h-full transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] border border-slate-100"
               >
@@ -73,7 +81,7 @@ export default function PortfolioPage() {
                     <span className="text-slate-700 text-[1.05rem] font-extrabold">{p.client}</span>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

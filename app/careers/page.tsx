@@ -1,7 +1,12 @@
-"use client";
 import Link from "next/link";
 import CustomHeroSection from "@/components/sections/CustomHeroSection";
 import { ArrowRight, MapPin, Briefcase, Clock } from "lucide-react";
+
+export const metadata = {
+  title: "Careers",
+  description: "Join our team of passionate innovators at Photonexes Technologies. We're looking for talented individuals to build the future of software.",
+  keywords: ["careers", "jobs", "hiring", "software engineering jobs"],
+};
 
 const jobs = [
   {
@@ -105,7 +110,7 @@ export default function CareersPage() {
                 </div>
                 
                 <div className="shrink-0 mt-4 md:mt-0">
-                  <Link href="/contact" className="block">
+                  <Link href={`/contact?role=${encodeURIComponent(job.title)}`} className="block">
                     <button className="flex items-center gap-2 bg-slate-900 text-white px-8 py-4 rounded-full font-bold text-sm tracking-wide transition-all duration-300 hover:bg-[#ea580c] hover:shadow-[0_8px_20px_-5px_rgba(234,88,12,0.4)] group/btn">
                       Apply Now
                       <ArrowRight size={18} strokeWidth={2.5} className="transition-transform duration-300 group-hover/btn:translate-x-1" />

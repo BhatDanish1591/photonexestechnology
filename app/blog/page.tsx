@@ -11,7 +11,7 @@ export const metadata = {
 const blogs = [
   {
     category: "AI",
-    date: "Dec 15, 2024",
+    date: "Dec 15, 2026",
     readTime: "5 min",
     title: "The Future of AI in Software Development",
     desc: "How generative AI is transforming the way we write, review, and deploy code in modern software engineering.",
@@ -19,15 +19,15 @@ const blogs = [
   },
   {
     category: "Web Dev",
-    date: "Dec 10, 2024",
+    date: "Dec 10, 2026",
     readTime: "7 min",
-    title: "Top 10 Web Development Trends for 2025",
+    title: "Top 10 Web Development Trends for 2027",
     desc: "From server components to edge computing — the web development landscape is evolving faster than ever.",
     color: "#0ea5e9"
   },
   {
     category: "Programming",
-    date: "Dec 5, 2024",
+    date: "Dec 5, 2026",
     readTime: "6 min",
     title: "Python vs JavaScript: Which Should You Learn First?",
     desc: "A comprehensive guide for beginners on choosing the right first programming language for their career goals.",
@@ -35,15 +35,15 @@ const blogs = [
   },
   {
     category: "Cloud",
-    date: "Nov 28, 2024",
+    date: "Nov 28, 2026",
     readTime: "8 min",
-    title: "AWS vs Azure vs Google Cloud in 2025",
+    title: "AWS vs Azure vs Google Cloud in 2027",
     desc: "An in-depth comparison of the top three cloud providers and how to choose the right one for your enterprise.",
     color: "#10b981"
   },
   {
     category: "Careers",
-    date: "Nov 20, 2024",
+    date: "Nov 20, 2026",
     readTime: "4 min",
     title: "How to Ace Your Next Technical Interview",
     desc: "Actionable advice from our senior engineering team on how to prepare for and pass modern system design interviews.",
@@ -51,7 +51,7 @@ const blogs = [
   },
   {
     category: "Security",
-    date: "Nov 12, 2024",
+    date: "Nov 12, 2026",
     readTime: "9 min",
     title: "Zero Trust Architecture Explained",
     desc: "Why perimeter security is dead and how modern enterprises are securing their networks using Zero Trust principles.",
@@ -91,7 +91,8 @@ export default function BlogPage() {
           {/* Blog Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogs.map((blog, i) => (
-              <div 
+              <Link 
+                href={`/blog#${i}`}
                 key={i} 
                 className="group bg-[#f4f7f9] p-8 rounded-[32px] flex flex-col h-full border border-transparent hover:border-slate-100 hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 relative overflow-hidden"
               >
@@ -114,7 +115,7 @@ export default function BlogPage() {
                   {blog.desc}
                 </p>
 
-              </div>
+              </Link>
             ))}
           </div>
 
