@@ -44,7 +44,17 @@ export default function Navbar() {
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 no-underline z-50" onClick={() => setMobileOpen(false)}>
+          <Link 
+            href="/" 
+            className="flex items-center gap-3 no-underline z-50" 
+            onClick={(e) => {
+              if (pathname === "/") {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+              setMobileOpen(false);
+            }}
+          >
             <div style={{ display: "flex", flexDirection: "column", gap: "4px", alignItems: "center" }}>
               {/* Row: SVG + Photonexes */}
               <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
@@ -99,6 +109,12 @@ export default function Navbar() {
                 <Link
                   key={link.label}
                   href={link.href}
+                  onClick={(e) => {
+                    if (isActive) {
+                      e.preventDefault();
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }
+                  }}
                   className={`px-4 py-2 rounded-full font-bold text-sm tracking-wide transition-all duration-300 flex items-center group ${
                     isActive 
                       ? "neu-inset text-[#6366f1]" 
@@ -175,7 +191,13 @@ export default function Navbar() {
                      opacity: mobileOpen ? 1 : 0,
                      transitionDelay: `${index * 50 + 100}ms`
                    }}
-                   onClick={() => setMobileOpen(false)}
+                   onClick={(e) => {
+                     if (isActive) {
+                       e.preventDefault();
+                       window.scrollTo({ top: 0, behavior: "smooth" });
+                     }
+                     setMobileOpen(false);
+                   }}
                  >
                    <span>{link.label}</span>
                    <span className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${isActive ? "bg-purple-50 text-purple-600 scale-100" : "bg-transparent text-slate-400 scale-0 group-hover:scale-100 group-hover:bg-purple-50 group-hover:text-purple-600"}`}>
