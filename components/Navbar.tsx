@@ -35,7 +35,7 @@ export default function Navbar() {
   return (
     <>
       <nav 
-        className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-400 ${
+        className={`fixed top-0 left-0 right-0 z-[9999] transition-[background-color,padding,box-shadow] duration-300 will-change-auto ${
           scrolled 
             ? "bg-[#eef2f6] shadow-[6px_6px_14px_#d0d4d8,-6px_-6px_14px_#ffffff] py-3" 
             : "bg-transparent py-5"
