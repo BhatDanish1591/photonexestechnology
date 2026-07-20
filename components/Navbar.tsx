@@ -123,7 +123,8 @@ export default function Navbar() {
                 >
                   <span>{link.label}</span>
                   <svg 
-                    className={`transition-all duration-300 ${isActive ? 'opacity-100 w-3.5 h-3.5 ml-1' : 'opacity-0 w-0 h-3.5 ml-0 group-hover:opacity-100 group-hover:w-3.5 group-hover:ml-1'}`} 
+                    className={`transition-[opacity,transform] duration-300 w-3.5 h-3.5 ml-1 ${isActive ? 'opacity-100 scale-100' : 'opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100'}`}
+                    style={{ willChange: 'transform, opacity' }}
                     viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"
                   >
                     <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
