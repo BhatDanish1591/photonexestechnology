@@ -4,7 +4,7 @@ import ContactSection from "@/components/sections/ContactSection";
 
 export const metadata = {
   title: "Industries We Serve",
-  description: "Photonexes Technologies provides specialized IT solutions for healthcare, finance, education, logistics, and retail industries worldwide.",
+  description: "Photonexes Technology provides specialized IT solutions for healthcare, finance, education, logistics, and retail industries worldwide.",
   keywords: ["enterprise software solutions", "healthcare IT", "finance software", "logistics tech solutions"],
 };
 

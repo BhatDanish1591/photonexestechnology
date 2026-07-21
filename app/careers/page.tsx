@@ -4,7 +4,7 @@ import { ArrowRight, MapPin, Briefcase, Clock } from "lucide-react";
 
 export const metadata = {
   title: "Careers",
-  description: "Join our team of passionate innovators at Photonexes Technologies. We're looking for talented individuals to build the future of software.",
+  description: "Join our team of passionate innovators at Photonexes Technology. We're looking for talented individuals to build the future of software.",
   keywords: ["careers", "jobs", "hiring", "software engineering jobs"],
 };
 
@@ -47,14 +47,14 @@ export default function CareersPage() {
     "description": job.description,
     "identifier": {
       "@type": "PropertyValue",
-      "name": "Photonexes Technologies"
+      "name": "Photonexes Technology"
     },
     "datePosted": "2026-07-15",
     "validThrough": "2026-12-31",
     "employmentType": job.type === "Full-time" ? "FULL_TIME" : "CONTRACTOR",
     "hiringOrganization": {
       "@type": "Organization",
-      "name": "Photonexes Technologies",
+      "name": "Photonexes Technology",
       "sameAs": "https://photonexes.in",
       "logo": "https://photonexes.in/logo.png"
     },

@@ -18,7 +18,7 @@ import BestCompanySection from "@/components/sections/BestCompanySection";
 import FeaturesBannerSection from "@/components/sections/FeaturesBannerSection";
 
 export const metadata: Metadata = {
-  title: "Photonexes Technologies",
+  title: "Photonexes Technology",
   description:
     "India's premier IT Software Company and Training Institute. Expert software development, web development, mobile apps, cloud solutions, AI, cybersecurity, and professional IT training with internships, certifications, and guaranteed placement assistance.",
 };

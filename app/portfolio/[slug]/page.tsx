@@ -7,7 +7,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const title = slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
   return {
     title: `${title} | Photonexes Portfolio`,
-    description: `Read the case study for ${title} delivered by Photonexes Technologies.`,
+    description: `Read the case study for ${title} delivered by Photonexes Technology.`,
   };
 }
 

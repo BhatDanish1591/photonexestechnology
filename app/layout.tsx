@@ -18,11 +18,11 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   metadataBase: new URL('https://photonexes.in'),
   title: {
-    default: "Photonexes Technologies | Best IT Company in Zirakpur",
-    template: "%s | Photonexes Technologies",
+    default: "Photonexes Technology | Best IT Company in Zirakpur",
+    template: "%s | Photonexes Technology",
   },
   description:
-    "Photonexes Technologies is a top-rated IT software company in Zirakpur, Punjab. We specialize in enterprise software development, web development, mobile apps, AI solutions, and managed IT support for global businesses.",
+    "Photonexes Technology is a top-rated IT software company in Zirakpur, Punjab. We specialize in enterprise software development, web development, mobile apps, AI solutions, and managed IT support for global businesses.",
   keywords: [
     "best IT company in Zirakpur",
     "software development company Zirakpur",
@@ -32,16 +32,16 @@ export const metadata: Metadata = {
     "enterprise software development",
     "AI solutions Punjab",
     "cloud migration services",
-    "Photonexes Technologies",
+    "Photonexes Technology",
   ],
-  authors: [{ name: "Photonexes Technologies" }],
-  creator: "Photonexes Technologies",
+  authors: [{ name: "Photonexes Technology" }],
+  creator: "Photonexes Technology",
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: "https://photonexes.in",
-    siteName: "Photonexes Technologies",
-    title: "Photonexes Technologies | Best IT Company in Zirakpur",
+    siteName: "Photonexes Technology",
+    title: "Photonexes Technology | Best IT Company in Zirakpur",
     description:
       "Top-rated IT software company in Zirakpur specializing in enterprise software development, AI, and cloud solutions.",
     images: [
@@ -49,13 +49,13 @@ export const metadata: Metadata = {
         url: "/logo.png",
         width: 1200,
         height: 630,
-        alt: "Photonexes Technologies Logo",
+        alt: "Photonexes Technology Logo",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Photonexes Technologies | Best IT Company in Zirakpur",
+    title: "Photonexes Technology | Best IT Company in Zirakpur",
     description:
       "Top-rated IT software company in Zirakpur specializing in enterprise software development, AI, and cloud solutions.",
     images: ["/logo.png"],
@@ -82,7 +82,7 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Photonexes Technologies",
+    "name": "Photonexes Technology",
     "image": "https://photonexes.in/logo.png",
     "@id": "https://photonexes.in",
     "url": "https://photonexes.in",

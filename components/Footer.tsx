@@ -179,7 +179,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-slate-400 font-bold text-sm text-center md:text-left">
-            &copy; {new Date().getFullYear()} Photonexes Technologies. All Rights Reserved.
+            &copy; {new Date().getFullYear()} Photonexes Technology. All Rights Reserved.
           </div>
           <div className="flex gap-8">
             <Link href="/privacy-policy" className="text-slate-400 hover:text-[#ea580c] font-bold text-sm transition-colors">Privacy Policy</Link>

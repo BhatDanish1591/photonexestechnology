@@ -40,7 +40,7 @@ export default function PrivacyPolicyPage() {
             {/* Overview */}
             <section id="p-overview" className="mb-12 pb-12 border-b border-slate-100">
               <p className="text-slate-600 text-[1.1rem] leading-relaxed font-medium mb-6">
-                Photonexes Technologies (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) operates{" "}
+                Photonexes Technology (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) operates{" "}
                 <strong className="text-slate-900">photonexes.in</strong> and provides comprehensive software solution services, IT training, and placement assistance.
                 This Privacy Policy describes how we collect, use, store, and share information about you when you use
                 our services. By accessing or using our website, you agree to the collection and use of information in
@@ -175,7 +175,7 @@ export default function PrivacyPolicyPage() {
                 Contact Us
               </h2>
               <div className="bg-[#f4f7f9] p-10 rounded-[32px] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:bg-white transition-all duration-300 border border-transparent hover:border-slate-100">
-                <div className="font-black text-2xl mb-8 text-slate-900">Photonexes Technologies</div>
+                <div className="font-black text-2xl mb-8 text-slate-900">Photonexes Technology</div>
                 <div className="flex items-center gap-5">
                   <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center shrink-0 border border-slate-100">
                     <Mail size={24} className="text-[#ea580c]" />

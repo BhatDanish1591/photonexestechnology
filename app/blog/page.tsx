@@ -4,7 +4,7 @@ import { Clock, ArrowRight } from "lucide-react";
 
 export const metadata = {
   title: "Tech Blog & Insights",
-  description: "Read the latest insights on software development, AI trends, cloud computing, and IT career advice on the Photonexes Technologies blog.",
+  description: "Read the latest insights on software development, AI trends, cloud computing, and IT career advice on the Photonexes Technology blog.",
   keywords: ["tech blog", "software development trends", "AI news", "IT career advice"],
 };
 

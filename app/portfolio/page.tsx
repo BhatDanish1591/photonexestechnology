@@ -4,7 +4,7 @@ import CustomHeroSection from "@/components/sections/CustomHeroSection";
 
 export const metadata = {
   title: "Our Portfolio",
-  description: "Explore our recent success stories, case studies, and enterprise solutions delivered by Photonexes Technologies.",
+  description: "Explore our recent success stories, case studies, and enterprise solutions delivered by Photonexes Technology.",
   keywords: ["software portfolio", "case studies", "enterprise solutions", "IT success stories"],
 };
 
