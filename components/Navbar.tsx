@@ -75,7 +75,7 @@ export default function Navbar() {
                 </span>
               </div>
               {/* Slogan centered below */}
-              <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+              <div className="hidden sm:flex items-center gap-1">
                 {["INNOVATION", "TECHNOLOGY", "CONNECTIVITY"].map((word, i) => (
                   <span key={i} style={{ display: "flex", alignItems: "center", gap: "4px" }}>
                     <span style={{
@@ -102,7 +102,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-1 xl:gap-2">
+          <div className="hidden xl:flex items-center gap-0 xl:gap-0.5">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -115,15 +115,15 @@ export default function Navbar() {
                       window.scrollTo({ top: 0, behavior: "smooth" });
                     }
                   }}
-                  className={`px-4 py-2 rounded-full font-bold text-sm tracking-wide transition-all duration-300 flex items-center group ${
+                  className={`px-2.5 py-2 rounded-full font-semibold text-[0.78rem] tracking-wide transition-all duration-300 flex items-center group whitespace-nowrap ${
                     isActive 
                       ? "neu-inset text-[#6366f1]" 
                       : "text-[#0f172a] hover:text-[#6366f1]"
                   }`}
                 >
-                  <span>{link.label}</span>
+                  <span className="whitespace-nowrap">{link.label}</span>
                   <svg 
-                    className={`transition-[opacity,transform] duration-300 w-3.5 h-3.5 ml-1 ${isActive ? 'opacity-100 scale-100' : 'opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100'}`}
+                    className={`transition-[opacity,transform] duration-300 w-3.5 h-3.5 ml-1 shrink-0 ${isActive ? 'opacity-100 scale-100' : 'opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100'}`}
                     style={{ willChange: 'transform, opacity' }}
                     viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"
                   >
@@ -135,10 +135,10 @@ export default function Navbar() {
           </div>
 
           {/* Desktop CTA Button */}
-          <div className="hidden lg:flex">
+          <div className="hidden xl:flex">
             <Link 
               href="/contact" 
-              className="flex items-center gap-2 bg-slate-900 text-white px-7 py-3 rounded-full font-bold text-sm tracking-wide transition-all duration-300 hover:bg-[#ea580c] hover:shadow-[0_8px_20px_-5px_rgba(234,88,12,0.4)] group/btn"
+              className="flex items-center gap-2 bg-slate-900 text-white px-5 py-2.5 rounded-full font-bold text-[0.8rem] tracking-wide transition-all duration-300 hover:bg-[#ea580c] hover:shadow-[0_8px_20px_-5px_rgba(234,88,12,0.4)] group/btn whitespace-nowrap"
             >
               Enquire Now
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover/btn:translate-x-1 transition-transform duration-300"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
@@ -147,7 +147,7 @@ export default function Navbar() {
 
           {/* Mobile Hamburger */}
           <button 
-            className="lg:hidden z-50 text-slate-800 p-2 focus:outline-none" 
+            className="xl:hidden z-50 text-slate-800 p-2 focus:outline-none" 
             onClick={() => setMobileOpen(!mobileOpen)} 
             aria-label="Toggle Menu"
           >
@@ -158,7 +158,7 @@ export default function Navbar() {
 
       {/* Mobile Backdrop */}
       <div 
-        className={`fixed inset-0 z-[9997] bg-slate-900/60 backdrop-blur-md transition-opacity duration-400 lg:hidden ${
+        className={`fixed inset-0 z-[9997] bg-slate-900/60 backdrop-blur-md transition-opacity duration-400 xl:hidden ${
           mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
         onClick={() => setMobileOpen(false)}
@@ -166,7 +166,7 @@ export default function Navbar() {
 
       {/* Modern Premium Sidebar */}
       <div 
-        className={`fixed top-0 right-0 bottom-0 w-[85%] max-w-[400px] z-[9998] bg-[#eef2f6] shadow-[-20px_0_40px_rgba(0,0,0,0.1)] transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] lg:hidden flex flex-col pt-[100px] pb-8 px-6 overflow-hidden ${
+        className={`fixed top-0 right-0 bottom-0 w-[85%] max-w-[400px] z-[9998] bg-[#eef2f6] shadow-[-20px_0_40px_rgba(0,0,0,0.1)] transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] xl:hidden flex flex-col pt-[100px] pb-8 px-6 overflow-hidden ${
           mobileOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
