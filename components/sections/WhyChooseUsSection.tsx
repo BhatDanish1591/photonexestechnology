@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { Briefcase, Puzzle, CheckCircle, Clock, RefreshCw, Rocket } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 
@@ -80,7 +81,7 @@ export default function WhyChooseUsSection() {
                 
                 {/* Top Image Banner */}
                 <div className="relative h-48 -mt-10 -mx-10 mb-8 overflow-hidden z-10">
-                  <img src={reason.image} alt={reason.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <Image fill={true}  src={reason.image} alt={reason.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent"></div>
                   
                   {/* Floating Icon moved up over the image */}

@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
 
@@ -93,10 +94,10 @@ export default function PlacementSection() {
 
         {/* Right Side: Image */}
         <div style={{ flex: "1 1 500px", position: "relative", display: "flex", justifyContent: "flex-end" }}>
-           <img loading="eager" fetchPriority="high" 
+           <Image fill={true}  loading="eager" fetchPriority="high" 
             src="/assets/stock_1784102780692_34.jpg" 
             alt="Happy Indian professional placed" 
-            style={{ 
+            style={{   
               width: "90%", 
               height: "auto", 
               borderRadius: "16px", 

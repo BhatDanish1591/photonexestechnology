@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { Smile } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -40,7 +41,7 @@ export default function BestCompanySection() {
             
             {/* The Image (Large circle/rounded right side) */}
             <div className="relative w-full aspect-[4/3] overflow-hidden rounded-l-[150px] rounded-r-3xl shadow-2xl border-4 border-white z-10">
-              <img 
+              <Image fill={true}  
                 src="/assets/stock_1784102777283_14.jpg" 
                 alt="IT Training and Office in Zirakpur" 
                 className="w-full h-full object-cover"

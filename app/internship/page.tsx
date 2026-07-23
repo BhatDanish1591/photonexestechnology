@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Check, ArrowRight, CheckCircle2, AlertCircle, UploadCloud } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -110,7 +111,7 @@ export default function InternshipApplicationPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-[#1e1b4b] via-transparent to-transparent z-10" />
             
             {/* Main Image */}
-            <img 
+            <Image fill={true}  
               src="/assets/stock_1784102773402_1.jpg" 
               alt="Interns collaborating at Photonexes" 
               className="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-700 hover:scale-105"

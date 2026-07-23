@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
 import { CheckCircle2 } from "lucide-react";
 
@@ -51,7 +52,7 @@ export default function AboutDetailsSection() {
           
           <ScrollReveal animation="scaleUp" delay={100} className="w-full h-full order-1 lg:order-2">
             <div className="group relative rounded-3xl overflow-hidden shadow-2xl h-full min-h-[400px] border-[6px] border-white ring-1 ring-slate-100">
-              <img 
+              <Image fill={true}  
                 src="/assets/stock_1784102776130_10.jpg" 
                 alt="Why choose us - IT Professional in Server Room" 
                 className="w-full h-full object-cover absolute inset-0 transform transition-transform duration-700 ease-out group-hover:scale-110"

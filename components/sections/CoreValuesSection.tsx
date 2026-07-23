@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { Lightbulb, ShieldCheck, Target, Users, Zap, Award, BookOpen, Heart, Leaf } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 
@@ -177,7 +178,7 @@ export default function CoreValuesSection() {
                 }}
               >
                 {/* Full Bleed Background Image */}
-                <img 
+                <Image fill={true}  
                   src={v.image} 
                   alt={v.title} 
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 

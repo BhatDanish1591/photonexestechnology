@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { ArrowDown } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -62,7 +63,7 @@ export default function AboutSection() {
         {/* Right Side: Image Slideshow */}
         <div className="relative flex justify-center lg:justify-end h-[400px] lg:h-[500px]">
           {sideImages.map((src, idx) => (
-            <img 
+            <Image fill={true}  
               key={src}
               src={src} 
               alt={`About us visual ${idx + 1}`} 
