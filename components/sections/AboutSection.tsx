@@ -67,7 +67,7 @@ export default function AboutSection() {
               key={src}
               src={src} 
               alt={`About us visual ${idx + 1}`} 
-              className={`absolute top-1/2 -translate-y-1/2 w-full max-w-[500px] h-full max-h-[500px] object-contain transition-all duration-1000 ease-in-out ${
+              className={`object-contain transition-all duration-1000 ease-in-out ${
                 idx === currentIdx ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
               } ${src.includes("team_puzzle") ? "mix-blend-multiply" : "rounded-3xl shadow-2xl object-cover"}`}
             />
