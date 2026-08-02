@@ -59,10 +59,8 @@ const popularCourses = [
   },
 ];
 
-const MotionLink = motion(Link);
-
 function CourseCard({ course, index }: { course: typeof popularCourses[0]; index: number }) {
-  const cardRef = useRef<HTMLAnchorElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(cardRef, { once: true, margin: "-50px" });
 
   // 3D Tilt Values
@@ -71,7 +69,7 @@ function CourseCard({ course, index }: { course: typeof popularCourses[0]; index
   const rotateX = useSpring(useTransform(mouseY, [-120, 120], [10, -10]), { stiffness: 250, damping: 25 });
   const rotateY = useSpring(useTransform(mouseX, [-120, 120], [-10, 10]), { stiffness: 250, damping: 25 });
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
     const rect = cardRef.current.getBoundingClientRect();
     mouseX.set(e.clientX - rect.left - rect.width / 2);
@@ -91,57 +89,58 @@ function CourseCard({ course, index }: { course: typeof popularCourses[0]; index
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
     >
-      <MotionLink 
-        ref={cardRef}
-        href="/courses"
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        style={{
-          perspective: 1000,
-          rotateX,
-          rotateY,
-          transformStyle: "preserve-3d",
-          borderBottom: `4px solid ${course.border}`
-        }}
-        className="neu-card group relative flex flex-col justify-between min-h-[260px] p-8 overflow-hidden no-underline cursor-pointer transition-shadow duration-300 hover:shadow-xl bg-white"
-      >
-        {/* Glowing Decorative Orb */}
-        <div 
-          className="absolute -top-10 -right-10 w-48 h-48 rounded-full blur-[60px] opacity-0 group-hover:opacity-40 transition-opacity duration-700 pointer-events-none"
-          style={{ background: course.border, transform: "translateZ(-20px)" }}
-        />
-
-        <div className="relative z-10" style={{ transform: "translateZ(30px)" }}>
-          <div 
-            className="mb-6 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3 origin-left drop-shadow-sm w-fit"
-            style={{ color: course.border }}
-          >
-            <Icon size={36} />
-          </div>
-          <h3 className="text-slate-900 font-sans text-xl font-extrabold leading-tight whitespace-pre-line mb-3">
-            {course.name}
-          </h3>
-          <p className="text-slate-600 text-[0.95rem] leading-relaxed m-0">
-            {course.desc}
-          </p>
-        </div>
-        
-        <div 
-          className="mt-8 flex items-center justify-between relative z-10 pt-6 border-t border-slate-200/50"
-          style={{ transform: "translateZ(20px)" }}
+      <Link href="/courses" className="no-underline block">
+        <motion.div 
+          ref={cardRef}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+          style={{
+            perspective: 1000,
+            rotateX,
+            rotateY,
+            transformStyle: "preserve-3d",
+            borderBottom: `4px solid ${course.border}`
+          }}
+          className="neu-card group relative flex flex-col justify-between min-h-[260px] p-8 overflow-hidden no-underline cursor-pointer transition-shadow duration-300 hover:shadow-xl bg-white"
         >
-          <div className="flex items-center gap-3 text-slate-700 text-[0.85rem] font-bold">
-            <div className="w-5 h-0.5 rounded-full" style={{ background: course.border }}></div>
-            {course.duration}
-          </div>
+          {/* Glowing Decorative Orb */}
           <div 
-            className="w-8 h-8 rounded-full flex items-center justify-center text-white opacity-0 -translate-x-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0"
-            style={{ background: course.border }}
-          >
-            <ArrowRight size={14} strokeWidth={3} />
+            className="absolute -top-10 -right-10 w-48 h-48 rounded-full blur-[60px] opacity-0 group-hover:opacity-40 transition-opacity duration-700 pointer-events-none"
+            style={{ background: course.border, transform: "translateZ(-20px)" }}
+          />
+
+          <div className="relative z-10" style={{ transform: "translateZ(30px)" }}>
+            <div 
+              className="mb-6 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3 origin-left drop-shadow-sm w-fit"
+              style={{ color: course.border }}
+            >
+              <Icon size={36} />
+            </div>
+            <h3 className="text-slate-900 font-sans text-xl font-extrabold leading-tight whitespace-pre-line mb-3">
+              {course.name}
+            </h3>
+            <p className="text-slate-600 text-[0.95rem] leading-relaxed m-0">
+              {course.desc}
+            </p>
           </div>
-        </div>
-      </MotionLink>
+          
+          <div 
+            className="mt-8 flex items-center justify-between relative z-10 pt-6 border-t border-slate-200/50"
+            style={{ transform: "translateZ(20px)" }}
+          >
+            <div className="flex items-center gap-3 text-slate-700 text-[0.85rem] font-bold">
+              <div className="w-5 h-0.5 rounded-full" style={{ background: course.border }}></div>
+              {course.duration}
+            </div>
+            <div 
+              className="w-8 h-8 rounded-full flex items-center justify-center text-white opacity-0 -translate-x-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0"
+              style={{ background: course.border }}
+            >
+              <ArrowRight size={14} strokeWidth={3} />
+            </div>
+          </div>
+        </motion.div>
+      </Link>
     </motion.div>
   );
 }
