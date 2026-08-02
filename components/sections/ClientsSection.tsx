@@ -1,79 +1,63 @@
 "use client";
-import React from "react";
+import InfiniteSlider from "@/components/smoothui/infinite-slider/index";
+import { motion } from "motion/react";
 
 const clients = [
   "Microsoft", "Google", "Amazon", "IBM", "Oracle",
-  "Meta", "Apple", "Cisco", "Intel", "Adobe"
+  "Meta", "Apple", "Cisco", "Intel", "Adobe",
 ];
 
 export default function ClientsSection() {
   return (
-    <section 
-      style={{
-        padding: "2rem 0",
-        background: "#ffffff",
-        borderTop: "1px solid #e2e8f0",
-        borderBottom: "1px solid #e2e8f0",
-        overflow: "hidden"
-      }}
-    >
-      <div style={{ textAlign: "center", marginBottom: "2rem" }}>
-        <p style={{
-          color: "#64748b",
-          fontSize: "0.95rem",
-          fontWeight: 600,
-          letterSpacing: "0.1em",
-          textTransform: "uppercase"
-        }}>
-          Trusted by Innovative Companies Worldwide
-        </p>
-      </div>
+    <section className="py-10 bg-white border-t border-b border-slate-100 overflow-hidden">
+      {/* Label — fade-in */}
+      <motion.p
+        className="text-center text-slate-500 text-xs font-semibold tracking-[0.2em] uppercase mb-8"
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        Trusted by Innovative Companies Worldwide
+      </motion.p>
 
-      <div style={{
-        display: "flex",
-        width: "200%",
-        animation: "scroll 20s linear infinite",
-      }}>
-        <div style={{ display: "flex", width: "50%", justifyContent: "space-around", alignItems: "center" }}>
-          {clients.map((client, idx) => (
-            <div 
-              key={idx}
-              style={{
-                fontSize: "1.75rem",
-                fontWeight: 800,
-                color: "#94a3b8",
-                fontFamily: "Inter, sans-serif",
-                transition: "color 0.3s ease",
-                cursor: "pointer"
+      {/* Dual-row InfiniteSlider for depth */}
+      <div className="flex flex-col gap-4">
+        <InfiniteSlider speed={60} gap={48} speedOnHover={20}>
+          {clients.map((client) => (
+            <motion.div
+              key={client}
+              className="px-8 py-3 rounded-full border border-slate-100 bg-slate-50 text-slate-400 font-bold text-lg select-none whitespace-nowrap"
+              whileHover={{
+                color: "#0f172a",
+                borderColor: "#ea580c",
+                backgroundColor: "#fff7ed",
+                scale: 1.05,
               }}
-              onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = "#0f172a"}
-              onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = "#94a3b8"}
+              transition={{ duration: 0.2 }}
             >
               {client}
-            </div>
+            </motion.div>
           ))}
-        </div>
-        
-        {/* Duplicate for infinite scroll */}
-        <div style={{ display: "flex", width: "50%", justifyContent: "space-around", alignItems: "center" }}>
-          {clients.map((client, idx) => (
-            <div 
-              key={`dup-${idx}`}
-              style={{
-                fontSize: "1.75rem",
-                fontWeight: 800,
-                color: "#94a3b8",
-                fontFamily: "Inter, sans-serif",
-                transition: "color 0.3s ease",
-                cursor: "pointer"
+        </InfiniteSlider>
+
+        <InfiniteSlider speed={45} gap={48} reverse speedOnHover={20}>
+          {[...clients].reverse().map((client) => (
+            <motion.div
+              key={`rev-${client}`}
+              className="px-8 py-3 rounded-full border border-slate-100 bg-slate-50 text-slate-300 font-bold text-base select-none whitespace-nowrap"
+              whileHover={{
+                color: "#1e3a8a",
+                borderColor: "#2563eb",
+                backgroundColor: "#eff6ff",
+                scale: 1.05,
               }}
-              onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = "#0f172a"}
-              onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = "#94a3b8"}
+              transition={{ duration: 0.2 }}
             >
               {client}
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </InfiniteSlider>
       </div>
     </section>
   );

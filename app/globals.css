@@ -520,3 +520,86 @@
 @media (min-width: 1025px) {
   .hamburger-btn { display: none !important; }
 }
+
+/* Custom Scrollbar Hide Utility */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Slider Revolution Custom Navigation Prev/Next dark */
+.geer_nav_prev_next_dark {
+  width: 48px;
+  height: 48px;
+  background: rgba(15, 23, 42, 0.85); /* Dark slate semi-transparent */
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  z-index: 50;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.geer_nav_prev_next_dark:hover {
+  background: #ea580c; /* Accent color on hover */
+  border-color: #ea580c;
+}
+
+.geer_nav_prev_next_dark .geer-nav-line {
+  position: absolute;
+  height: 1px;
+  background: #ea580c;
+  width: 0;
+  top: 50%;
+  transition: width 0.3s ease;
+}
+
+.tp-rightarrow .geer-nav-line {
+  right: 100%;
+}
+
+.tp-leftarrow .geer-nav-line {
+  left: 100%;
+}
+
+.geer_nav_prev_next_dark:hover .geer-nav-line {
+  width: 32px;
+}
+
+.geer_nav_prev_next_dark .geer-nav-text {
+  position: absolute;
+  color: #0f172a;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.tp-rightarrow .geer-nav-text {
+  right: calc(100% + 40px);
+  transform: translateX(10px);
+}
+
+.tp-leftarrow .geer-nav-text {
+  left: calc(100% + 40px);
+  transform: translateX(-10px);
+}
+
+.geer_nav_prev_next_dark:hover .geer-nav-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+

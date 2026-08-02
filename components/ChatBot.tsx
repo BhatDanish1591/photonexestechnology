@@ -79,7 +79,7 @@ export default function ChatBot() {
       return "We offer comprehensive IT services including Custom Software Development, Mobile Apps, Cloud Migration, AI Solutions, and Managed IT Support tailored to your business needs.";
     }
     if (lower.includes("contact") || lower.includes("phone") || lower.includes("address") || lower.includes("location") || lower.includes("where")) {
-      return "We are located in Zirakpur, Punjab. You can reach us directly at +91-7006291591 or through our Contact page!";
+      return "We are located in Zirakpur, Punjab. You can reach us directly at +91-8351057778 or through our Contact page!";
     }
     if (lower.includes("price") || lower.includes("cost") || lower.includes("quote")) {
       return "Our pricing depends on the scope of your project. Since I've already notified our team, an expert will contact you shortly to provide a customized quote!";

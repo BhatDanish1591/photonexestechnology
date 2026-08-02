@@ -12,10 +12,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/portfolio',
     '/industries',
     '/internship',
-    '/placement',
+    '/careers',
+    '/technologies',
     '/blog',
     '/privacy-policy',
-    '/terms',
   ];
 
   const sitemapData = routes.map((route) => ({

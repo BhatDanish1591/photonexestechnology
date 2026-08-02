@@ -220,7 +220,7 @@ export default function Navbar() {
               className="px-4 text-center mb-2"
             >
               <p className="text-slate-500 text-sm font-semibold mb-1 uppercase tracking-widest">Get in Touch</p>
-              <p className="text-slate-900 font-extrabold text-lg">+91-7006291591</p>
+              <p className="text-slate-900 font-extrabold text-lg">+91-8351057778</p>
             </div>
 
             <Link 

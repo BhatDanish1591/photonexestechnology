@@ -7,6 +7,7 @@ const inter = Inter({
   weight: ["400", "500", "600", "700", "800", "900"],
   display: "swap",
   variable: "--font-inter",
+  preload: false,
 });
 
 const outfit = Outfit({
@@ -14,9 +15,11 @@ const outfit = Outfit({
   weight: ["400", "500", "600", "700", "800", "900"],
   display: "swap",
   variable: "--font-outfit",
+  preload: false,
 });
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://photonexes.in'),
+  metadataBase: new URL("https://photonexes.in"),
   title: {
     default: "Photonexes Technology | Best IT Company in Zirakpur",
     template: "%s | Photonexes Technology",
@@ -61,7 +64,7 @@ export const metadata: Metadata = {
     images: ["/logo.png"],
   },
   icons: {
-    icon: '/logo.png',
+    icon: "/logo.png",
   },
   robots: {
     index: true,
@@ -73,6 +76,8 @@ export const metadata: Metadata = {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ChatBot from "@/components/ChatBot";
+import PageLoader from "@/components/PageLoader";
+import PageTransitionWrapper from "@/components/PageTransitionWrapper";
 
 export default function RootLayout({
   children,
@@ -82,40 +87,43 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Photonexes Technology",
-    "image": "https://photonexes.in/logo.png",
+    name: "Photonexes Technology",
+    image: "https://photonexes.in/logo.png",
     "@id": "https://photonexes.in",
-    "url": "https://photonexes.in",
-    "telephone": "+91-7006291591",
-    "address": {
+    url: "https://photonexes.in",
+    telephone: "+91-8351057778",
+    address: {
       "@type": "PostalAddress",
-      "streetAddress": "Zirakpur",
-      "addressLocality": "Zirakpur",
-      "addressRegion": "Punjab",
-      "postalCode": "140603",
-      "addressCountry": "IN"
+      streetAddress: "Zirakpur",
+      addressLocality: "Zirakpur",
+      addressRegion: "Punjab",
+      postalCode: "140603",
+      addressCountry: "IN",
     },
-    "geo": {
+    geo: {
       "@type": "GeoCoordinates",
-      "latitude": 30.6425,
-      "longitude": 76.8173
+      latitude: 30.6425,
+      longitude: 76.8173,
     },
-    "sameAs": [
+    sameAs: [
       "https://www.linkedin.com/company/photonexes",
       "https://twitter.com/photonexes",
-      "https://www.facebook.com/photonexes"
-    ]
+      "https://www.facebook.com/photonexes",
+    ],
   };
 
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
       <body className="antialiased relative">
+        <PageLoader />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <Navbar />
-        {children}
+        <PageTransitionWrapper>
+          {children}
+        </PageTransitionWrapper>
         <Footer />
         <ChatBot />
       </body>
