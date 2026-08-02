@@ -41,11 +41,6 @@ export default function ContactHeroForm() {
         }),
       });
 
-      // 2. Open WhatsApp Web / App with prefilled message
-      const text = `Hello Photonexes! I just filled out the contact form on your website:\n\n*Name:* ${formData.name}\n*Company:* ${formData.company}\n*Email:* ${formData.email}\n*Phone:* +91 ${formData.phone}\n*Message:* ${formData.message}`;
-      const waUrl = `https://wa.me/918351057778?text=${encodeURIComponent(text)}`;
-      window.open(waUrl, "_blank");
-
       setSuccess(true);
       setFormData({
         name: "",
@@ -90,7 +85,7 @@ export default function ContactHeroForm() {
           <form onSubmit={handleSubmit} className="space-y-4 relative">
             {success && (
               <div className="p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 font-bold rounded-2xl text-sm mb-4">
-                Thank you! Your message has been sent. Opening WhatsApp to connect directly...
+                Thank you! Your message has been sent successfully. We will get in touch with you shortly.
               </div>
             )}
 

@@ -134,11 +134,6 @@ export default function ChatBot() {
       // Send the email in the background silently
       submitLead(finalData);
 
-      // Open WhatsApp directly
-      const text = `Hello Photonexes Support! I just submitted a support query:\n\n*Name:* ${finalData.name}\n*Email:* ${finalData.email}\n*Phone:* ${finalData.phone}\n*Query:* ${finalData.message}`;
-      const waUrl = `https://wa.me/918351057778?text=${encodeURIComponent(text)}`;
-      window.open(waUrl, "_blank");
-
       // Reply based on keywords
       setTimeout(() => {
         setMessages(prev => [...prev, { text: getBotReply(val), isBot: true }]);
