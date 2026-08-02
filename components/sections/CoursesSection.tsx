@@ -59,6 +59,8 @@ const popularCourses = [
   },
 ];
 
+const MotionLink = motion(Link);
+
 function CourseCard({ course, index }: { course: typeof popularCourses[0]; index: number }) {
   const cardRef = useRef<HTMLAnchorElement>(null);
   const isInView = useInView(cardRef, { once: true, margin: "-50px" });
@@ -89,7 +91,7 @@ function CourseCard({ course, index }: { course: typeof popularCourses[0]; index
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
     >
-      <Link 
+      <MotionLink 
         ref={cardRef}
         href="/courses"
         onMouseMove={handleMouseMove}
@@ -139,7 +141,7 @@ function CourseCard({ course, index }: { course: typeof popularCourses[0]; index
             <ArrowRight size={14} strokeWidth={3} />
           </div>
         </div>
-      </Link>
+      </MotionLink>
     </motion.div>
   );
 }

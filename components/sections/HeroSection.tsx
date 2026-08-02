@@ -24,7 +24,7 @@ const headlines = [
 const containerVariants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.12 } },
-};
+} as const;
 
 const itemVariants = {
   hidden: { opacity: 0, y: 32, filter: "blur(8px)" },
@@ -34,7 +34,7 @@ const itemVariants = {
     filter: "blur(0px)",
     transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
   },
-};
+} as const;
 
 export default function HeroSection() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
